@@ -1,0 +1,11 @@
+name: "Gus Wezerek's Five Favorites"
+description: "Portofolioliolio"
+
+# url: "http://localhost:4000"
+
+paginate: 10
+
+markdown: rdiscount
+permalink: pretty
+
+exclude: ["*.scss", "Gruntfile.js"]
