@@ -6,6 +6,6 @@ url: "http://localhost:4000"
 paginate: 10
 
 markdown: rdiscount
-permalink: pretty
+permalink: none
 
-exclude: ["*.scss", "Gruntfile.js"]
+exclude: ["*.scss", "Gruntfile.js", "*.sublime-project", "node_modules", "*.sublime-workspace", "package.json"]
