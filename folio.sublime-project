@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/Users/SenorGustav/Sites/folio"
+			"follow_symlinks": true,
+			"path": "/Users/upstatement/Sites/folio"
 		}
 	]
 }

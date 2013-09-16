@@ -1,0 +1,44 @@
+// ============================================= 
+
+//  Footer                
+
+// ============================================= 
+
+
+
+.footer {
+	
+}
+
+.footer-actions-wrap {
+	position: relative;
+	margin-bottom: 10px;
+	padding: 20px 0;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.prev-category {
+	position: absolute;
+	left: 0;
+}
+
+.next-category {
+	position: absolute;
+	right: 0;
+}
+
+.about-txt {
+	font-size: 14px;
+	text-align: left;
+}
+
+.postscript {
+	position: absolute;
+	left: 0;
+}
+
+.email-address {
+	position: absolute;
+	right: 0;
+}
