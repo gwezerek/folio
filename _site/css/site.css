@@ -335,10 +335,32 @@ button {
   margin-right: 0;
 }
 
+/* line 7, ../sass/partials/_reset.scss */
+button {
+  background: none;
+  border: none;
+}
+
 /* entypo */
 /* line 4, ../sass/partials/_type.scss */
 [class^="entypo-"]:before {
   font-family: 'entypo', sans-serif;
+  color: white;
+}
+
+/* line 7, ../sass/partials/_header.scss */
+.header {
+  margin-bottom: 30px;
+}
+
+/* line 7, ../sass/partials/_category.scss */
+.category-name {
+  text-transform: uppercase;
+}
+
+/* line 12, ../sass/partials/_category.scss */
+.post-txt-label {
+  text-transform: uppercase;
 }
 
 /* line 13, ../sass/partials/_footer.scss */
@@ -380,21 +402,16 @@ button {
   right: 0;
 }
 
-/* line 21, ../sass/site.scss */
+/* line 25, ../sass/site.scss */
 body {
   font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
   background: #111111;
   color: white;
-  margin: 0 5.5% 40px;
+  margin: 30px 5.5% 40px;
 }
 
-/* line 29, ../sass/site.scss */
+/* line 33, ../sass/site.scss */
 a {
   color: green;
   text-decoration: none;
-}
-
-/* line 34, ../sass/site.scss */
-.post-txt-label {
-  text-transform: uppercase;
 }

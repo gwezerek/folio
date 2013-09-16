@@ -12,27 +12,27 @@
 
 //  Import partials              
 // =============================================
+@import "partials/reset";
 @import "partials/type";
+@import "partials/header";
+@import "partials/category";
 @import "partials/footer";
+
 
 
 //  Base styles            
 // =============================================
 body {
   font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
-  background: $black-95;
-  color: white;
-  margin: 0 5.5% 40px;
+  background: $bground;
+  color: $accent;
+  margin: 30px 5.5% 40px;
 
 }
 
 a {
   color: green;
   text-decoration: none;
-}
-
-.post-txt-label {
-  text-transform: uppercase;
 }
 
 .folio-content {
