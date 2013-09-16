@@ -1,3 +1,4 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
 /* !============================================= */
 /* ! Variables						  			  */
 /* !============================================= */
@@ -334,94 +335,27 @@ button {
   margin-right: 0;
 }
 
+/* entypo */
+/* line 4, ../sass/partials/_type.scss */
+[class^="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
 /* line 20, ../sass/site.scss */
 body {
   font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
-  background: black;
-  color: #ececec;
-  padding: 0;
-  margin: 0;
+  background: #111111;
+  color: white;
+  margin: 0 5.5% 40px;
 }
 
-/* line 27, ../sass/site.scss */
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 31, ../sass/site.scss */
+/* line 28, ../sass/site.scss */
 a {
   color: green;
   text-decoration: none;
 }
 
-/* line 36, ../sass/site.scss */
-a:hover {
-  color: #ececec;
-  text-decoration: underline;
-}
-
-/* line 41, ../sass/site.scss */
-header {
-  padding: 0 10px;
-  overflow: hidden;
-}
-
-/* line 45, ../sass/site.scss */
-h1 {
-  margin: 0;
-}
-
-/* line 49, ../sass/site.scss */
-nav ul, ul.entries {
-  list-style-type: none;
-}
-
-/* line 52, ../sass/site.scss */
-nav li a {
-  float: left;
-  margin: 5px;
-}
-
-/* line 56, ../sass/site.scss */
-.content {
-  padding: 10px;
-}
-
-/* line 60, ../sass/site.scss */
-ul.entries li {
-  position: relative;
-  margin: 20px auto;
-  padding: 20px;
-  background: #ececec;
-  width: 600px;
-}
-
-/* line 68, ../sass/site.scss */
-ul.entries img {
-  width: 600px;
-}
-
-/* line 72, ../sass/site.scss */
-ul.entries li h3 {
-  position: absolute;
-  bottom: -18px;
-  left: 17px;
-  font-size: 2em;
-}
-
-/* line 78, ../sass/site.scss */
-ul.entries a {
-  color: #ececec;
-}
-
-/* line 81, ../sass/site.scss */
-ul.entries a:hover {
-  color: #fff;
-}
-
-/* line 85, ../sass/site.scss */
-footer {
-  font-size: 0.65em;
-  text-align: center;
+/* line 33, ../sass/site.scss */
+.post-txt-label {
+  text-transform: uppercase;
 }

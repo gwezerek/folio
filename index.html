@@ -2,21 +2,31 @@
 layout: allpages
 ---
 
-<ul>
-	{% for cat in site.categories %}
-	<li>
-		<h2>{{ cat[0] }}</h2>
+<main class="folio-content">
+	<ul class="category-list">
 
-		{% for post in cat[1] %}
-		<li>
-			<ul>
-				<a href="{{ post.url }}">
-					<img src="{{ post.image }}" />
-					<h3>{{ post.title }}</h3>
-				</a>
+		{% for cat in site.categories %}
+		<li class="category">
+			<h2 class="category-name">{{ cat[0] }}</h2>
+			
+			<ul class="post-list">
+				{% for post in cat[1] %}
+				{% assign i = forloop.index %}
+				<li class="post">
+					<div class="post-meta">
+						<p class="post-txt"><span class="post-txt-label">Client:</span> {{ post.client }}</p>
+						<p class="post-txt"> {{ post.story }}</p>
+						<p class="post-txt"><span class="post-txt-label">No.</span> {{ i }}</p>
+					</div>
+						<img src="{{ post.image }}" />
+					<button class="button prev-post entypo-left">
+					<button class="button next-post entypo-right">
+				</li>
+				{% endfor %}
 			</ul>
+
 		</li>
 		{% endfor %}
-	</li>
-	{% endfor %}
-</ul>
+
+	</ul>
+</main>
