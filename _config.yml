@@ -8,4 +8,4 @@ paginate: 10
 markdown: rdiscount
 permalink: none
 
-exclude: ["*.scss", "Gruntfile.js", "*.sublime-project", "node_modules", "*.sublime-workspace", "package.json"]
+exclude: ["*.scss", "Gruntfile.js", ""]
