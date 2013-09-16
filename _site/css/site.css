@@ -334,6 +334,45 @@ button {
   margin-right: 0;
 }
 
+/* line 13, ../sass/partials/_footer.scss */
+.footer-actions-wrap {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 20px 0;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+/* line 21, ../sass/partials/_footer.scss */
+.prev-category {
+  position: absolute;
+  left: 0;
+}
+
+/* line 26, ../sass/partials/_footer.scss */
+.next-category {
+  position: absolute;
+  right: 0;
+}
+
+/* line 31, ../sass/partials/_footer.scss */
+.about-txt {
+  font-size: 14px;
+  text-align: left;
+}
+
+/* line 36, ../sass/partials/_footer.scss */
+.postscript {
+  position: absolute;
+  left: 0;
+}
+
+/* line 41, ../sass/partials/_footer.scss */
+.email-address {
+  position: absolute;
+  right: 0;
+}
+
 /* line 20, ../sass/site.scss */
 body {
   font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
