@@ -10,10 +10,14 @@
 }
 
 .post-wrap {
-	margin-bottom: 20px; 
+	margin-bottom: 40px; 
 	padding: 15px 0 15px 15px;
 	border: solid $accent;
 	border-width: 1px 0 1px 1px;
+}
+
+.post {
+	position: relative;
 }
 
 .img-top-wrap {
@@ -22,13 +26,13 @@
 	margin-bottom: 10px;
 }
 
-.post-txt {
+.post-txt-index {
 	position: absolute;
 	bottom: 0;
 	display: inline;
 }
 
-.post-txt-label {
+.post-txt-index-label {
   text-transform: uppercase;
 }
 
@@ -45,7 +49,18 @@
 
 .post-img {
 	width: 100%;
+	margin-bottom: 10px;
 }
 
+.expand-post {
+	position: absolute;
+	right: 0;
+	top: -45px;
+}
 
+.collapse-post {
+	position: absolute;
+	right: 0;
+	bottom: -5px;
+}
 

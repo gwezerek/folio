@@ -338,6 +338,7 @@ button {
 button {
   background: none;
   border: none;
+  padding: 0;
 }
 
 /* entypo */
@@ -365,13 +366,18 @@ button {
 
 /* line 12, ../sass/partials/_category.scss */
 .post-wrap {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding: 15px 0 15px 15px;
   border: solid white;
   border-width: 1px 0 1px 1px;
 }
 
 /* line 19, ../sass/partials/_category.scss */
+.post {
+  position: relative;
+}
+
+/* line 23, ../sass/partials/_category.scss */
 .img-top-wrap {
   *zoom: 1;
   position: relative;
@@ -384,24 +390,24 @@ button {
   clear: both;
 }
 
-/* line 25, ../sass/partials/_category.scss */
-.post-txt {
+/* line 29, ../sass/partials/_category.scss */
+.post-txt-index {
   position: absolute;
   bottom: 0;
   display: inline;
 }
 
-/* line 31, ../sass/partials/_category.scss */
-.post-txt-label {
+/* line 35, ../sass/partials/_category.scss */
+.post-txt-index-label {
   text-transform: uppercase;
 }
 
-/* line 35, ../sass/partials/_category.scss */
+/* line 39, ../sass/partials/_category.scss */
 .post-nav-mod {
   float: right;
 }
 
-/* line 39, ../sass/partials/_category.scss */
+/* line 43, ../sass/partials/_category.scss */
 .post-nav {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -413,9 +419,24 @@ button {
   border: 1px solid white;
 }
 
-/* line 46, ../sass/partials/_category.scss */
+/* line 50, ../sass/partials/_category.scss */
 .post-img {
   width: 100%;
+  margin-bottom: 10px;
+}
+
+/* line 55, ../sass/partials/_category.scss */
+.expand-post {
+  position: absolute;
+  right: 0;
+  top: -45px;
+}
+
+/* line 61, ../sass/partials/_category.scss */
+.collapse-post {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
 }
 
 /* line 13, ../sass/partials/_footer.scss */
@@ -462,7 +483,7 @@ body {
   margin: 30px 5.5% 40px;
   background: #111111;
   color: white;
-  font: 14px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
+  font: 14px/1.5 helvetica, arial, san-serif;
 }
 
 /* line 34, ../sass/site.scss */
