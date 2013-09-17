@@ -1,4 +1,3 @@
-@import url(http://weloveiconfonts.com/api/?family=entypo);
 /* !============================================= */
 /* ! Variables						  			  */
 /* !============================================= */
@@ -343,8 +342,13 @@ button {
 
 /* entypo */
 /* line 4, ../sass/partials/_type.scss */
-[class^="entypo-"]:before {
+.icon {
   font-family: 'entypo', sans-serif;
+  font-size: 20px;
+}
+
+/* line 7, ../sass/partials/_buttons.scss */
+.button {
   color: white;
 }
 
@@ -355,12 +359,63 @@ button {
 
 /* line 7, ../sass/partials/_category.scss */
 .category-name {
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
 /* line 12, ../sass/partials/_category.scss */
+.post-wrap {
+  margin-bottom: 20px;
+  padding: 15px 0 15px 15px;
+  border: solid white;
+  border-width: 1px 0 1px 1px;
+}
+
+/* line 19, ../sass/partials/_category.scss */
+.img-top-wrap {
+  *zoom: 1;
+  position: relative;
+  margin-bottom: 10px;
+}
+/* line 38, ../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.img-top-wrap:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 25, ../sass/partials/_category.scss */
+.post-txt {
+  position: absolute;
+  bottom: 0;
+  display: inline;
+}
+
+/* line 31, ../sass/partials/_category.scss */
 .post-txt-label {
   text-transform: uppercase;
+}
+
+/* line 35, ../sass/partials/_category.scss */
+.post-nav-mod {
+  float: right;
+}
+
+/* line 39, ../sass/partials/_category.scss */
+.post-nav {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+}
+
+/* line 46, ../sass/partials/_category.scss */
+.post-img {
+  width: 100%;
 }
 
 /* line 13, ../sass/partials/_footer.scss */
@@ -402,15 +457,15 @@ button {
   right: 0;
 }
 
-/* line 25, ../sass/site.scss */
+/* line 26, ../sass/site.scss */
 body {
-  font: 16px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
+  margin: 30px 5.5% 40px;
   background: #111111;
   color: white;
-  margin: 30px 5.5% 40px;
+  font: 14px/1.5 verdana, helvetica-neue, helvetica, arial, san-serif;
 }
 
-/* line 33, ../sass/site.scss */
+/* line 34, ../sass/site.scss */
 a {
   color: green;
   text-decoration: none;

@@ -5,10 +5,47 @@
 // ============================================= 
 
 .category-name {
+	margin-bottom: 10px;
 	text-transform: uppercase;
 }
 
+.post-wrap {
+	margin-bottom: 20px; 
+	padding: 15px 0 15px 15px;
+	border: solid $accent;
+	border-width: 1px 0 1px 1px;
+}
+
+.img-top-wrap {
+	@include pie-clearfix;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.post-txt {
+	position: absolute;
+	bottom: 0;
+	display: inline;
+}
 
 .post-txt-label {
   text-transform: uppercase;
 }
+
+.post-nav-mod {
+	float: right;
+}
+
+.post-nav {
+	@include border-radius(50%);
+	width: 40px;
+	height: 40px;
+	border: 1px solid $accent;
+}
+
+.post-img {
+	width: 100%;
+}
+
+
+

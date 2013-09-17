@@ -12,17 +12,21 @@ layout: allpages
 			<ul class="post-list">
 				{% for post in cat[1] %}
 				{% assign i = forloop.index %}
-				<li class="post">
-					<div class="post-meta">
+				<li class="post-wrap">
+					<div class-"post">
+						<div class="img-top-wrap">
+							<p class="post-txt"><span class="post-txt-label">No.</span> {{ i }}</p>
+							<div class="post-nav-mod">
+								<button class="button post-nav prev-post icon">&#59233;</button>
+								<button class="button post-nav next-post icon">&#59234;</button>
+							</div>
+						</div>
+						<img class="post-img" src="{{ post.image }}" />
 						<p class="post-txt"><span class="post-txt-label">Client:</span> {{ post.client }}</p>
 						<p class="post-txt"> {{ post.story }}</p>
-						<p class="post-txt"><span class="post-txt-label">No.</span> {{ i }}</p>
+						<button class="button expand-post icon">&#59232;</button>
+						<button class="button collapse-post icon">&#59235;</button>
 					</div>
-					<img src="{{ post.image }}" />
-					<button class="button expand-post entypo-down">
-					<button class="button collapse-post entypo-up">
-					<button class="button prev-post entypo-left">
-					<button class="button next-post entypo-right">
 				</li>
 				{% endfor %}
 			</ul>
