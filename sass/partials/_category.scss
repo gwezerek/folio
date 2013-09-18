@@ -30,6 +30,11 @@
 	bottom: -5px;
 }
 
+.cat-collapse {
+	@include trans(.2s, transform, ease-in);
+	@include rotate(180deg);
+}
+
 .post-wrap {
 	margin-bottom: 40px; 
 	padding: 25px 0 15px 15px;

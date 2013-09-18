@@ -382,6 +382,19 @@ button {
 }
 
 /* line 33, ../sass/partials/_category.scss */
+.cat-collapse {
+  -webkit-transition: -webkit-transform 0.2s ease-in;
+  -moz-transition: -moz-transform 0.2s ease-in;
+  -o-transition: -o-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/* line 38, ../sass/partials/_category.scss */
 .post-wrap {
   margin-bottom: 40px;
   padding: 25px 0 15px 15px;
@@ -389,36 +402,36 @@ button {
   border-width: 1px 0 1px 1px;
 }
 
-/* line 40, ../sass/partials/_category.scss */
+/* line 45, ../sass/partials/_category.scss */
 .post-wrap-collapsed {
   padding: 0;
   border-width: 0 0 1px 0;
 }
 
-/* line 45, ../sass/partials/_category.scss */
+/* line 50, ../sass/partials/_category.scss */
 .post {
   position: relative;
 }
 
-/* line 49, ../sass/partials/_category.scss */
+/* line 54, ../sass/partials/_category.scss */
 .post-collapsed {
   display: none;
 }
 
-/* line 53, ../sass/partials/_category.scss */
+/* line 58, ../sass/partials/_category.scss */
 .img-top-wrap {
   *zoom: 1;
   position: relative;
   margin-bottom: 15px;
 }
-/* line 38, ../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .img-top-wrap:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 59, ../sass/partials/_category.scss */
+/* line 64, ../sass/partials/_category.scss */
 .post-txt-client {
   position: absolute;
   top: -1px;
@@ -427,24 +440,24 @@ button {
   border-bottom: 1px solid white;
 }
 
-/* line 67, ../sass/partials/_category.scss */
+/* line 72, ../sass/partials/_category.scss */
 .post-txt-index {
   position: absolute;
   bottom: -1px;
   display: inline;
 }
 
-/* line 73, ../sass/partials/_category.scss */
+/* line 78, ../sass/partials/_category.scss */
 .post-txt-index-label {
   text-transform: uppercase;
 }
 
-/* line 77, ../sass/partials/_category.scss */
+/* line 82, ../sass/partials/_category.scss */
 .post-nav-mod {
   float: right;
 }
 
-/* line 81, ../sass/partials/_category.scss */
+/* line 86, ../sass/partials/_category.scss */
 .post-nav {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -460,13 +473,13 @@ button {
   background-color: #111111;
 }
 
-/* line 92, ../sass/partials/_category.scss */
+/* line 97, ../sass/partials/_category.scss */
 .post-img {
   margin-bottom: 10px;
   width: 100%;
 }
 
-/* line 97, ../sass/partials/_category.scss */
+/* line 102, ../sass/partials/_category.scss */
 .post-txt-story {
   padding-right: 25px;
 }
