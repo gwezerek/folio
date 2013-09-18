@@ -1,34 +1,72 @@
 // ============================================= 
 
-//  Category of five items             
+//  cat of five items             
 
 // ============================================= 
 
-.category-name {
+.cat {
+	position: relative;
+}
+
+// .cat-top-wrap {
+// 	position: relative;
+// }
+
+.cat-name {
 	margin-bottom: 10px;
 	text-transform: uppercase;
 }
 
+.cat-btn {
+	position: absolute;
+	right: 0;
+}
+
+.cat-btn-outside {
+	top: 3px;
+}
+
+.cat-btn-inside {
+	bottom: -5px;
+}
+
 .post-wrap {
 	margin-bottom: 40px; 
-	padding: 15px 0 15px 15px;
+	padding: 25px 0 15px 15px;
 	border: solid $accent;
 	border-width: 1px 0 1px 1px;
+}
+
+.post-wrap-collapsed {
+	padding: 0;
+	border-width: 0 0 1px 0;
 }
 
 .post {
 	position: relative;
 }
 
+.post-collapsed {
+	display: none;
+}
+
 .img-top-wrap {
 	@include pie-clearfix;
 	position: relative;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+.post-txt-client {
+	position: absolute;
+	top: -1px;
+	padding-bottom: 2px;
+	width: 100%;
+	border-bottom: 1px solid $accent;
 }
 
 .post-txt-index {
 	position: absolute;
-	bottom: 0;
+	bottom: -1px;
 	display: inline;
 }
 
@@ -42,25 +80,23 @@
 
 .post-nav {
 	@include border-radius(50%);
+	position: relative;
+	z-index: 1;
+	margin-left: 5px;
 	width: 40px;
 	height: 40px;
 	border: 1px solid $accent;
+	background-color: $bground;
 }
 
 .post-img {
-	width: 100%;
 	margin-bottom: 10px;
+	width: 100%;
 }
 
-.expand-post {
-	position: absolute;
-	right: 0;
-	top: -45px;
+.post-txt-story {
+	padding-right: 25px;
 }
 
-.collapse-post {
-	position: absolute;
-	right: 0;
-	bottom: -5px;
-}
+
 

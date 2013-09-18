@@ -6,28 +6,27 @@ layout: allpages
 	<ul class="category-list">
 
 		{% for cat in site.categories %}
-		<li class="category">
-			<h2 class="category-name">{{ cat[0] }}</h2>
-			
-			<ul class="post-list">
+		<li class="cat">
+			<h2 class="cat-name">{{ cat[0] }}</h2>
+			<button class="cat-btn cat-btn-outside cat-expand icon">&#59236;</button>
+			<ul class="post-wrap post-wrap-collapsed">
 				{% for post in cat[1] %}
 				{% assign i = forloop.index %}
-				<li class="post-wrap">
-					<div class="post">
+				<!-- <li class="post-wrap post-wrap-collapsed"> -->
+					<li class="post post-collapsed">
 						<div class="img-top-wrap">
+							<p class="post-txt-client"><span class="post-txt-label">Client:</span> {{ post.client }}</p>
 							<p class="post-txt-index"><span class="post-txt-index-label">No.</span> {{ i }}</p>
-							<p class="post-txt"><span class="post-txt-label">Client:</span> {{ post.client }}</p>
 							<div class="post-nav-mod">
-								<button class="button post-nav prev-post icon">&#59233;</button>
-								<button class="button post-nav next-post icon">&#59234;</button>
+								<button class="post-nav prev-post icon">&#59237;</button>
+								<button class="post-nav next-post icon">&#59238;</button>
 							</div>
 						</div>
-						<img class="post-img" src="{{ post.image }}" />
-						<p class="post-txt"> {{ post.story }}</p>
-						<button class="button expand-post icon">&#59232;</button>
-						<button class="button collapse-post icon">&#59235;</button>
+						<img class="post-img lazy" src="/img/transparent.gif" data-original="{{ post.image }}">
+						<p class="post-txt-story"> {{ post.story }}</p>
+						<button class="cat-btn cat-btn-inside cat-collapse icon">&#59239;</button>
 					</div>
-				</li>
+				<!-- </li> -->
 				{% endfor %}
 			</ul>
 
