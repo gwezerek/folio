@@ -18,6 +18,8 @@
 }
 
 .cat-btn {
+	@include rotate(180deg);
+	@include trans(.2s, transform, ease-in);
 	position: absolute;
 	right: 0;
 }
@@ -30,9 +32,8 @@
 	bottom: -5px;
 }
 
-.cat-collapse {
-	@include trans(.2s, transform, ease-in);
-	@include rotate(180deg);
+.cat-expand {
+	@include rotate(0deg);
 }
 
 .post-wrap {
