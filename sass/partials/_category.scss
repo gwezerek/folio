@@ -8,10 +8,6 @@
 	position: relative;
 }
 
-// .cat-top-wrap {
-// 	position: relative;
-// }
-
 .cat-name {
 	margin-bottom: 10px;
 	text-transform: uppercase;
@@ -29,7 +25,8 @@
 }
 
 .cat-btn-inside {
-	bottom: -5px;
+	bottom: 2px;
+	@include rotate(0deg);
 }
 
 .cat-expand {

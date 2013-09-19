@@ -40,6 +40,16 @@
 
 	});
 
+	$('.cat-btn-inside').on('click', function() {
+		var $this 	= $(this),
+			wrap 	= $this.closest('.post-wrap');
+
+			$this.closest('.post').slideUp();
+			setTimeout (function(){
+				wrap.toggleClass('post-wrap-collapsed')
+			}, 300);
+	});
+
 	// Load all images in set
 
 
