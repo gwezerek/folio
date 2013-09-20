@@ -13,7 +13,7 @@ layout: allpages
 				{% for post in cat[1] %}
 				{% assign i = forloop.index %}
 				<!-- <li class="post-wrap post-wrap-collapsed"> -->
-					<li class="post post-collapsed" data-index="{{ i }}">
+					<li class="post post-collapsed {% if i == 1 %} current {% endif %}" data-index="{{ i }}">
 						<div class="img-top-wrap">
 							<p class="post-txt-client"><span class="post-txt-label">Client:</span> {{ post.client }}</p>
 							<p class="post-txt-index"><span class="post-txt-index-label">No.</span> {{ i }}</p>
@@ -35,3 +35,5 @@ layout: allpages
 
 	</ul>
 </main>
+
+
