@@ -20,6 +20,7 @@
 	// ON CATEGORY EXPAND
 
 	// Expand the first post and post wrapper
+	// Can I use 
 
 	$('.cat-btn').on('click', function() {
 		var $this 	= $(this),
@@ -37,17 +38,15 @@
 				wrap.toggleClass('post-wrap-collapsed')
 			}, 300);
 		}
-
 	});
 
 	$('.cat-btn-inside').on('click', function() {
 		var $this 	= $(this),
-			wrap 	= $this.closest('.post-wrap');
 
 			$this.closest('.post').slideUp();
 			$this.closest('.cat').find('.cat-btn-outside').addClass('cat-expand');
 			setTimeout (function(){
-				wrap.toggleClass('post-wrap-collapsed')
+				$this.closest('.post-wrap').toggleClass('post-wrap-collapsed')
 			}, 300);
 	});
 
