@@ -45,6 +45,7 @@
 			wrap 	= $this.closest('.post-wrap');
 
 			$this.closest('.post').slideUp();
+			$this.closest('.cat').find('.cat-btn-outside').addClass('cat-expand');
 			setTimeout (function(){
 				wrap.toggleClass('post-wrap-collapsed')
 			}, 300);
