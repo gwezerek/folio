@@ -24,13 +24,12 @@
 
 	$('.cat-btn').on('click', function() {
 		var $this 	= $(this),
-			wrap 	= $(this).siblings('.post-wrap'),
-			wrapValue = wrap.data('index');
+			wrap 	= $(this).siblings('.post-wrap');
 
 		if ($this.hasClass('cat-expand')) {
 			wrap.toggleClass('post-wrap-collapsed');
 			$this.toggleClass('cat-expand');
-			wrap.find('.post[data-index='+wrapValue+']').slideDown();
+			wrap.find('.current').slideDown();
 		} else {
 			wrap.find('.post').slideUp();
 			$this.toggleClass('cat-expand');
@@ -41,7 +40,7 @@
 	});
 
 	$('.cat-btn-inside').on('click', function() {
-		var $this 	= $(this),
+		var $this = $(this);
 
 			$this.closest('.post').slideUp();
 			$this.closest('.cat').find('.cat-btn-outside').addClass('cat-expand');
@@ -57,15 +56,24 @@
 	// ON NEXT CLICK
 
 	$('.post-nav').on('click', function() {
-		var  wrap 	= $(this).siblings('.post-wrap'),
-			wrapValue = wrap.data('index');
+		var post = $(this).closest('.post');
 
-			$(this).closest('.post').hide();
+			// $(this).closest('.post').hide();
 			
 		if ($(this).hasClass('post-prev')) {
-			$(this).closest('.post').prev().show();
+			if (post.data('index') === 1) {
+				return;
+			} else {
+				post.hide().removeClass('current');
+				post.prev().show().addClass('current');
+			}
 		} else {
-			$(this).closest('.post').next().show();
+			if (post.data('index') === 5) {
+				return;
+			} else {
+				post.hide().removeClass('current');
+				post.next().show().addClass('current');
+			}
 		}
 	});
 

@@ -406,42 +406,46 @@ button {
 
 /* line 36, ../sass/partials/_category.scss */
 .post-wrap {
+  -webkit-transition: height 0.2s ease-in;
+  -moz-transition: height 0.2s ease-in;
+  -o-transition: height 0.2s ease-in;
+  transition: height 0.2s ease-in;
   margin-bottom: 40px;
   padding: 25px 0 15px 15px;
   border: solid white;
   border-width: 1px 0 1px 1px;
 }
 
-/* line 43, ../sass/partials/_category.scss */
+/* line 44, ../sass/partials/_category.scss */
 .post-wrap-collapsed {
   padding: 0;
   border-width: 0 0 1px 0;
 }
 
-/* line 48, ../sass/partials/_category.scss */
+/* line 49, ../sass/partials/_category.scss */
 .post {
   position: relative;
 }
 
-/* line 52, ../sass/partials/_category.scss */
+/* line 53, ../sass/partials/_category.scss */
 .post-collapsed {
   display: none;
 }
 
-/* line 56, ../sass/partials/_category.scss */
+/* line 57, ../sass/partials/_category.scss */
 .img-top-wrap {
   *zoom: 1;
   position: relative;
   margin-bottom: 15px;
 }
-/* line 38, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .img-top-wrap:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 62, ../sass/partials/_category.scss */
+/* line 63, ../sass/partials/_category.scss */
 .post-txt-client {
   position: absolute;
   top: -1px;
@@ -450,24 +454,24 @@ button {
   border-bottom: 1px solid white;
 }
 
-/* line 70, ../sass/partials/_category.scss */
+/* line 71, ../sass/partials/_category.scss */
 .post-txt-index {
   position: absolute;
   bottom: -1px;
   display: inline;
 }
 
-/* line 76, ../sass/partials/_category.scss */
+/* line 77, ../sass/partials/_category.scss */
 .post-txt-index-label {
   text-transform: uppercase;
 }
 
-/* line 80, ../sass/partials/_category.scss */
+/* line 81, ../sass/partials/_category.scss */
 .post-nav-mod {
   float: right;
 }
 
-/* line 84, ../sass/partials/_category.scss */
+/* line 85, ../sass/partials/_category.scss */
 .post-nav {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -483,13 +487,13 @@ button {
   background-color: #111111;
 }
 
-/* line 95, ../sass/partials/_category.scss */
+/* line 96, ../sass/partials/_category.scss */
 .post-img {
   margin-bottom: 10px;
   width: 100%;
 }
 
-/* line 100, ../sass/partials/_category.scss */
+/* line 101, ../sass/partials/_category.scss */
 .post-txt-story {
   padding-right: 25px;
 }
