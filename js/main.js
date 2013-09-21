@@ -20,7 +20,7 @@
 	// ON CATEGORY EXPAND
 
 	// Expand the first post and post wrapper
-	// Can I use 
+	// Can I use an .on selector to combine these two functions?
 
 	$('.cat-btn').on('click', function() {
 		var $this 	= $(this),
@@ -59,22 +59,14 @@
 	$('.post-nav').on('click', function() {
 		var  wrap 	= $(this).siblings('.post-wrap'),
 			wrapValue = wrap.data('index');
-			// wrapExpanded = $(this).siblings('.post-wrap-expanded');
 
-			// console.log($this.closest('.post'));
 			$(this).closest('.post').hide();
-
-
-			// $(this).closest('.post').next().show();
-
-
-
+			
 		if ($(this).hasClass('post-prev')) {
 			$(this).closest('.post').prev().show();
 		} else {
 			$(this).closest('.post').next().show();
 		}
-
 	});
 
 	// Add .post-collapsed to current .post
