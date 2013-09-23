@@ -1,21 +1,12 @@
 
 (function($) {
 
-	$(function() {
-		// $('.post-wrap').
+
+	$(function() {          
+	    $('.lazy').lazyload({
+	        event : "loadSet"
+	    });
 	});
-	
-	$('.lazy').lazyload({
-		
-	});
-
-
-	// ON READY
-
-	// Load first image of each set
-
-
-
 
 	// ON CATEGORY EXPAND
 
@@ -27,9 +18,10 @@
 			wrap 	= $(this).siblings('.post-wrap');
 
 		if ($this.hasClass('cat-expand')) {
-			wrap.toggleClass('post-wrap-collapsed');
 			$this.toggleClass('cat-expand');
+			wrap.toggleClass('post-wrap-collapsed');
 			wrap.find('.current').slideDown();
+			wrap.find('.lazy').trigger('loadSet');
 		} else {
 			wrap.find('.post').slideUp();
 			$this.toggleClass('cat-expand');
