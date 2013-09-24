@@ -32,7 +32,6 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   outline: 0;
-  font-size: 100%;
   vertical-align: baseline;
   background: transparent;
 }                  
@@ -81,8 +80,7 @@ input, select { vertical-align: middle; }
 //  * we normalize monospace styles ourselves
 //  * table font-size is reset in the HTML5 reset above so there is no need to repeat
 
-body { font: 13px/1.231 sans-serif; *font-size: small; /*text-rendering: optimizeLegibility;*/
-  /* this causes problems in Chrome for Windows and on iOS */ -webkit-overflow-scrolling : touch;} // hack retained to preserve specificity
+body {-webkit-overflow-scrolling : touch;} // hack retained to preserve specificity
 
 select, input, textarea, button { font: 99% sans-serif; }
 

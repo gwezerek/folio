@@ -22,18 +22,13 @@
 
 //  Base styles            
 // =============================================
+
 body {
   margin: 30px 5.5% 40px;
   background: $bground;
-  color: $accent;
-  font: 12px/1.5 helvetica, arial, san-serif;
-
 }
 
 a {
-  color: green;
+  color: $accent;
   text-decoration: none;
-}
-
-.folio-content {
 }

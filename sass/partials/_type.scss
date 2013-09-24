@@ -1,7 +1,19 @@
-// @import "http://weloveiconfonts.com/api/?family=entypo";
+// ============================================= 
+
+//  Type            
+
+// ============================================= 
 
 /* entypo */
 .icon {
   font-family: 'entypo', sans-serif;
   font-size: 12px;
+}
+
+body {
+	font-family:'NeueHaasGroteskText W01', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	font-size: em(12);
+	line-height: 130%;
+	color: $accent;
 }

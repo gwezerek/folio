@@ -24,7 +24,7 @@
 // REF: http://bourbon.io/docs/#px-to-em
 // USE: em(12);
 
-@function em($pxval, $base: 13) {
+@function em($pxval, $base: 16) {
   @if not unitless($pxval) {
       $pxval: strip-units($pxval);
   }

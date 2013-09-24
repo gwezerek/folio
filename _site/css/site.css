@@ -29,41 +29,40 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   outline: 0;
-  font-size: 100%;
   vertical-align: baseline;
   background: transparent;
 }
 
-/* line 41, ../sass/components/_reset.scss */
+/* line 40, ../sass/components/_reset.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 47, ../sass/components/_reset.scss */
+/* line 46, ../sass/components/_reset.scss */
 img {
   line-height: 0;
   vertical-align: middle;
 }
 
-/* line 49, ../sass/components/_reset.scss */
+/* line 48, ../sass/components/_reset.scss */
 nav ul {
   list-style: none;
 }
 
-/* line 51, ../sass/components/_reset.scss */
+/* line 50, ../sass/components/_reset.scss */
 blockquote, q {
   quotes: none;
 }
 
-/* line 54, ../sass/components/_reset.scss */
+/* line 53, ../sass/components/_reset.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
 
-/* line 56, ../sass/components/_reset.scss */
+/* line 55, ../sass/components/_reset.scss */
 a {
   margin: 0;
   padding: 0;
@@ -72,14 +71,14 @@ a {
   background: transparent;
 }
 
-/* line 58, ../sass/components/_reset.scss */
+/* line 57, ../sass/components/_reset.scss */
 ins {
   background-color: #ff9;
   color: #000;
   text-decoration: none;
 }
 
-/* line 60, ../sass/components/_reset.scss */
+/* line 59, ../sass/components/_reset.scss */
 mark {
   background-color: #ff9;
   color: #000;
@@ -87,24 +86,24 @@ mark {
   font-weight: bold;
 }
 
-/* line 62, ../sass/components/_reset.scss */
+/* line 61, ../sass/components/_reset.scss */
 del {
   text-decoration: line-through;
 }
 
-/* line 64, ../sass/components/_reset.scss */
+/* line 63, ../sass/components/_reset.scss */
 abbr[title], dfn[title] {
   border-bottom: 1px dotted;
   cursor: help;
 }
 
-/* line 67, ../sass/components/_reset.scss */
+/* line 66, ../sass/components/_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 69, ../sass/components/_reset.scss */
+/* line 68, ../sass/components/_reset.scss */
 hr {
   display: block;
   height: 1px;
@@ -114,93 +113,89 @@ hr {
   padding: 0;
 }
 
-/* line 71, ../sass/components/_reset.scss */
+/* line 70, ../sass/components/_reset.scss */
 input, select {
   vertical-align: middle;
 }
 
-/* line 84, ../sass/components/_reset.scss */
+/* line 83, ../sass/components/_reset.scss */
 body {
-  font: 13px/1.231 sans-serif;
-  *font-size: small;
-  /*text-rendering: optimizeLegibility;*/
-  /* this causes problems in Chrome for Windows and on iOS */
   -webkit-overflow-scrolling: touch;
 }
 
-/* line 87, ../sass/components/_reset.scss */
+/* line 85, ../sass/components/_reset.scss */
 select, input, textarea, button {
   font: 99% sans-serif;
 }
 
-/* line 92, ../sass/components/_reset.scss */
+/* line 90, ../sass/components/_reset.scss */
 pre, code, kbd, samp {
   font-family: monospace, sans-serif;
 }
 
-/* line 100, ../sass/components/_reset.scss */
+/* line 98, ../sass/components/_reset.scss */
 body, select, input, textarea {
   color: #444;
 }
 
-/* line 109, ../sass/components/_reset.scss */
+/* line 107, ../sass/components/_reset.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-/* line 112, ../sass/components/_reset.scss */
+/* line 110, ../sass/components/_reset.scss */
 html {
   overflow-y: scroll;
 }
 
-/* line 116, ../sass/components/_reset.scss */
+/* line 114, ../sass/components/_reset.scss */
 a:hover, a:active {
   outline: none;
 }
 
-/* line 121, ../sass/components/_reset.scss */
+/* line 119, ../sass/components/_reset.scss */
 ul, ol {
   list-style: none;
 }
 
-/* line 122, ../sass/components/_reset.scss */
+/* line 120, ../sass/components/_reset.scss */
 ol {
   list-style-type: decimal;
 }
 
-/* line 125, ../sass/components/_reset.scss */
+/* line 123, ../sass/components/_reset.scss */
 nav ul, nav li {
   margin: 0;
 }
 
-/* line 127, ../sass/components/_reset.scss */
+/* line 125, ../sass/components/_reset.scss */
 small {
   font-size: 85%;
 }
 
-/* line 128, ../sass/components/_reset.scss */
+/* line 126, ../sass/components/_reset.scss */
 strong, th {
   font-weight: bold;
 }
 
-/* line 130, ../sass/components/_reset.scss */
+/* line 128, ../sass/components/_reset.scss */
 td, td img {
   vertical-align: top;
 }
 
-/* line 132, ../sass/components/_reset.scss */
+/* line 130, ../sass/components/_reset.scss */
 sub {
   vertical-align: sub;
   font-size: smaller;
 }
 
-/* line 133, ../sass/components/_reset.scss */
+/* line 131, ../sass/components/_reset.scss */
 sup {
   vertical-align: super;
   font-size: smaller;
 }
 
-/* line 135, ../sass/components/_reset.scss */
+/* line 133, ../sass/components/_reset.scss */
 pre {
   padding: 15px;
   white-space: pre;
@@ -209,47 +204,47 @@ pre {
   word-wrap: break-word;
 }
 
-/* line 145, ../sass/components/_reset.scss */
+/* line 143, ../sass/components/_reset.scss */
 textarea {
   overflow: auto;
 }
 
-/* line 147, ../sass/components/_reset.scss */
+/* line 145, ../sass/components/_reset.scss */
 .ie6 legend, .ie7 legend {
   margin-left: -7px;
 }
 
-/* line 151, ../sass/components/_reset.scss */
+/* line 149, ../sass/components/_reset.scss */
 input[type="radio"] {
   vertical-align: text-bottom;
 }
 
-/* line 152, ../sass/components/_reset.scss */
+/* line 150, ../sass/components/_reset.scss */
 input[type="checkbox"] {
   vertical-align: bottom;
 }
 
-/* line 153, ../sass/components/_reset.scss */
+/* line 151, ../sass/components/_reset.scss */
 .ie7 input[type="checkbox"] {
   vertical-align: baseline;
 }
 
-/* line 154, ../sass/components/_reset.scss */
+/* line 152, ../sass/components/_reset.scss */
 .ie6 input {
   vertical-align: text-bottom;
 }
 
-/* line 157, ../sass/components/_reset.scss */
+/* line 155, ../sass/components/_reset.scss */
 label, input[type=button], input[type=submit], button {
   cursor: pointer;
 }
 
-/* line 160, ../sass/components/_reset.scss */
+/* line 158, ../sass/components/_reset.scss */
 button, input, select, textarea {
   margin: 0;
 }
 
-/* line 164, ../sass/components/_reset.scss */
+/* line 162, ../sass/components/_reset.scss */
 input:invalid, textarea:invalid {
   border-radius: 1px;
   -moz-box-shadow: 0px 0px 5px red;
@@ -257,43 +252,43 @@ input:invalid, textarea:invalid {
   box-shadow: 0px 0px 5px red;
 }
 
-/* line 171, ../sass/components/_reset.scss */
+/* line 169, ../sass/components/_reset.scss */
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid {
   background-color: #f0dddd;
 }
 
-/* line 177, ../sass/components/_reset.scss */
+/* line 175, ../sass/components/_reset.scss */
 ::-moz-selection {
   background: #1d78af;
   color: white;
   text-shadow: none;
 }
 
-/* line 178, ../sass/components/_reset.scss */
+/* line 176, ../sass/components/_reset.scss */
 ::selection {
   background: #1d78af;
   color: white;
   text-shadow: none;
 }
 
-/* line 181, ../sass/components/_reset.scss */
+/* line 179, ../sass/components/_reset.scss */
 a:link {
   -webkit-tap-highlight-color: #1d78af;
 }
 
-/* line 185, ../sass/components/_reset.scss */
+/* line 183, ../sass/components/_reset.scss */
 button {
   width: auto;
   overflow: visible;
 }
 
-/* line 189, ../sass/components/_reset.scss */
+/* line 187, ../sass/components/_reset.scss */
 .ie7 img {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 197, ../sass/components/_reset.scss */
+/* line 195, ../sass/components/_reset.scss */
 .clearfix:before, .clearfix:after {
   content: "\0020";
   display: block;
@@ -301,17 +296,17 @@ button {
   visibility: hidden;
 }
 
-/* line 201, ../sass/components/_reset.scss */
+/* line 199, ../sass/components/_reset.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 203, ../sass/components/_reset.scss */
+/* line 201, ../sass/components/_reset.scss */
 .clearfix {
   zoom: 1;
 }
 
-/* line 211, ../sass/components/_reset.scss */
+/* line 209, ../sass/components/_reset.scss */
 .a11y-only {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
@@ -344,10 +339,19 @@ button {
 }
 
 /* entypo */
-/* line 4, ../sass/partials/_type.scss */
+/* line 8, ../sass/partials/_type.scss */
 .icon {
   font-family: 'entypo', sans-serif;
   font-size: 12px;
+}
+
+/* line 13, ../sass/partials/_type.scss */
+body {
+  font-family: 'NeueHaasGroteskText W01', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 0.75em;
+  line-height: 130%;
+  color: white;
 }
 
 /* line 7, ../sass/partials/_header.scss */
@@ -494,12 +498,6 @@ button {
   width: 100%;
 }
 
-/* line 105, ../sass/partials/_category.scss */
-.post-txt-story {
-  padding-right: 25px;
-  font-family: 'NeueHaasGroteskText W01';
-}
-
 /* line 13, ../sass/partials/_footer.scss */
 .footer-actions-wrap {
   position: relative;
@@ -541,16 +539,14 @@ button {
   right: 0;
 }
 
-/* line 25, ../sass/site.scss */
+/* line 26, ../sass/site.scss */
 body {
   margin: 30px 5.5% 40px;
   background: black;
-  color: white;
-  font: 12px/1.5 helvetica, arial, san-serif;
 }
 
-/* line 33, ../sass/site.scss */
+/* line 31, ../sass/site.scss */
 a {
-  color: green;
+  color: white;
   text-decoration: none;
 }
