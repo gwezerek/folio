@@ -9,8 +9,13 @@
 }
 
 .cat-name {
+	font-size: 1.5em;
 	margin-bottom: 10px;
 	text-transform: uppercase;
+	font-family:'TimesNewRomanW04-CondBo';
+	font-weight: 500;
+	  text-rendering: optimizeLegibility;
+
 }
 
 .cat-btn {
@@ -99,6 +104,7 @@
 
 .post-txt-story {
 	padding-right: 25px;
+	font-family:'NeueHaasGroteskText W01';
 }
 
 

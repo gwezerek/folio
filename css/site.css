@@ -4,6 +4,7 @@
 /* !-- Universal ------------------------------------ */
 /* !-- Project ------------------------------------ */
 /* !-- Paths ------------------------------------ */
+/* !-- Fonts ------------------------------------ */
 /* line 17, ../sass/components/_reset.scss */
 * {
   -webkit-box-sizing: border-box;
@@ -361,11 +362,15 @@ button {
 
 /* line 11, ../sass/partials/_category.scss */
 .cat-name {
+  font-size: 1.5em;
   margin-bottom: 10px;
   text-transform: uppercase;
+  font-family: 'TimesNewRomanW04-CondBo';
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
 }
 
-/* line 16, ../sass/partials/_category.scss */
+/* line 21, ../sass/partials/_category.scss */
 .cat-btn {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -380,12 +385,12 @@ button {
   right: 0;
 }
 
-/* line 23, ../sass/partials/_category.scss */
+/* line 28, ../sass/partials/_category.scss */
 .cat-btn-outside {
   top: 3px;
 }
 
-/* line 27, ../sass/partials/_category.scss */
+/* line 32, ../sass/partials/_category.scss */
 .cat-btn-inside {
   bottom: 2px;
   -webkit-transform: rotate(0deg);
@@ -395,7 +400,7 @@ button {
   transform: rotate(0deg);
 }
 
-/* line 32, ../sass/partials/_category.scss */
+/* line 37, ../sass/partials/_category.scss */
 .cat-expand {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -404,7 +409,7 @@ button {
   transform: rotate(0deg);
 }
 
-/* line 36, ../sass/partials/_category.scss */
+/* line 41, ../sass/partials/_category.scss */
 .post-wrap {
   margin-bottom: 40px;
   padding: 25px 0 15px 15px;
@@ -412,23 +417,23 @@ button {
   border-width: 1px 0 1px 1px;
 }
 
-/* line 43, ../sass/partials/_category.scss */
+/* line 48, ../sass/partials/_category.scss */
 .post-wrap-collapsed {
   padding: 0;
   border-width: 0 0 1px 0;
 }
 
-/* line 48, ../sass/partials/_category.scss */
+/* line 53, ../sass/partials/_category.scss */
 .post {
   position: relative;
 }
 
-/* line 52, ../sass/partials/_category.scss */
+/* line 57, ../sass/partials/_category.scss */
 .post-collapsed {
   display: none;
 }
 
-/* line 56, ../sass/partials/_category.scss */
+/* line 61, ../sass/partials/_category.scss */
 .img-top-wrap {
   *zoom: 1;
   position: relative;
@@ -441,7 +446,7 @@ button {
   clear: both;
 }
 
-/* line 62, ../sass/partials/_category.scss */
+/* line 67, ../sass/partials/_category.scss */
 .post-txt-client {
   position: absolute;
   top: -1px;
@@ -450,24 +455,24 @@ button {
   border-bottom: 1px solid white;
 }
 
-/* line 70, ../sass/partials/_category.scss */
+/* line 75, ../sass/partials/_category.scss */
 .post-txt-index {
   position: absolute;
   bottom: -1px;
   display: inline;
 }
 
-/* line 76, ../sass/partials/_category.scss */
+/* line 81, ../sass/partials/_category.scss */
 .post-txt-index-label {
   text-transform: uppercase;
 }
 
-/* line 80, ../sass/partials/_category.scss */
+/* line 85, ../sass/partials/_category.scss */
 .post-nav-mod {
   float: right;
 }
 
-/* line 84, ../sass/partials/_category.scss */
+/* line 89, ../sass/partials/_category.scss */
 .post-nav {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -483,15 +488,16 @@ button {
   background-color: black;
 }
 
-/* line 95, ../sass/partials/_category.scss */
+/* line 100, ../sass/partials/_category.scss */
 .post-img {
   margin-bottom: 10px;
   width: 100%;
 }
 
-/* line 100, ../sass/partials/_category.scss */
+/* line 105, ../sass/partials/_category.scss */
 .post-txt-story {
   padding-right: 25px;
+  font-family: 'NeueHaasGroteskText W01';
 }
 
 /* line 13, ../sass/partials/_footer.scss */
