@@ -358,29 +358,30 @@ body {
   margin-bottom: 30px;
 }
 
-/* line 11, ../sass/partials/_header.scss */
-.header-wrap {
-  width: 300px;
-  background-color: red;
+/* line 17, ../sass/partials/_header.scss */
+.header-img {
+  width: 100%;
+  max-width: 480px;
+  margin-left: -10px;
 }
 
-/* line 17, ../sass/partials/_header.scss */
+/* line 23, ../sass/partials/_header.scss */
 .header-title {
   font-family: 'NHaasGroteskTXW01-75Bd';
   text-rendering: optimizeLegibility;
   display: block;
 }
-/* line 22, ../sass/partials/_header.scss */
+/* line 28, ../sass/partials/_header.scss */
 .header-title > div {
   line-height: 90%;
 }
-/* line 24, ../sass/partials/_header.scss */
+/* line 30, ../sass/partials/_header.scss */
 .header-title > div:first-child {
   line-height: 75%;
   margin-left: -10px;
 }
 
-/* line 31, ../sass/partials/_header.scss */
+/* line 37, ../sass/partials/_header.scss */
 .title-sup {
   font-size: 36px;
 }
@@ -468,7 +469,7 @@ body {
   position: relative;
   margin-bottom: 15px;
 }
-/* line 38, ../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .img-top-wrap:after {
   content: "";
   display: table;
@@ -573,7 +574,7 @@ body {
 
 /* line 26, ../sass/site.scss */
 body {
-  margin: 20px 5.5% 40px;
+  margin: 30px 5.5% 40px;
   background: black;
 }
 
