@@ -348,7 +348,6 @@ button {
 /* line 13, ../sass/partials/_type.scss */
 body {
   font-family: 'NeueHaasGroteskText W01', Helvetica, Arial, sans-serif;
-  font-weight: normal;
   font-size: 0.75em;
   line-height: 130%;
   color: white;
@@ -359,6 +358,33 @@ body {
   margin-bottom: 30px;
 }
 
+/* line 11, ../sass/partials/_header.scss */
+.header-wrap {
+  width: 300px;
+  background-color: red;
+}
+
+/* line 17, ../sass/partials/_header.scss */
+.header-title {
+  font-family: 'NHaasGroteskTXW01-75Bd';
+  text-rendering: optimizeLegibility;
+  display: block;
+}
+/* line 22, ../sass/partials/_header.scss */
+.header-title > div {
+  line-height: 90%;
+}
+/* line 24, ../sass/partials/_header.scss */
+.header-title > div:first-child {
+  line-height: 75%;
+  margin-left: -10px;
+}
+
+/* line 31, ../sass/partials/_header.scss */
+.title-sup {
+  font-size: 36px;
+}
+
 /* line 7, ../sass/partials/_category.scss */
 .cat {
   position: relative;
@@ -366,15 +392,14 @@ body {
 
 /* line 11, ../sass/partials/_category.scss */
 .cat-name {
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin-bottom: 10px;
   text-transform: uppercase;
   font-family: 'TimesNewRomanW04-CondBo';
   font-weight: 500;
-  text-rendering: optimizeLegibility;
 }
 
-/* line 21, ../sass/partials/_category.scss */
+/* line 19, ../sass/partials/_category.scss */
 .cat-btn {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -389,12 +414,12 @@ body {
   right: 0;
 }
 
-/* line 28, ../sass/partials/_category.scss */
+/* line 26, ../sass/partials/_category.scss */
 .cat-btn-outside {
   top: 3px;
 }
 
-/* line 32, ../sass/partials/_category.scss */
+/* line 30, ../sass/partials/_category.scss */
 .cat-btn-inside {
   bottom: 2px;
   -webkit-transform: rotate(0deg);
@@ -404,7 +429,7 @@ body {
   transform: rotate(0deg);
 }
 
-/* line 37, ../sass/partials/_category.scss */
+/* line 35, ../sass/partials/_category.scss */
 .cat-expand {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -413,31 +438,31 @@ body {
   transform: rotate(0deg);
 }
 
-/* line 41, ../sass/partials/_category.scss */
+/* line 39, ../sass/partials/_category.scss */
 .post-wrap {
   margin-bottom: 40px;
-  padding: 25px 0 15px 15px;
+  padding: 20px 0 20px 15px;
   border: solid white;
   border-width: 1px 0 1px 1px;
 }
 
-/* line 48, ../sass/partials/_category.scss */
+/* line 46, ../sass/partials/_category.scss */
 .post-wrap-collapsed {
   padding: 0;
   border-width: 0 0 1px 0;
 }
 
-/* line 53, ../sass/partials/_category.scss */
+/* line 51, ../sass/partials/_category.scss */
 .post {
   position: relative;
 }
 
-/* line 57, ../sass/partials/_category.scss */
+/* line 55, ../sass/partials/_category.scss */
 .post-collapsed {
   display: none;
 }
 
-/* line 61, ../sass/partials/_category.scss */
+/* line 59, ../sass/partials/_category.scss */
 .img-top-wrap {
   *zoom: 1;
   position: relative;
@@ -450,7 +475,7 @@ body {
   clear: both;
 }
 
-/* line 67, ../sass/partials/_category.scss */
+/* line 65, ../sass/partials/_category.scss */
 .post-txt-client {
   position: absolute;
   top: -1px;
@@ -459,24 +484,31 @@ body {
   border-bottom: 1px solid white;
 }
 
-/* line 75, ../sass/partials/_category.scss */
+/* line 73, ../sass/partials/_category.scss */
+.post-txt-label {
+  font-family: 'TimesNewRomanW04-Conden';
+  text-transform: uppercase;
+}
+
+/* line 78, ../sass/partials/_category.scss */
 .post-txt-index {
   position: absolute;
   bottom: -1px;
   display: inline;
 }
 
-/* line 81, ../sass/partials/_category.scss */
+/* line 84, ../sass/partials/_category.scss */
 .post-txt-index-label {
+  font-family: 'TimesNewRomanW04-Conden';
   text-transform: uppercase;
 }
 
-/* line 85, ../sass/partials/_category.scss */
+/* line 89, ../sass/partials/_category.scss */
 .post-nav-mod {
   float: right;
 }
 
-/* line 89, ../sass/partials/_category.scss */
+/* line 93, ../sass/partials/_category.scss */
 .post-nav {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -492,9 +524,9 @@ body {
   background-color: black;
 }
 
-/* line 100, ../sass/partials/_category.scss */
+/* line 104, ../sass/partials/_category.scss */
 .post-img {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   width: 100%;
 }
 
@@ -541,7 +573,7 @@ body {
 
 /* line 26, ../sass/site.scss */
 body {
-  margin: 30px 5.5% 40px;
+  margin: 20px 5.5% 40px;
   background: black;
 }
 

@@ -9,13 +9,11 @@
 }
 
 .cat-name {
-	font-size: 1.5em;
+	font-size: em(20);
 	margin-bottom: 10px;
 	text-transform: uppercase;
 	font-family:'TimesNewRomanW04-CondBo';
 	font-weight: 500;
-	  text-rendering: optimizeLegibility;
-
 }
 
 .cat-btn {
@@ -40,7 +38,7 @@
 
 .post-wrap {
 	margin-bottom: 40px; 
-	padding: 25px 0 15px 15px;
+	padding: 20px 0 20px 15px;
 	border: solid $accent;
 	border-width: 1px 0 1px 1px;
 }
@@ -72,6 +70,11 @@
 	border-bottom: 1px solid $accent;
 }
 
+.post-txt-label {
+	font-family:'TimesNewRomanW04-Conden';
+	text-transform: uppercase;
+}
+
 .post-txt-index {
 	position: absolute;
 	bottom: -1px;
@@ -79,6 +82,7 @@
 }
 
 .post-txt-index-label {
+  font-family:'TimesNewRomanW04-Conden';
   text-transform: uppercase;
 }
 
@@ -98,7 +102,7 @@
 }
 
 .post-img {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 	width: 100%;
 }
 

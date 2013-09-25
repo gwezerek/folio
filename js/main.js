@@ -1,7 +1,11 @@
 
 (function($) {
 
+	// $('.header-title').fitText();
 
+	$('.header-title').bigtext();
+
+	// Lazy Load
 	$(function() {          
 	    $('.lazy').lazyload({
 	        event : "loadSet"

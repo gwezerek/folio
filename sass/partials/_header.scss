@@ -7,3 +7,27 @@
 .header {
 	margin-bottom: 30px;
 }
+
+.header-wrap {
+	// display: block;
+	width: 300px;
+	background-color: red;
+}
+
+.header-title {
+	font-family:'NHaasGroteskTXW01-75Bd';
+	text-rendering: optimizeLegibility;
+	display: block;
+	// width: 300px;
+	>div {
+		line-height: 90%;
+		&:first-child {
+			line-height: 75%;
+			margin-left: -10px;
+		}
+	}
+}
+
+.title-sup {
+	font-size: 36px;
+}
