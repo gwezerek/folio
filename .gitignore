@@ -1,0 +1,5 @@
+### SASS Ignores - "Sassy CSS" http://sass-lang.com/
+*.sass-cache
+
+# SublimeText project files
+*.sublime-workspace

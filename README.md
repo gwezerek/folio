@@ -1,14 +1,23 @@
-folio
-=====
+#folio
 
-Bower 
-To install/update packages listed in bower.json, use: bower install
-To install a new package, use: bower install [PACKAGE] --save
+## Dependencies
 
-Grunt
-To update a plugin listed in packages.json, use: npm install                    -- I think?
-To add a plugin to your gruntfile, use: npm install [PLUGIN] --save-dev
+* [Grunt](http://gruntjs.com/)
+* [Bower](https://github.com/bower/bower)
 
-To start site, live reload
-jekyll serve --w
-grunt
+## Setup
+
+First, run `bower install` to make sure you have all the necessary JS libs
+
+Second, run `npm install` to make sure you have all of the dev dependencies to create builds of the site.
+
+## Development
+
+1. From the root project directory, run 'jekyll serve --w'. This will serve the site at localhost:4000.
+2. From the same directory, run 'grunt'.
+
+
+## Adding libraries and plugins
+
+1. To install a new package, use: bower install [PACKAGE] --save
+2. To add a plugin to your gruntfile, use: npm install [PLUGIN] --save-dev
