@@ -362,7 +362,7 @@ body {
 .header-img {
   width: 100%;
   max-width: 480px;
-  margin-left: -10px;
+  margin-left: -5px;
 }
 
 /* line 23, ../sass/partials/_header.scss */
