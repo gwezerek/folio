@@ -10,8 +10,14 @@
 
 .header-wrap {
 	// display: block;
-	width: 300px;
-	background-color: red;
+	// width: 100%;
+	// background-color: red;
+}
+
+.header-img {
+	width: 100%;
+	max-width: 480px;
+	margin-left: -10px;
 }
 
 .header-title {

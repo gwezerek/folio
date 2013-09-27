@@ -3,7 +3,7 @@
 
 	// $('.header-title').fitText();
 
-	$('.header-title').bigtext();
+	// $('.header-title').bigtext();
 
 	// Lazy Load
 	$(function() {          
