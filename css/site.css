@@ -355,33 +355,55 @@ body {
 
 /* line 7, ../sass/partials/_header.scss */
 .header {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
-/* line 17, ../sass/partials/_header.scss */
+/* line 11, ../sass/partials/_header.scss */
+.header-snark {
+  position: absolute;
+  left: 0;
+  padding: 0 0 4px 5.5%;
+  width: 94.5%;
+  margin-top: -3px;
+  border-bottom: 1px solid white;
+}
+
+/* line 20, ../sass/partials/_header.scss */
+.contact-tools {
+  float: right;
+  margin-bottom: 10px;
+}
+
+/* line 25, ../sass/partials/_header.scss */
+.button-big-contact {
+  position: relative;
+  z-index: 1;
+}
+
+/* line 32, ../sass/partials/_header.scss */
 .header-img {
-  width: 100%;
-  max-width: 480px;
   margin-left: -10px;
+  max-width: 480px;
+  width: 100%;
 }
 
-/* line 23, ../sass/partials/_header.scss */
+/* line 38, ../sass/partials/_header.scss */
 .header-title {
+  display: block;
   font-family: 'NHaasGroteskTXW01-75Bd';
   text-rendering: optimizeLegibility;
-  display: block;
 }
-/* line 28, ../sass/partials/_header.scss */
+/* line 42, ../sass/partials/_header.scss */
 .header-title > div {
   line-height: 90%;
 }
-/* line 30, ../sass/partials/_header.scss */
+/* line 44, ../sass/partials/_header.scss */
 .header-title > div:first-child {
-  line-height: 75%;
   margin-left: -10px;
+  line-height: 75%;
 }
 
-/* line 37, ../sass/partials/_header.scss */
+/* line 51, ../sass/partials/_header.scss */
 .title-sup {
   font-size: 36px;
 }
@@ -393,7 +415,7 @@ body {
 
 /* line 11, ../sass/partials/_category.scss */
 .cat-name {
-  font-size: 1.25em;
+  font-size: 1.625em;
   margin-bottom: 10px;
   text-transform: uppercase;
   font-family: 'TimesNewRomanW04-CondBo';
@@ -469,7 +491,7 @@ body {
   position: relative;
   margin-bottom: 15px;
 }
-/* line 38, ../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .img-top-wrap:after {
   content: "";
   display: table;
@@ -510,22 +532,12 @@ body {
 }
 
 /* line 93, ../sass/partials/_category.scss */
-.post-nav {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
+.button-big-post {
   position: relative;
   z-index: 1;
-  margin-left: 5px;
-  width: 40px;
-  height: 40px;
-  border: 1px solid white;
-  background-color: black;
 }
 
-/* line 104, ../sass/partials/_category.scss */
+/* line 98, ../sass/partials/_category.scss */
 .post-img {
   margin-bottom: 15px;
   width: 100%;
@@ -582,4 +594,18 @@ body {
 a {
   color: white;
   text-decoration: none;
+}
+
+/* line 36, ../sass/site.scss */
+.button-big {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  margin-left: 5px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  background-color: black;
 }

@@ -9,7 +9,7 @@
 }
 
 .cat-name {
-	font-size: em(20);
+	font-size: em(26);
 	margin-bottom: 10px;
 	text-transform: uppercase;
 	font-family:'TimesNewRomanW04-CondBo';
@@ -90,15 +90,9 @@
 	float: right;
 }
 
-.post-nav {
-	@include border-radius(50%);
+.button-big-post {
 	position: relative;
 	z-index: 1;
-	margin-left: 5px;
-	width: 40px;
-	height: 40px;
-	border: 1px solid $accent;
-	background-color: $bground;
 }
 
 .post-img {

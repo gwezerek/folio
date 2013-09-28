@@ -51,7 +51,7 @@
 
 	// ON NEXT CLICK
 
-	$('.post-nav').on('click', function() {
+	$('.button-big-post').on('click', function() {
 		var post = $(this).closest('.post');
 
 			// $(this).closest('.post').hide();

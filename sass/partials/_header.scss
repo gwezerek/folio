@@ -5,31 +5,45 @@
 // ============================================= 
 
 .header {
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 
-.header-wrap {
-	// display: block;
-	// width: 100%;
-	// background-color: red;
+.header-snark {
+	position: absolute;
+	left: 0;
+	padding: 0 0 4px 5.5%;
+	width: 94.5%;
+	margin-top: -3px;
+	border-bottom: 1px solid $accent;
 }
+
+.contact-tools {
+	float: right;
+	margin-bottom: 10px;
+}
+
+.button-big-contact {
+	position: relative;
+	z-index: 1;	
+}
+
+
 
 .header-img {
-	width: 100%;
-	max-width: 480px;
 	margin-left: -10px;
+	max-width: 480px;
+	width: 100%;
 }
 
 .header-title {
+	display: block;
 	font-family:'NHaasGroteskTXW01-75Bd';
 	text-rendering: optimizeLegibility;
-	display: block;
-	// width: 300px;
 	>div {
 		line-height: 90%;
 		&:first-child {
-			line-height: 75%;
 			margin-left: -10px;
+			line-height: 75%;
 		}
 	}
 }
