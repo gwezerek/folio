@@ -382,9 +382,9 @@ body {
 
 /* line 32, ../sass/partials/_header.scss */
 .header-img {
-  margin-left: -10px;
-  max-width: 480px;
   width: 100%;
+  max-width: 480px;
+  margin-left: -5px;
 }
 
 /* line 38, ../sass/partials/_header.scss */
@@ -415,11 +415,11 @@ body {
 
 /* line 11, ../sass/partials/_category.scss */
 .cat-name {
-  font-size: 1.625em;
   margin-bottom: 10px;
   text-transform: uppercase;
-  font-family: 'TimesNewRomanW04-CondBo';
   font-weight: 500;
+  font-size: 1.625em;
+  font-family: 'TimesNewRomanW04-CondBo';
 }
 
 /* line 19, ../sass/partials/_category.scss */
@@ -444,12 +444,12 @@ body {
 
 /* line 30, ../sass/partials/_category.scss */
 .cat-btn-inside {
-  bottom: 2px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
+  bottom: 2px;
 }
 
 /* line 35, ../sass/partials/_category.scss */
@@ -509,8 +509,8 @@ body {
 
 /* line 73, ../sass/partials/_category.scss */
 .post-txt-label {
-  font-family: 'TimesNewRomanW04-Conden';
   text-transform: uppercase;
+  font-family: 'TimesNewRomanW04-Conden';
 }
 
 /* line 78, ../sass/partials/_category.scss */
@@ -522,8 +522,8 @@ body {
 
 /* line 84, ../sass/partials/_category.scss */
 .post-txt-index-label {
-  font-family: 'TimesNewRomanW04-Conden';
   text-transform: uppercase;
+  font-family: 'TimesNewRomanW04-Conden';
 }
 
 /* line 89, ../sass/partials/_category.scss */
