@@ -28,10 +28,7 @@ body {
   background: $bground;
 }
 
-a {
-  color: $accent;
-  text-decoration: none;
-}
+
 
 .button-big {
 	@include border-radius(50%);

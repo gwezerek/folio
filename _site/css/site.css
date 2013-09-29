@@ -338,6 +338,12 @@ button {
   color: white;
 }
 
+/* line 14, ../sass/partials/_reset.scss */
+a {
+  color: white;
+  text-decoration: none;
+}
+
 /* entypo */
 /* line 8, ../sass/partials/_type.scss */
 .icon {
@@ -597,13 +603,7 @@ body {
   background: black;
 }
 
-/* line 31, ../sass/site.scss */
-a {
-  color: white;
-  text-decoration: none;
-}
-
-/* line 36, ../sass/site.scss */
+/* line 33, ../sass/site.scss */
 .button-big {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
