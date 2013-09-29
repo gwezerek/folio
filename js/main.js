@@ -1,5 +1,5 @@
 
-(function($) {
+;(function($) {
 
 	// $('.header-title').fitText();
 
@@ -21,12 +21,14 @@
 		var $this 	= $(this),
 			wrap 	= $(this).siblings('.post-wrap');
 
-		if ($this.hasClass('cat-expand')) {
+		if ($this.hasClass('cat-expand')) {					// if collapsed, expand
+			$this.closest('.cat').toggleClass('expanded');
 			$this.toggleClass('cat-expand');
 			wrap.toggleClass('post-wrap-collapsed');
 			wrap.find('.current').slideDown();
 			wrap.find('.lazy').trigger('loadSet');
-		} else {
+		} else {											// if expanded, collapsed
+			$this.closest('.cat').toggleClass('expanded');
 			wrap.find('.post').slideUp();
 			$this.toggleClass('cat-expand');
 			setTimeout (function(){

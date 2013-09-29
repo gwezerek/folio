@@ -380,30 +380,30 @@ body {
   z-index: 1;
 }
 
-/* line 32, ../sass/partials/_header.scss */
+/* line 30, ../sass/partials/_header.scss */
 .header-img {
   width: 100%;
   max-width: 480px;
   margin-left: -5px;
 }
 
-/* line 38, ../sass/partials/_header.scss */
+/* line 36, ../sass/partials/_header.scss */
 .header-title {
   display: block;
   font-family: 'NHaasGroteskTXW01-75Bd';
   text-rendering: optimizeLegibility;
 }
-/* line 42, ../sass/partials/_header.scss */
+/* line 40, ../sass/partials/_header.scss */
 .header-title > div {
   line-height: 90%;
 }
-/* line 44, ../sass/partials/_header.scss */
+/* line 42, ../sass/partials/_header.scss */
 .header-title > div:first-child {
   margin-left: -10px;
   line-height: 75%;
 }
 
-/* line 51, ../sass/partials/_header.scss */
+/* line 49, ../sass/partials/_header.scss */
 .title-sup {
   font-size: 36px;
 }
@@ -412,17 +412,22 @@ body {
 .cat {
   position: relative;
 }
+/* line 9, ../sass/partials/_category.scss */
+.cat.expanded > .cat-name {
+  color: white;
+}
 
-/* line 11, ../sass/partials/_category.scss */
+/* line 14, ../sass/partials/_category.scss */
 .cat-name {
   margin-bottom: 10px;
+  color: #7f7f7f;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 1.625em;
   font-family: 'TimesNewRomanW04-CondBo';
 }
 
-/* line 19, ../sass/partials/_category.scss */
+/* line 23, ../sass/partials/_category.scss */
 .cat-btn {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
@@ -437,12 +442,12 @@ body {
   right: 0;
 }
 
-/* line 26, ../sass/partials/_category.scss */
+/* line 30, ../sass/partials/_category.scss */
 .cat-btn-outside {
   top: 3px;
 }
 
-/* line 30, ../sass/partials/_category.scss */
+/* line 34, ../sass/partials/_category.scss */
 .cat-btn-inside {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -452,16 +457,17 @@ body {
   bottom: 2px;
 }
 
-/* line 35, ../sass/partials/_category.scss */
+/* line 39, ../sass/partials/_category.scss */
 .cat-expand {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
+  color: #7f7f7f;
 }
 
-/* line 39, ../sass/partials/_category.scss */
+/* line 44, ../sass/partials/_category.scss */
 .post-wrap {
   margin-bottom: 40px;
   padding: 20px 0 20px 15px;
@@ -469,23 +475,24 @@ body {
   border-width: 1px 0 1px 1px;
 }
 
-/* line 46, ../sass/partials/_category.scss */
+/* line 51, ../sass/partials/_category.scss */
 .post-wrap-collapsed {
   padding: 0;
   border-width: 0 0 1px 0;
+  border-color: #7f7f7f;
 }
 
-/* line 51, ../sass/partials/_category.scss */
+/* line 57, ../sass/partials/_category.scss */
 .post {
   position: relative;
 }
 
-/* line 55, ../sass/partials/_category.scss */
+/* line 61, ../sass/partials/_category.scss */
 .post-collapsed {
   display: none;
 }
 
-/* line 59, ../sass/partials/_category.scss */
+/* line 65, ../sass/partials/_category.scss */
 .img-top-wrap {
   *zoom: 1;
   position: relative;
@@ -498,7 +505,7 @@ body {
   clear: both;
 }
 
-/* line 65, ../sass/partials/_category.scss */
+/* line 71, ../sass/partials/_category.scss */
 .post-txt-client {
   position: absolute;
   top: -1px;
@@ -507,37 +514,37 @@ body {
   border-bottom: 1px solid white;
 }
 
-/* line 73, ../sass/partials/_category.scss */
+/* line 79, ../sass/partials/_category.scss */
 .post-txt-label {
   text-transform: uppercase;
   font-family: 'TimesNewRomanW04-Conden';
 }
 
-/* line 78, ../sass/partials/_category.scss */
+/* line 84, ../sass/partials/_category.scss */
 .post-txt-index {
   position: absolute;
   bottom: -1px;
   display: inline;
 }
 
-/* line 84, ../sass/partials/_category.scss */
+/* line 90, ../sass/partials/_category.scss */
 .post-txt-index-label {
   text-transform: uppercase;
   font-family: 'TimesNewRomanW04-Conden';
 }
 
-/* line 89, ../sass/partials/_category.scss */
+/* line 95, ../sass/partials/_category.scss */
 .post-nav-mod {
   float: right;
 }
 
-/* line 93, ../sass/partials/_category.scss */
+/* line 99, ../sass/partials/_category.scss */
 .button-big-post {
   position: relative;
   z-index: 1;
 }
 
-/* line 98, ../sass/partials/_category.scss */
+/* line 104, ../sass/partials/_category.scss */
 .post-img {
   margin-bottom: 15px;
   width: 100%;

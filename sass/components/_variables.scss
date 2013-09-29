@@ -40,6 +40,9 @@ $mono:"Courier New",Courier,mono;
 $accent: white;
 $bground: black;
 
+$accent-50: shade($accent, 50%);
+$bground-90: tint($bground, 30%);
+
 
 /* !-- Paths ------------------------------------ */
 
