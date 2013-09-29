@@ -1,2 +1,4 @@
 *.sass-cache
 *.sublime-workspace
+folio/_site/
+folio/css/

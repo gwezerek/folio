@@ -366,50 +366,49 @@ body {
 
 /* line 11, ../sass/partials/_header.scss */
 .header-snark {
-  position: absolute;
   left: 0;
   padding: 0 0 4px 5.5%;
-  width: 94.5%;
-  margin-top: -3px;
+  margin: -3px 0 30px -6.5%;
   border-bottom: 1px solid white;
 }
 
-/* line 20, ../sass/partials/_header.scss */
+/* line 18, ../sass/partials/_header.scss */
 .contact-tools {
-  float: right;
-  margin-bottom: 10px;
+  position: absolute;
+  top: 30px;
+  right: 5.5%;
 }
 
-/* line 25, ../sass/partials/_header.scss */
+/* line 24, ../sass/partials/_header.scss */
 .button-big-contact {
   position: relative;
   z-index: 1;
 }
 
-/* line 30, ../sass/partials/_header.scss */
+/* line 29, ../sass/partials/_header.scss */
 .header-img {
   width: 100%;
   max-width: 480px;
   margin-left: -5px;
 }
 
-/* line 36, ../sass/partials/_header.scss */
+/* line 35, ../sass/partials/_header.scss */
 .header-title {
   display: block;
   font-family: 'NHaasGroteskTXW01-75Bd';
   text-rendering: optimizeLegibility;
 }
-/* line 40, ../sass/partials/_header.scss */
+/* line 39, ../sass/partials/_header.scss */
 .header-title > div {
   line-height: 90%;
 }
-/* line 42, ../sass/partials/_header.scss */
+/* line 41, ../sass/partials/_header.scss */
 .header-title > div:first-child {
   margin-left: -10px;
   line-height: 75%;
 }
 
-/* line 49, ../sass/partials/_header.scss */
+/* line 48, ../sass/partials/_header.scss */
 .title-sup {
   font-size: 36px;
 }
@@ -535,22 +534,21 @@ body {
 
 /* line 90, ../sass/partials/_category.scss */
 .post-txt-index-label {
-  text-transform: uppercase;
   font-family: 'TimesNewRomanW04-Conden';
 }
 
-/* line 95, ../sass/partials/_category.scss */
+/* line 94, ../sass/partials/_category.scss */
 .post-nav-mod {
   float: right;
 }
 
-/* line 99, ../sass/partials/_category.scss */
+/* line 98, ../sass/partials/_category.scss */
 .button-big-post {
   position: relative;
   z-index: 1;
 }
 
-/* line 104, ../sass/partials/_category.scss */
+/* line 103, ../sass/partials/_category.scss */
 .post-img {
   margin-bottom: 15px;
   width: 100%;
