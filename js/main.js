@@ -1,22 +1,6 @@
 	
 
-// var folio_page_state = 'small';
-
-
 ;(function($) {
-
-	// $('.header-title').fitText();
-
-	// $('.header-title').bigtext();
-
-	// Lazy Load
-	$(function() {          
-	    $('.lazy').lazyload({
-	        event : "loadSet"
-	    });
-	});
-
-
 
 	// ON CATEGORY EXPAND
 
@@ -53,9 +37,6 @@
 			}, 300);
 	});
 
-	// Load all images in set
-
-
 	// ON NEXT CLICK
 
 	$('.button-big-post').on('click', function() {
@@ -80,13 +61,32 @@
 		}
 	});
 
+
+
+
 	// Add .post-collapsed to current .post
 
 	// Remove .post-collapsed from next .post
 
 	// On last post, run on category expand for next category
 
-			console.log('Leaving small' );
+
+	var layout = (function() {
+
+		var addGrid = function (selector) {
+			$(selector).addClass('grid');
+		};
+
+		var removeGrid = function (selector) {
+			$(selector).removeClass('grid');
+		};		
+
+		return {
+			addGrid: addGrid,
+			removeGrid: removeGrid
+		};
+	})();
+
 
 
 	ssm.addState({
@@ -94,9 +94,9 @@
 		maxWidth: 600,
 		onEnter: function() {
 			folio_page_state = 'small';
+			layout.removeGrid('.js-folio-content');
 		},
 		onLeave: function() {
-			// null
 			console.log('Leaving small' );
 		}
 	});
@@ -107,11 +107,10 @@
 		maxWidth: 960,
 		onEnter: function() {
 			folio_page_state = 'medium';
+			layout.addGrid('.js-folio-content');
 		},
 		onLeave: function() {
-			// null
-							console.log('Leaving med' );
-
+			console.log('Leaving med' );
 		}
 	});		
 
@@ -120,18 +119,26 @@
 		minWidth: 960,
 		onEnter: function() {
 			folio_page_state = 'large';
+			layout.addGrid('.js-folio-content');			
 		},
 		onLeave: function() {
-			// null
-							console.log('Leaving large' );
-
+			console.log('Leaving large' );
 		}
 	});
 
 	ssm.ready();
-							console.log('Woop' );
 
-	// fastclick. No need for double-taps on the page
+
+	// MISC FUNCTIONS
+
+	// Lazy Load
+	$(function() {          
+	    $('.lazy').lazyload({
+	        event : "loadSet"
+	    });
+	});
+
+		// fastclick. No need for double-taps on the page
 	if( $('html').hasClass('touch') ){
 		window.addEventListener('load', function() {
 		    FastClick.attach(document.body);

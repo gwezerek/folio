@@ -14,6 +14,7 @@
 // =============================================
 @import "partials/reset";
 @import "partials/type";
+@import "partials/layout";
 @import "partials/header";
 @import "partials/category";
 @import "partials/footer";
@@ -27,8 +28,6 @@ body {
   margin: 30px 5.5% 40px;
   background: $bground;
 }
-
-
 
 .button-big {
 	@include border-radius(50%);
