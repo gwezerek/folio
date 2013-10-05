@@ -94,7 +94,7 @@
 		maxWidth: 600,
 		onEnter: function() {
 			folio_page_state = 'small';
-			layout.removeGrid('.js-folio-content');
+			layout.removeGrid('.js-category-list');
 		},
 		onLeave: function() {
 			console.log('Leaving small' );
@@ -107,7 +107,7 @@
 		maxWidth: 960,
 		onEnter: function() {
 			folio_page_state = 'medium';
-			layout.addGrid('.js-folio-content');
+			layout.addGrid('.js-category-list');
 		},
 		onLeave: function() {
 			console.log('Leaving med' );
@@ -119,7 +119,7 @@
 		minWidth: 960,
 		onEnter: function() {
 			folio_page_state = 'large';
-			layout.addGrid('.js-folio-content');			
+			layout.addGrid('.js-category-list');			
 		},
 		onLeave: function() {
 			console.log('Leaving large' );
