@@ -16,6 +16,10 @@
     "tests"
   ],
   "dependencies": {
+    "jquery": "~2.0.3",
+    "SimpleStateManager": "~2.0.2"
+  },
+  "resolutions": {
     "jquery": "~2.0.3"
   }
 }

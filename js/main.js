@@ -1,3 +1,7 @@
+	
+
+// var folio_page_state = 'small';
+
 
 ;(function($) {
 
@@ -11,6 +15,8 @@
 	        event : "loadSet"
 	    });
 	});
+
+
 
 	// ON CATEGORY EXPAND
 
@@ -50,7 +56,6 @@
 	// Load all images in set
 
 
-
 	// ON NEXT CLICK
 
 	$('.button-big-post').on('click', function() {
@@ -81,6 +86,60 @@
 
 	// On last post, run on category expand for next category
 
+			console.log('Leaving small' );
+
+
+	ssm.addState({
+		id: 'small',
+		maxWidth: 600,
+		onEnter: function() {
+			folio_page_state = 'small';
+		},
+		onLeave: function() {
+			// null
+			console.log('Leaving small' );
+		}
+	});
+
+	ssm.addState({
+		id: 'medium',
+		minWidth: 600,
+		maxWidth: 960,
+		onEnter: function() {
+			folio_page_state = 'medium';
+		},
+		onLeave: function() {
+			// null
+							console.log('Leaving med' );
+
+		}
+	});		
+
+	ssm.addState({
+		id: 'large',
+		minWidth: 960,
+		onEnter: function() {
+			folio_page_state = 'large';
+		},
+		onLeave: function() {
+			// null
+							console.log('Leaving large' );
+
+		}
+	});
+
+	ssm.ready();
+							console.log('Woop' );
+
+	// fastclick. No need for double-taps on the page
+	if( $('html').hasClass('touch') ){
+		window.addEventListener('load', function() {
+		    FastClick.attach(document.body);
+		}, false);
+	}
 
 
 })(jQuery);
+
+
+

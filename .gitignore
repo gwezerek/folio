@@ -1,4 +1,5 @@
 *.sass-cache
 *.sublime-workspace
-folio/_site/
-folio/css/
+_site/
+css/
+bower_components/
