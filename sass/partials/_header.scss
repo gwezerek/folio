@@ -26,10 +26,24 @@
 	z-index: 1;	
 }
 
+.header-link {
+	@media (min-width: $medium) {
+		@include media-grid(3, em(20), '.header-img');
+	}
+	@media (min-width: $large) {
+			@include media-grid(4, em(20), '.header-img');
+	}	
+}
+
 .header-img {
 	width: 100%;
-	max-width: 480px;
 	margin-left: -5px;
+	@media (min-width: $medium) {
+		padding-left: 0 !important;
+	}
+	@media (min-width: $large) {
+		padding-left: 0 !important;
+	}		
 }
 
 .header-title {

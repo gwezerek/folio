@@ -5,8 +5,8 @@
 // ============================================= 
 
 .grid {
-	@include media-grid($num: 3, $pad: em(20), $target:'.cat');
+	@include media-grid(3, em(20), '.cat');
 	@media (min-width: $large) {
-		@include media-grid($num: 4, $pad: em(20), $target:'.cat');
+		@include media-grid(4, em(20), '.cat');
 	}
 }

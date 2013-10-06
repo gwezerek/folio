@@ -2,6 +2,32 @@
 
 ;(function($) {
 
+
+	var layout = (function() {
+
+		var addGrid = function (selector) {
+			$(selector).addClass('grid');
+		},
+		removeGrid = function (selector) {
+			$(selector).removeClass('grid');
+		},
+		addArticleView = function (selector) {
+			$(selector).addClass('article-view');
+		},
+		removeArticleView = function (selector) {
+			$(selector).removeClass('article-view');
+		};		
+
+		return {
+			addGrid: addGrid,
+			removeGrid: removeGrid,
+			addArticleView: addArticleView,
+			removeArticleView: removeArticleView
+		};
+
+	})();
+
+
 	// ON CATEGORY EXPAND
 
 	// Expand the first post and post wrapper
@@ -17,6 +43,7 @@
 			wrap.toggleClass('post-wrap-collapsed');
 			wrap.find('.current').slideDown();
 			wrap.find('.lazy').trigger('loadSet');
+			layout.addArticleView('.footer-actions-wrap');
 		} else {											// if expanded, collapsed
 			$this.closest('.cat').toggleClass('expanded');
 			wrap.find('.post').slideUp();
@@ -24,6 +51,7 @@
 			setTimeout (function(){
 				wrap.toggleClass('post-wrap-collapsed')
 			}, 300);
+			layout.removeArticleView('.footer-actions-wrap');
 		}
 	});
 
@@ -63,70 +91,59 @@
 
 
 
-
-	// Add .post-collapsed to current .post
-
-	// Remove .post-collapsed from next .post
-
-	// On last post, run on category expand for next category
-
-
-	var layout = (function() {
-
-		var addGrid = function (selector) {
-			$(selector).addClass('grid');
-		};
-
-		var removeGrid = function (selector) {
-			$(selector).removeClass('grid');
-		};		
-
-		return {
-			addGrid: addGrid,
-			removeGrid: removeGrid
-		};
-	})();
-
-
-
-	ssm.addState({
-		id: 'small',
-		maxWidth: 600,
-		onEnter: function() {
-			folio_page_state = 'small';
-			layout.removeGrid('.js-category-list');
+	// Simple State Manager
+	ssm.setResizeTimeout(0);
+	console.log(ssm.setResizeTimeout);
+	ssm.addStates([
+		{
+			id: 'small',
+			minWidth: 0,
+			maxWidth: 450,
+			onEnter: function() {
+				layout.removeGrid('.js-category-list');
+			},
+			onLeave: function() {
+				console.log('Leaving small');
+			}
+		}, 
+		{
+			id: 'medium',
+			minWidth: 450,
+			maxWidth: 960,
+			onEnter: function() {
+				layout.addGrid('.js-category-list');
+			},
+			onLeave: function() {
+				console.log('Leaving med');
+			}			
 		},
-		onLeave: function() {
-			console.log('Leaving small' );
+		{
+			id: 'large',
+			minWidth: 960,
+			onEnter: function() {
+				layout.addGrid('.js-category-list');			
+			},
+			onLeave: function() {
+				console.log('Leaving large');
+			}			
 		}
-	});
+	]).ready();
 
-	ssm.addState({
-		id: 'medium',
-		minWidth: 600,
-		maxWidth: 960,
-		onEnter: function() {
-			folio_page_state = 'medium';
-			layout.addGrid('.js-category-list');
-		},
-		onLeave: function() {
-			console.log('Leaving med' );
-		}
-	});		
 
-	ssm.addState({
-		id: 'large',
-		minWidth: 960,
-		onEnter: function() {
-			folio_page_state = 'large';
-			layout.addGrid('.js-category-list');			
-		},
-		onLeave: function() {
-			console.log('Leaving large' );
-		}
-	});
+	// });		
 
-	ssm.ready();
+	// ssm.addState({
+	// 	id: 'large',
+	// 	minWidth: 960,
+	// 	onEnter: function() {
+	// 		layout.addGrid('.js-category-list');			
+	// 	},
+	// 	onLeave: function() {
+	// 		console.log('Leaving large' );
+	// 	}
+	// });
+
+	// ssm.ready();
 
 
 	// MISC FUNCTIONS

@@ -17,6 +17,9 @@
 	border-top: 1px solid white;
 	border-bottom: 1px solid white;
 	display: none;
+	@media (min-width: $medium) {
+		display: block;
+	}
 }
 
 .prev-category {
@@ -33,6 +36,12 @@
 	text-align: left;
 	border-top: 1px solid white;
 	padding-top: 10px;
+}
+
+.filter {
+	position: absolute;
+	right: 0;
+	left: 0;
 }
 
 .postscript {
