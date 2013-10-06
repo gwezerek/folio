@@ -13,7 +13,10 @@
 		display: table;
 		height: 160px;
 		border: 1px solid $accent-50;
-		// margin-bottom: em(40);
+		&:hover {
+			border-color: white;
+			border-width: em(5);
+		}
 	}	
 }
 
@@ -24,11 +27,21 @@
 	font-weight: 500;
 	font-size: em(26);
 	font-family:'TimesNewRomanW04-CondBo';
+	cursor: pointer;
 
 	@media (min-width: $medium) { 
 		text-align: center;
 		display: table-cell;
-		vertical-align: middle;		
+		vertical-align: middle;
+		font-family:'NeueHaasGroteskText W01';
+		font-size: em(16);
+		text-transform: none;
+		&:hover {
+			color: white;
+			font-family:'TimesNewRomanW04-CondBo';
+			font-size: em(26);			
+			text-transform: uppercase;			
+		}		
 	}
 
 }
