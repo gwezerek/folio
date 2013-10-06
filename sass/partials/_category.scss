@@ -9,6 +9,12 @@
 	&.expanded > .cat-name {
 		color: $accent;
 	}
+	@media (min-width: $medium) { 
+		display: table;
+		height: 160px;
+		border: 1px solid $accent-50;
+		// margin-bottom: em(40);
+	}	
 }
 
 .cat-name {
@@ -18,13 +24,24 @@
 	font-weight: 500;
 	font-size: em(26);
 	font-family:'TimesNewRomanW04-CondBo';
+
+	@media (min-width: $medium) { 
+		text-align: center;
+		display: table-cell;
+		vertical-align: middle;		
+	}
+
 }
+
 
 .cat-btn {
 	@include rotate(180deg);
 	@include trans(.2s, transform, ease-in);
 	position: absolute;
 	right: 0;
+	@media (min-width: $medium) { 
+		display: none;
+	}	
 }
 
 .cat-btn-outside {
@@ -52,6 +69,9 @@
 	padding: 0;
 	border-width: 0 0 1px 0;
 	border-color: $accent-50;
+	@media (min-width: $medium) { 
+		display: none;
+	}		
 }
 
 .post {

@@ -5,8 +5,10 @@
 // ============================================= 
 
 .grid {
-	@include media-grid(3, em(20), '.cat');
+	@media (min-width: $medium) {
+		@include media-grid(3, em(40), '.cat');		
+	}
 	@media (min-width: $large) {
-		@include media-grid(4, em(20), '.cat');
+		@include media-grid(4, em(60), '.cat');
 	}
 }

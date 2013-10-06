@@ -6,19 +6,36 @@
 
 .header {
 	margin-bottom: 50px;
+	@media (min-width: $medium) {
+		position: relative;
+		margin-bottom: 80px;
+	}	
 }
 
 .header-snark {
 	left: 0;
-	padding: 0 0 4px 5.5%;
 	margin: -3px 0 30px -6.5%;
+	padding: 0 0 4px 5.5%;
 	border-bottom: 1px solid $accent;
+	@media (min-width: $medium) {
+		position: absolute;
+		bottom: 0;
+		margin-bottom: -25px;
+		width: 106.5%;
+		color: transparent;
+		pointer-events: none;
+	}
 }
 
 .contact-tools {
 	position: absolute;
 	top: 30px;
 	right: 5.5%;
+	@media (min-width: $medium) {
+		bottom: -45px;
+		top: auto;
+		right: 0;
+	}	
 }
 
 .button-big-contact {
@@ -27,23 +44,18 @@
 }
 
 .header-link {
+	display: block;
 	@media (min-width: $medium) {
-		@include media-grid(3, em(20), '.header-img');
+		@include media-grid(3, em(30), '.header-img');
 	}
 	@media (min-width: $large) {
-			@include media-grid(4, em(20), '.header-img');
+			@include media-grid(4, em(60), '.header-img');
 	}	
 }
 
 .header-img {
-	width: 100%;
 	margin-left: -5px;
-	@media (min-width: $medium) {
-		padding-left: 0 !important;
-	}
-	@media (min-width: $large) {
-		padding-left: 0 !important;
-	}		
+	width: 100%;	
 }
 
 .header-title {

@@ -16,53 +16,24 @@
 // ============================================= //
 
 @mixin media-grid($num: 2, $pad: em(20), $target:'.media-block') {
-	margin-left: -#{$pad};
 	@include pie-clearfix;
 
 	> #{$target} {
 		float: left;
-		padding-left: #{$pad};
-		@if $num == 2 or $num == "two" {
-			width: 50%;
-			&:nth-of-type(2n+3) {
-				clear: left;
-			}
-			&.n3 {
-				clear:left;
-			}
-		}
-		@if $num == 3 or $num == "three" {
-			width: 33.3333%;
-			&:nth-of-type(3n+4) {
-				clear: left;
-			}
-			.ie7 & {
-				width: 33%;
-			}
-			&.n4 {
-				clear: left;
-			}
-		}
-		@if $num == 4 or $num == "four" {
-			width: 25%;
-			&:nth-of-type(4n+5) {
-				clear: left;
-			}
-			&.n5 {
-				clear: left;
-			}
-		}
-		@if $num == 5 or $num == "five" {
-			&:nth-of-type(5n+6) {
-				clear: left;
-			}
-			width: 20%;
-			&.n6 {
-				clear: left;
-			}
-		}
+		clear: none;
+		margin-left: #{$pad};
+		margin-bottom: #{$pad};
+		width: calc((100% - (#{$pad} * (#{$num} - 1)))/#{$num});
+		&:nth-of-type(n) {
+			clear: none;
+			margin-left: #{$pad};
+		}	
+		&:nth-of-type(#{$num}n+1) {
+			clear: left;
+			margin-left: 0;
+		}		
 	}
-} //media-grid
+}
 
 
 // ============================================= //
@@ -98,41 +69,41 @@
 // USE: @include grid-static(300px, 40px);
 
 @mixin grid-static($width: 300px, $margin: 40px, $static-col: right) {
-	// Variables
 	$total: $width + $margin;
 
 	// If the right column has a static width
 	@if $static-col == right {
 		> .ui-block-1 {
-			width: 100%;
 			float: left;
 			margin-right: -$total;
+			width: 100%;
 			> .ui-block-inner {
 				margin-right: $total;
 			}
 		}
 
 		> .ui-block-2 {
-			width: $width;
 			float: right;
+			width: $width;
 		}
 	} // right
 
 	// If the left column has a static width
 	@else {
 		> .ui-block-1 {
-			width: $width;
 			float: left;
+			width: $width;
 		}		
 		> .ui-block-2 {
-			width: 100%;
 			float: right;
 			margin-left: -$total;
+			width: 100%;
 			> .ui-block-inner {
 				margin-left: $total;
 			}
 		}
-	} //else
+	}
+	// Variables //else
 
 	@include pie-clearfix;
 }
@@ -149,16 +120,16 @@ $margin-r: 5%;
 
 	> .ui-block-1,
 	> .ui-block.first {
-		width: $width-1 - ($margin-r/2);
 		@include float-left;
 		margin-right: $margin-r;
+		width: $width-1 - ($margin-r/2);
 	}
 
 	> .ui-block-2,	
 	> .ui-block.second {
-		width: $width-2 - ($margin-r/2);
 		@include float-left;
 		margin-right: 0;
+		width: $width-2 - ($margin-r/2);
 	}
 }
 
@@ -167,15 +138,15 @@ $margin-r: 5%;
 
 	> .ui-block-1,	
 	> .ui-block.first {
-		width: $width-1 - ($margin-r/2);
 		@include float-right;
+		width: $width-1 - ($margin-r/2);
 	}
 	
 	> .ui-block-2,
 	> .ui-block.second {
-		width: $width-2 - ($margin-r/2);
 		@include float-left;
 		margin-right: 0;
+		width: $width-2 - ($margin-r/2);
 	}
 }
 
@@ -184,15 +155,15 @@ $margin-r: 5%;
 
 	> .ui-block-1,	
 	> .ui-block.first {
-		width: $width-1 - ($margin-r/2);
 		@include float-left;
+		width: $width-1 - ($margin-r/2);
 	}
 
 	> .ui-block-2,	
 	> .ui-block.second {
-		width: $width-2 - ($margin-r/2);
 		@include float-right;
 		margin-right: 0;
+		width: $width-2 - ($margin-r/2);
 	}
 }
 
@@ -203,23 +174,23 @@ $margin-r: 5%;
 
 	> .ui-block-1,
 	> .ui-block.first {
-		width: $width3-1 - ($margin3-r/3);
 		@include float-left;
 		margin-right: $margin3-r/2;
+		width: $width3-1 - ($margin3-r/3);
 	}
 
 	> .ui-block-2,	
 	> .ui-block.second {
-		width: $width3-2 - ($margin3-r/3);
 		@include float-left;
 		margin-right: $margin3-r/2;
+		width: $width3-2 - ($margin3-r/3);
 	}
 
 	> .ui-block-3,
 	> .ui-block.last {
-		width: $width3-3 - ($margin3-r/3);
 		@include float-left;
-		margin-right: 0;		
+		margin-right: 0;
+		width: $width3-3 - ($margin3-r/3);		
 	}
 }
 
@@ -230,23 +201,23 @@ $margin-r: 5%;
 
 	> .ui-block-1,
 	> .ui-block.first {
-		width: $width3-1 - ($margin3-r/3);
 		@include float-right;
 		margin-right: 0;
+		width: $width3-1 - ($margin3-r/3);
 	}
 
 	> .ui-block-2,
 	> .ui-block.second {
-		width: $width3-2 - ($margin3-r/3);
 		@include float-right;
 		margin-right: $margin3-r/2;
+		width: $width3-2 - ($margin3-r/3);
 	}
 
 	> .ui-block-3,
 	> .ui-block.last {
-		width: $width3-3 - ($margin3-r/3);
 		@include float-left;
-		margin-right: $margin3-r/2;		
+		margin-right: $margin3-r/2;
+		width: $width3-3 - ($margin3-r/3);		
 	}
 }
 
@@ -259,30 +230,30 @@ $margin-r: 5%;
 
 	> .ui-block-1,
 	> .ui-block.first {
-		width: $width4-1 - ($margin4-r/4);
 		@include float-left;
 		margin-right: $margin4-r/3;
+		width: $width4-1 - ($margin4-r/4);
 	}
 
 	> .ui-block-2,	
 	> .ui-block.second {
-		width: $width4-2 - ($margin4-r/4);
 		@include float-left;
 		margin-right: $margin4-r/3;
+		width: $width4-2 - ($margin4-r/4);
 	}
 
 	> .ui-block-3,
 	> .ui-block.third {
-		width: $width4-3 - ($margin4-r/4);
 		@include float-left;
 		margin-right: $margin4-r/3;
+		width: $width4-3 - ($margin4-r/4);
 	}
 
 	> .ui-block-4,
 	> .ui-block.last {
-		width: $width4-4 - ($margin4-r/4);
 		@include float-left;
-		margin-right: 0;	
+		margin-right: 0;
+		width: $width4-4 - ($margin4-r/4);	
 	}
 }
 
@@ -295,46 +266,49 @@ $margin-r: 5%;
 
 	> .ui-block-1,
 	> .ui-block.first {
-		width: $width5-1 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
+		width: $width5-1 - ($margin5-r/5);
 	}
 
 	> .ui-block-2,	
 	> .ui-block.second {
-		width: $width5-2 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
+		width: $width5-2 - ($margin5-r/5);
 	}
 
 	> .ui-block-3,
 	> .ui-block.third {
-		width: $width5-3 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
+		width: $width5-3 - ($margin5-r/5);
 	}
 
 	> .ui-block-4,
 	> .ui-block.fourth {
-		width: $width5-4 - ($margin5-r/5);
 		@include float-left;
 		margin-right: $margin5-r/4;
+		width: $width5-4 - ($margin5-r/5);
 	}
 
 	> .ui-block-5,
 	> .ui-block.last {
-		width: $width5-5 - ($margin5-r/5);
 		@include float-left;
-		margin-right: 0;	
+		margin-right: 0;
+		width: $width5-5 - ($margin5-r/5);	
 	}
 }
 
 //Jeff's universal ui-grid layout mixin
 
 @mixin cols($col-num: 2, $width-1: 0, $width-2: 0, $width-3: 0, $width-4: 0, $width-5: 0, $width-last: 0, $margin-r:5% ) {
+	$var-list: $col-num, $width-1, $width-2, $width-3, $width-4, $width-5, $width-last, $margin-r;
+	$flip: false;
+	$var-list: $col-num, $width-1, $width-2, $width-3, $width-4, $width-5, $width-last, $margin-r;
+	$name-list: first, second, third, fourth, fifth, sixth;
   
 	@include pie-clearfix;
-	$var-list: $col-num, $width-1, $width-2, $width-3, $width-4, $width-5, $width-last, $margin-r;
  
 	//Discovers margin option
 	@for $num from 1 through length($var-list) {
@@ -349,9 +323,6 @@ $margin-r: 5%;
 			}
 		}
 	}
- 
-	//Flip functionality
-	$flip: false;
 	@each $var in $var-list {
 		@if $var == flip {
 			$flip: true;
@@ -381,10 +352,6 @@ $margin-r: 5%;
 	@if $col-num == 3 { $width-last: 100% - $width-2 - $width-1; }
 	@if $col-num == 2 { $width-last: 100% - $width-1; }
  
-	//Needed to reset var-list for some reason
-	$var-list: $col-num, $width-1, $width-2, $width-3, $width-4, $width-5, $width-last, $margin-r;
-	$name-list: first, second, third, fourth, fifth, sixth;
- 
 	//First col - second-to-last col
 	@for $num from 2 through $col-num {
 		$width: nth($var-list, $num);
@@ -392,9 +359,9 @@ $margin-r: 5%;
 		$col: $num - 1;
 		> .col-#{$col},
 		> .col.#{$name} {
+			@include float-left;
 			margin-right: $margin-r/($col-num - 1);
 			width: $width - ($margin-r/$col-num);
-			@include float-left;
 			@if $flip == true {
 				@include float-right;
 			}
@@ -405,10 +372,14 @@ $margin-r: 5%;
 	> .col-#{$col-num},
 	> .col.#{nth($name-list, $col-num)},
 	> .col.last {
-		width: $width-last - ($margin-r/$col-num);
 		@include float-left;
-		margin-right: 0;		
+		margin-right: 0;
+		width: $width-last - ($margin-r/$col-num);		
 	}
+ 
+	//Flip functionality
+ 
+	//Needed to reset var-list for some reason;
 }
 
 
@@ -448,8 +419,8 @@ $margin-r: 5%;
 
 		> .art-bd {
 			display: table-cell;
-			width: $art-width;
 			margin: 0;
+			width: $art-width;
 			> img,
 			> .art {
 				@include resp-img;
@@ -457,8 +428,8 @@ $margin-r: 5%;
 		}
 		> .txt-bd {
 			display: table-cell;
-			vertical-align: middle;
 			padding-left: $art-margin;
+			vertical-align: middle;
 		}
 
 		// If lower than IE8, which has no
@@ -469,13 +440,13 @@ $margin-r: 5%;
 				display: block;
 			}
 			> .art-bd {
-				width: $art-width;
 				float: left;
+				width: $art-width;
 			}
 			> .txt-bd {
 				margin-left: $gutter;
 			}
-		} // .lt-ie8
+		} // .lt-ie8;
 	} //middle
 
 	@else {
@@ -484,13 +455,13 @@ $margin-r: 5%;
 			display: block;
 		}
 		> .art-bd {
+			margin: 0;
 			width: $art-width;
 			@if $direction == right {
 				float: right;
 			} @else {
 				float: left;
 			}
-			margin: 0;
 			> img,
 			> .art {
 				@include resp-img;

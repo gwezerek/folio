@@ -92,42 +92,40 @@
 
 
 	// Simple State Manager
-	ssm.setResizeTimeout(0);
-	console.log(ssm.setResizeTimeout);
-	ssm.addStates([
-		{
-			id: 'small',
-			minWidth: 0,
-			maxWidth: 450,
-			onEnter: function() {
-				layout.removeGrid('.js-category-list');
-			},
-			onLeave: function() {
-				console.log('Leaving small');
-			}
-		}, 
-		{
-			id: 'medium',
-			minWidth: 450,
-			maxWidth: 960,
-			onEnter: function() {
-				layout.addGrid('.js-category-list');
-			},
-			onLeave: function() {
-				console.log('Leaving med');
-			}			
-		},
-		{
-			id: 'large',
-			minWidth: 960,
-			onEnter: function() {
-				layout.addGrid('.js-category-list');			
-			},
-			onLeave: function() {
-				console.log('Leaving large');
-			}			
-		}
-	]).ready();
+	// ssm.addStates([
+	// 	{
+	// 		id: 'small',
+	// 		minWidth: 0,
+	// 		maxWidth: 450,
+	// 		onEnter: function() {
+	// 			layout.removeGrid('.js-category-list');
+	// 		},
+	// 		onLeave: function() {
+	// 			console.log('Leaving small');
+	// 		}
+	// 	}, 
+	// 	{
+	// 		id: 'medium',
+	// 		minWidth: 450,
+	// 		maxWidth: 960,
+	// 		onEnter: function() {
+	// 			layout.addGrid('.js-category-list');
+	// 		},
+	// 		onLeave: function() {
+	// 			console.log('Leaving med');
+	// 		}			
+	// 	},
+	// 	{
+	// 		id: 'large',
+	// 		minWidth: 960,
+	// 		onEnter: function() {
+	// 			layout.addGrid('.js-category-list');			
+	// 		},
+	// 		onLeave: function() {
+	// 			console.log('Leaving large');
+	// 		}			
+	// 	}
+	// ]).ready();
 
 
 	// });		
