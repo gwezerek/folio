@@ -30,3 +30,36 @@ Change URL dynamically
 Parse URL on page load
 ScrollTo that content with 
 
+
+##Fake deep-linking
+Open story
+Change hash
+On load check hash, open, load, scrollto
+
+## Real
+Container categories
+Onclick small loads in posts
+Onclick large links out
+
+## Semi Deep Linking
+Homepage works as now
+At large categories link out
+
+
+## Fake Deep Linking
+Load the same page at all widths
+Parse URL on load
+Open correct content
+
+To do: 
+- [ ] Show only one category at once
+- [ ] Make final post in category open next category
+- [ ] Make final post in final category open first category
+- [ ] If nothing open, show grid 
+- [ ] Add grid links to posts 
+- [ ] Make posts have the same layout as index
+- [ ] If open, hide unopened categories at large
+- [ ] Parse URL to open correct post
+- [ ] Scroll to that correct post if at small
+- [ ] Profit
+

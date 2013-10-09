@@ -43,14 +43,20 @@
 	z-index: 1;	
 }
 
-.header-link {
-	display: block;
+.header-wrap {
 	@media (min-width: $medium) {
-		@include media-grid(3, em(30), '.header-img');
+		@include media-grid(3, em(30), '.header-link');
 	}
 	@media (min-width: $large) {
-			@include media-grid(4, em(60), '.header-img');
+			@include media-grid(4, em(30), '.header-link');
+	}
+	@media (min-width: $x-large) {
+		@include media-grid(5, em(30), '.header-link');
 	}	
+}
+
+.header-link {
+	display: block;			
 }
 
 .header-img {

@@ -14,10 +14,13 @@
 		height: 160px;
 		border: 1px solid $accent-50;
 		&:hover {
-			border-color: white;
 			border-width: em(5);
+			border-color: white;
 		}
-	}	
+	}
+	@media (min-width: $x-large) { 
+		height: 200px;
+	}			
 }
 
 .cat-name {
@@ -29,18 +32,19 @@
 	font-family:'TimesNewRomanW04-CondBo';
 	cursor: pointer;
 
-	@media (min-width: $medium) { 
-		text-align: center;
+	@media (min-width: $medium) {
 		display: table-cell;
-		vertical-align: middle;
-		font-family:'NeueHaasGroteskText W01';
-		font-size: em(16);
+		vertical-align: middle; 
+		text-align: center;
 		text-transform: none;
+		font-size: em(16);
+		font-family:'NeueHaasGroteskText W01';
 		&:hover {
-			color: white;
-			font-family:'TimesNewRomanW04-CondBo';
-			font-size: em(26);			
-			text-transform: uppercase;			
+			padding-top: em(10);
+			color: white;			
+			text-transform: uppercase;
+			font-size: em(26);
+			font-family:'TimesNewRomanW04-CondBo';			
 		}		
 	}
 
@@ -110,8 +114,6 @@
 }
 
 .post-txt-label {
-	text-transform: uppercase;
-	font-family:'TimesNewRomanW04-Conden';
 }
 
 .post-txt-index {
@@ -121,7 +123,6 @@
 }
 
 .post-txt-index-label {
-  font-family:'TimesNewRomanW04-Conden';
 }
 
 .post-nav-mod {
