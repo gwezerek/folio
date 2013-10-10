@@ -3,7 +3,7 @@
 ;(function($) {
 
 
-	var layout = (function() {
+	var myApp = (function() {
 
 		var addGrid = function (selector) {
 			$(selector).addClass('grid');
@@ -16,6 +16,14 @@
 		},
 		removeArticleView = function (selector) {
 			$(selector).removeClass('article-view');
+		},
+		openCat = function (selector) {
+			$this.closest('.cat').toggleClass('expanded');	// category is expanded
+			$this.toggleClass('cat-expand');				// remove cat-expand class on button
+			wrap.toggleClass('post-wrap-collapsed');		// remove collapsed class on category ul
+			wrap.find('.current').slideDown();				// a
+			wrap.find('.lazy').trigger('loadSet');			// lazy load all images in set
+			layout.addArticleView('.footer-actions-wrap');
 		};		
 
 		return {
@@ -36,10 +44,11 @@
 	$('.cat-btn').on('click', function() {
 		var $this 	= $(this),
 			wrap 	= $(this).siblings('.post-wrap');
+			
 
 		if ($this.hasClass('cat-expand')) {					// if collapsed, expand
-			$this.closest('.cat').toggleClass('expanded');
-			$this.toggleClass('cat-expand');
+			$this.closest('.cat').toggleClass('expanded');	// category is expanded
+			$this.toggleClass('cat-expand');				// remove cat-ex
 			wrap.toggleClass('post-wrap-collapsed');
 			wrap.find('.current').slideDown();
 			wrap.find('.lazy').trigger('loadSet');
@@ -90,60 +99,6 @@
 	});
 
 
-
-	// Simple State Manager
-	// ssm.addStates([
-	// 	{
-	// 		id: 'small',
-	// 		minWidth: 0,
-	// 		maxWidth: 450,
-	// 		onEnter: function() {
-	// 			layout.removeGrid('.js-category-list');
-	// 		},
-	// 		onLeave: function() {
-	// 			console.log('Leaving small');
-	// 		}
-	// 	}, 
-	// 	{
-	// 		id: 'medium',
-	// 		minWidth: 450,
-	// 		maxWidth: 960,
-	// 		onEnter: function() {
-	// 			layout.addGrid('.js-category-list');
-	// 		},
-	// 		onLeave: function() {
-	// 			console.log('Leaving med');
-	// 		}			
-	// 	},
-	// 	{
-	// 		id: 'large',
-	// 		minWidth: 960,
-	// 		onEnter: function() {
-	// 			layout.addGrid('.js-category-list');			
-	// 		},
-	// 		onLeave: function() {
-	// 			console.log('Leaving large');
-	// 		}			
-	// 	}
-	// ]).ready();
-
-
-	// });		
-
-	// ssm.addState({
-	// 	id: 'large',
-	// 	minWidth: 960,
-	// 	onEnter: function() {
-	// 		layout.addGrid('.js-category-list');			
-	// 	},
-	// 	onLeave: function() {
-	// 		console.log('Leaving large' );
-	// 	}
-	// });
-
-	// ssm.ready();
-
-
 	// MISC FUNCTIONS
 
 	// Lazy Load
@@ -153,7 +108,7 @@
 	    });
 	});
 
-		// fastclick. No need for double-taps on the page
+	// fastclick. No need for double-taps on the page
 	if( $('html').hasClass('touch') ){
 		window.addEventListener('load', function() {
 		    FastClick.attach(document.body);

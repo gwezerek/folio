@@ -1,35 +1,4 @@
 
-1. User has no items open			
-
-Small (<600)
-List									
-
-Medium (600-960)
-Grid									
-
-Large (>960)
-Grid									
-
-2. User has one item open			--> Shrinks to small
-
-Small (<600)								
-List									
-
-Medium (600-960)
-Article									Other categories appear
-
-Large (>960)
-Article									
-
-
-Add deep linking
-Add state manager
-At medium apply grid class
-
-Change URL dynamically
-Parse URL on page load
-ScrollTo that content with 
-
 
 ##Fake deep-linking
 Open story
@@ -63,3 +32,9 @@ To do:
 - [ ] Scroll to that correct post if at small
 - [ ] Profit
 
+
+## Show only one category at once
+
+Create post expand and post collapse functions
+On expand, find first category with active class, run post collapse
+	Add active class to selected category
