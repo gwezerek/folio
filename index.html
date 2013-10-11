@@ -3,10 +3,10 @@ layout: allpages
 ---
 
 <main class="folio-content">
-	<ul class="cat-list js-category-list grid"> <!-- js-category-list is currently not being used -->
+	<ul class="cat-list js-category-list grid" data-catIndex="0"> <!-- js-category-list is currently not being used -->
 
 		{% for cat in site.categories %}
-		<li class="cat">
+		<li class="cat" data-postIndex="0">
 			<h2 class="cat-name">{{ cat[0] | capitalize }}</h2>
 			<button class="cat-btn cat-btn-outside cat-expand icon">&#59236;</button>
 			<ul class="post-wrap post-wrap-collapsed" data-index="1">

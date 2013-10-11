@@ -38,3 +38,11 @@ To do:
 Create post expand and post collapse functions
 On expand, find first category with active class, run post collapse
 	Add active class to selected category
+
+
+Thoughts
+User module pattern for overall functions
+Use constructor to create category object to hold current post
+Need to combine constructor with module
+
+For cats.length create new Cat

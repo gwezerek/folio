@@ -3,99 +3,117 @@
 ;(function($) {
 
 
-	var myApp = (function() {
+	var site = (function() {
 
-		var addGrid = function (selector) {
+		var catList = $('.cat-list'),
+			cats = catList.find('.cat'),
+			catsLength = cats.length,
+			postsLength = 5,					
+			currentPost = 0,
+			currentCat = 0;
+
+
+		function addGrid(selector) {
 			$(selector).addClass('grid');
-		},
-		removeGrid = function (selector) {
+		}
+
+		function removeGrid(selector) {
 			$(selector).removeClass('grid');
-		},
-		addArticleView = function (selector) {
+		}
+
+		function addArticleView(selector) {
 			$(selector).addClass('article-view');
-		},
-		removeArticleView = function (selector) {
+		}
+
+		function removeArticleView(selector) {
 			$(selector).removeClass('article-view');
-		},
-		openCat = function (selector) {
-			$this.closest('.cat').toggleClass('expanded');	// category is expanded
-			$this.toggleClass('cat-expand');				// remove cat-expand class on button
-			wrap.toggleClass('post-wrap-collapsed');		// remove collapsed class on category ul
-			wrap.find('.current').slideDown();				// a
-			wrap.find('.lazy').trigger('loadSet');			// lazy load all images in set
-			layout.addArticleView('.footer-actions-wrap');
-		};		
+		}
+
+		function setCurrentPost(dir) {
+			var pos = $(this).data("postIndex");		// needs real targeting
+
+			pos += ( ~~( dir === 'next' ) ? (dir === 'prev') : -1 : 0);
+
+			var newPos = ( pos < 0 ) ? postsLength - 1 : pos % postsLength;				
+			// Flesh out if/else not to loop, but to hideCat, set catDir and run setCurrentCat, showCat 
+			$(cat).data("postIndex", newPos)			// needs real targeting
+
+			return pos;
+		}
+
+		function setCurrentCat() {
+			var pos = $(this).data("catIndex");		// needs real targeting
+		 
+			pos += ( ~~( catDir === 'nextCat' ) ? ( catDir === 'prevCat' ) : -1 : 0 );
+
+			var newPos = ( pos < 0 ) ? catsLength - 1 : pos % catsLength;
+			$('.cat-list').data("catIndex", newPos)			// needs real targeting
+
+			return pos;
+		}
+
+		// Combine next two functions with Toggle, move toggleArticleView outside of function?
+
+		function showCat() {
+			var $this = $(this);			
+
+			$this.closest('.cat').addClass('expanded');
+			$this.find('.post').eq(currentCat.data("postIndex")).slideDown();
+			site.addArticleView('.footer-actions-wrap');
+
+			catList.data("postIndex", $.inArray(cats, currentCat));			
+		}
+
+		function hideCat() {
+			var $this = $(this);
+				
+			$this.closest('.cat').removeClass('expanded');
+			$this.find('.post').eq(currentCat.data("postIndex")).slideUp();
+			site.removeArticleView('.footer-actions-wrap');
+		}				
+
+		function postNav() {
+			var $this = $(this);
+
+			site.setCurrentPost( $(this).data('dir') );
+			oldPost.hide();	
+			newPost.show();
+
+		}					
 
 		return {
 			addGrid: addGrid,
 			removeGrid: removeGrid,
 			addArticleView: addArticleView,
-			removeArticleView: removeArticleView
+			removeArticleView: removeArticleView,
+			setCurrentPost: setCurrentPost,
+			setCurrentCat: setCurrentCat,
+			hideCat: hideCat,
+			showCat: showCat,
+			postNav: postNav
 		};
 
 	})();
 
 
-	// ON CATEGORY EXPAND
-
-	// Expand the first post and post wrapper
-	// Can I use an .on selector to combine these two functions?
 
 	$('.cat-btn').on('click', function() {
 		var $this 	= $(this),
 			wrap 	= $(this).siblings('.post-wrap');
-			
 
-		if ($this.hasClass('cat-expand')) {					// if collapsed, expand
-			$this.closest('.cat').toggleClass('expanded');	// category is expanded
-			$this.toggleClass('cat-expand');				// remove cat-ex
-			wrap.toggleClass('post-wrap-collapsed');
-			wrap.find('.current').slideDown();
-			wrap.find('.lazy').trigger('loadSet');
-			layout.addArticleView('.footer-actions-wrap');
-		} else {											// if expanded, collapsed
-			$this.closest('.cat').toggleClass('expanded');
-			wrap.find('.post').slideUp();
-			$this.toggleClass('cat-expand');
-			setTimeout (function(){
-				wrap.toggleClass('post-wrap-collapsed')
-			}, 300);
-			layout.removeArticleView('.footer-actions-wrap');
-		}
+			if ($this.closest('.cat').hasClass('expanded')) {
+				site.hideCat();
+			} else {
+				site.showCat;
+			}			
 	});
 
-	$('.cat-btn-inside').on('click', function() {
-		var $this = $(this);
-
-			$this.closest('.post').slideUp();
-			$this.closest('.cat').find('.cat-btn-outside').addClass('cat-expand');
-			setTimeout (function(){
-				$this.closest('.post-wrap').toggleClass('post-wrap-collapsed')
-			}, 300);
-	});
-
-	// ON NEXT CLICK
 
 	$('.button-big-post').on('click', function() {
 		var post = $(this).closest('.post');
 
 			// $(this).closest('.post').hide();
 			
-		if ($(this).hasClass('post-prev')) {
-			if (post.data('index') === 1) {
-				return;
-			} else {
-				post.hide().removeClass('current');
-				post.prev().show().addClass('current');
-			}
-		} else {
-			if (post.data('index') === 5) {
-				return;
-			} else {
-				post.hide().removeClass('current');
-				post.next().show().addClass('current');
-			}
-		}
 	});
 
 
