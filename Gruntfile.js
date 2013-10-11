@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         'index.html'
       ],
       options: {
-        livereload: true,
+        // livereload: true,
         atBegin: true,
         interrupt: true,
         debounceDelay: 300

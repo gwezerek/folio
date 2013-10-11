@@ -32,7 +32,7 @@
 		function setCurrentPost(dir) {
 			var pos = $(this).data("postIndex");		// needs real targeting
 
-			pos += ( ~~( dir === 'next' ) ? (dir === 'prev') : -1 : 0);
+			// pos += ( ~~( dir === 'next' ) ? (dir === 'prev') : -1 : 0);
 
 			var newPos = ( pos < 0 ) ? postsLength - 1 : pos % postsLength;				
 			// Flesh out if/else not to loop, but to hideCat, set catDir and run setCurrentCat, showCat 
@@ -44,7 +44,7 @@
 		function setCurrentCat() {
 			var pos = $(this).data("catIndex");		// needs real targeting
 		 
-			pos += ( ~~( catDir === 'nextCat' ) ? ( catDir === 'prevCat' ) : -1 : 0 );
+			// pos += ( ~~( catDir === 'nextCat' ) ? ( catDir === 'prevCat' ) : -1 : 0 );
 
 			var newPos = ( pos < 0 ) ? catsLength - 1 : pos % catsLength;
 			$('.cat-list').data("catIndex", newPos)			// needs real targeting
@@ -55,19 +55,21 @@
 		// Combine next two functions with Toggle, move toggleArticleView outside of function?
 
 		function showCat() {
-			var $this = $(this);			
-
-			$this.closest('.cat').addClass('expanded');
-			$this.find('.post').eq(currentCat.data("postIndex")).slideDown();
+			var $this = $(this),
+				currentCat = $('.cat');
+				
+			currentCat.addClass('cat-expanded');
+			$this.find('.post').eq(currentCat.data("postindex")).slideDown();
 			site.addArticleView('.footer-actions-wrap');
 
 			catList.data("postIndex", $.inArray(cats, currentCat));			
 		}
 
 		function hideCat() {
-			var $this = $(this);
+			var $this = $(this),
+				currentCat = $('.cat');
 				
-			$this.closest('.cat').removeClass('expanded');
+			currentCat.removeClass('cat-expanded');
 			$this.find('.post').eq(currentCat.data("postIndex")).slideUp();
 			site.removeArticleView('.footer-actions-wrap');
 		}				
@@ -101,11 +103,11 @@
 		var $this 	= $(this),
 			wrap 	= $(this).siblings('.post-wrap');
 
-			if ($this.closest('.cat').hasClass('expanded')) {
+			if ($this.closest('.cat').hasClass('cat-expanded')) {
 				site.hideCat();
 			} else {
-				site.showCat;
-			}			
+				site.showCat();
+			}	
 	});
 
 
@@ -120,11 +122,11 @@
 	// MISC FUNCTIONS
 
 	// Lazy Load
-	$(function() {          
-	    $('.lazy').lazyload({
-	        event : "loadSet"
-	    });
-	});
+	// $(function() {          
+	//     $('.lazy').lazyload({
+	//         event : "loadSet"
+	//     });
+	// });
 
 	// fastclick. No need for double-taps on the page
 	if( $('html').hasClass('touch') ){

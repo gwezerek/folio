@@ -19,8 +19,5 @@
     "jquery": "~2.0.3",
     "history.js": "~1.8.0",
     "enquire": "~2.1.0"
-  },
-  "resolutions": {
-    "jquery": "~2.0.3"
   }
 }

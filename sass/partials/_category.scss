@@ -23,6 +23,25 @@
 	}			
 }
 
+// Could nest above, breaking out for clarity
+.cat-expanded {
+	.cat-btn {
+		@include rotate(0deg);
+		color: $accent-50;
+	}
+	.post-wrap {
+		padding: 20px 0 20px 15px;
+		border-width: 1px 0 1px 1px;
+		border-color: $accent;
+		@media (min-width: $medium) { 
+			display: block;
+		}			
+	}
+	.post {
+		display: block;
+	}
+}
+
 .cat-name {
 	margin-bottom: 10px;
 	color: $accent-50;
@@ -70,22 +89,11 @@
 	bottom: 2px;
 }
 
-.cat-expand {
-	@include rotate(0deg);
-	color: $accent-50;
-}
-
 .post-wrap {
 	margin-bottom: 40px; 
-	padding: 20px 0 20px 15px;
-	border: solid $accent;
-	border-width: 1px 0 1px 1px;
-}
-
-.post-wrap-collapsed {
+	border: solid $accent-50;
+	border-width: 0px 0 1px 0px;
 	padding: 0;
-	border-width: 0 0 1px 0;
-	border-color: $accent-50;
 	@media (min-width: $medium) { 
 		display: none;
 	}		
@@ -93,9 +101,6 @@
 
 .post {
 	position: relative;
-}
-
-.post-collapsed {
 	display: none;
 }
 
@@ -113,16 +118,10 @@
 	border-bottom: 1px solid $accent;
 }
 
-.post-txt-label {
-}
-
 .post-txt-index {
 	position: absolute;
 	bottom: -1px;
 	display: inline;
-}
-
-.post-txt-index-label {
 }
 
 .post-nav-mod {
