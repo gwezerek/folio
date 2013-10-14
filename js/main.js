@@ -5,16 +5,15 @@ var FOLIO = (function($) {
 	'use strict';
 
 	var myFolio = {
-		init: function() {
-			console.log('hi');
-		},
+
 		catList: $('.cat-list'),
 		cats: $('.cat'),
+		catLength: FOLIO.getCatLength,
 		postsLength: 5,					
 		currentPost: 0,
 		currentCat: 0,
 
-		getCatLegth: function() {
+		getCatLength: function() {
 			return (myFolio.cats.length);
 		},
 		addGrid: function(selector) {
@@ -97,8 +96,6 @@ var FOLIO = (function($) {
 
 		}
 	};
-
-	console.log(myFolio.getCatLegth());
 
 	return myFolio;
 
