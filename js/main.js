@@ -1,142 +1,135 @@
 	
 
-;(function($) {
+var FOLIO = (function($) {
+	
+	'use strict';
 
+	var myFolio = {
+		init: function() {
+			console.log('hi');
+		},
+		catList: $('.cat-list'),
+		cats: $('.cat'),
+		postsLength: 5,					
+		currentPost: 0,
+		currentCat: 0,
 
-	var site = (function() {
-
-		var catList = $('.cat-list'),
-			cats = catList.find('.cat'),
-			catsLength = cats.length,
-			postsLength = 5,					
-			currentPost = 0,
-			currentCat = 0;
-
-
-		function addGrid(selector) {
+		getCatLegth: function() {
+			return (myFolio.cats.length);
+		},
+		addGrid: function(selector) {
 			$(selector).addClass('grid');
-		}
+		},
 
-		function removeGrid(selector) {
+		removeGrid: function(selector) {
 			$(selector).removeClass('grid');
-		}
+		},
 
-		function addArticleView(selector) {
+		addArticleView: function(selector) {
 			$(selector).addClass('article-view');
-		}
+		},
 
-		function removeArticleView(selector) {
+		removeArticleView: function(selector) {
 			$(selector).removeClass('article-view');
-		}
+		},
 
-		function setCurrentPost(dir) {
-			var pos = $(this).data("postIndex");		// needs real targeting
+		setCurrentPost: function(dir) {
+			var pos = $(this).data('postIndex'),		// needs real targeting
+				newPos = '';
 
-			// pos += ( ~~( dir === 'next' ) ? (dir === 'prev') : -1 : 0);
+			pos += ( ~~( dir === 'next' ) ? (dir === 'prev') : -1);
 
-			var newPos = ( pos < 0 ) ? postsLength - 1 : pos % postsLength;				
-			// Flesh out if/else not to loop, but to hideCat, set catDir and run setCurrentCat, showCat 
-			$(cat).data("postIndex", newPos)			// needs real targeting
+			newPos = ( pos < 0 ) ? postsLength - 1 : pos % postsLength;				
+			// Flesh out if/else not to loop, but to hideCat, set catDir and run setCurrentCat, showCat
+
+			console.log(newPos); 
+			$(cat).data('postIndex', newPos);			// needs real targeting
 
 			return pos;
-		}
+		},
 
-		function setCurrentCat() {
-			var pos = $(this).data("catIndex");		// needs real targeting
+		setCurrentCat: function() {
+			var pos = $(this).data('catIndex');		// needs real targeting
 		 
-			// pos += ( ~~( catDir === 'nextCat' ) ? ( catDir === 'prevCat' ) : -1 : 0 );
+			pos += ( ~~( catDir === 'nextCat' ) ? ( catDir === 'prevCat' ) : -1);
 
 			var newPos = ( pos < 0 ) ? catsLength - 1 : pos % catsLength;
-			$('.cat-list').data("catIndex", newPos)			// needs real targeting
+			$('.cat-list').data('catIndex', newPos);			// needs real targeting
 
 			return pos;
-		}
+		},
+
+		postNav: function() {
+			myFolio.setCurrentPost( $(this).data('dir') );
+			oldPost.hide();	
+			newPost.show();
+		},
 
 		// Combine next two functions with Toggle, move toggleArticleView outside of function?
 
-		function showCat() {
+		showCat: function() {
 			var $this = $(this),
 				currentCat = $('.cat');
 				
 			currentCat.addClass('cat-expanded');
-			$this.find('.post').eq(currentCat.data("postindex")).slideDown();
-			site.addArticleView('.footer-actions-wrap');
+			$this.find('.post').eq(currentCat.data('postindex')).slideDown();
+			myFolio.addArticleView('.footer-actions-wrap');
 
-			catList.data("postIndex", $.inArray(cats, currentCat));			
-		}
+			myFolio.catList.data('postIndex', $.inArray(myFolio.cats, currentCat));			
+		},
 
-		function hideCat() {
+		hideCat: function() {
 			var $this = $(this),
 				currentCat = $('.cat');
 				
 			currentCat.removeClass('cat-expanded');
-			$this.find('.post').eq(currentCat.data("postIndex")).slideUp();
-			site.removeArticleView('.footer-actions-wrap');
-		}				
+			$this.find('.post').eq(currentCat.data('postIndex')).slideUp();
+			myFolio.removeArticleView('.footer-actions-wrap');
+		},
 
-		function postNav() {
-			var $this = $(this);
+		toggleCat: function() {
 
-			site.setCurrentPost( $(this).data('dir') );
-			oldPost.hide();	
-			newPost.show();
-
-		}					
-
-		return {
-			addGrid: addGrid,
-			removeGrid: removeGrid,
-			addArticleView: addArticleView,
-			removeArticleView: removeArticleView,
-			setCurrentPost: setCurrentPost,
-			setCurrentCat: setCurrentCat,
-			hideCat: hideCat,
-			showCat: showCat,
-			postNav: postNav
-		};
-
-	})();
-
-
-
-	$('.cat-btn').on('click', function() {
-		var $this 	= $(this),
-			wrap 	= $(this).siblings('.post-wrap');
-
-			if ($this.closest('.cat').hasClass('cat-expanded')) {
-				site.hideCat();
+			if ($(this).closest('.cat').hasClass('cat-expanded')) {
+				myFolio.hideCat();
 			} else {
-				site.showCat();
-			}	
-	});
+				myFolio.showCat();
+			}			
+
+		}
+	};
+
+	console.log(myFolio.getCatLegth());
+
+	return myFolio;
+
+}(jQuery));
+
+	//
+	// HANDLERS
+	//
+
+	// $('.cat-btn').on('click', myFolio.toggleCat());
 
 
-	$('.button-big-post').on('click', function() {
-		var post = $(this).closest('.post');
-
-			// $(this).closest('.post').hide();
-			
-	});
+	// $('.button-big-post').on('click', function() {
+	// 		$(this).closest('.post').hide();
+	// });
 
 
 	// MISC FUNCTIONS
 
 	// Lazy Load
-	// $(function() {          
-	//     $('.lazy').lazyload({
-	//         event : "loadSet"
-	//     });
+	// $(function() {
+	// 	$('.lazy').lazyload({
+	// 		event : 'loadSet'
+	// 	});
 	// });
 
 	// fastclick. No need for double-taps on the page
-	if( $('html').hasClass('touch') ){
-		window.addEventListener('load', function() {
-		    FastClick.attach(document.body);
-		}, false);
-	}
-
-
-})(jQuery);
-
+	// if( $('html').hasClass('touch') ){
+	// 	window.addEventListener('load', function() {
+	// 		FastClick.attach(document.body);
+	// 	}, false);
+	// }
 
 
