@@ -8,7 +8,6 @@ var FOLIO = (function($) {
 
 		catList: $('.cat-list'),
 		cats: $('.cat'),
-		catLength: FOLIO.getCatLength,
 		postsLength: 5,					
 		currentPost: 0,
 		currentCat: 0,
@@ -38,7 +37,7 @@ var FOLIO = (function($) {
 
 			pos += ( ~~( dir === 'next' ) ? (dir === 'prev') : -1);
 
-			newPos = ( pos < 0 ) ? postsLength - 1 : pos % postsLength;				
+			// newPos = ( pos < 0 ) ? 5 - 1 : pos % 5);				
 			// Flesh out if/else not to loop, but to hideCat, set catDir and run setCurrentCat, showCat
 
 			console.log(newPos); 
@@ -48,11 +47,12 @@ var FOLIO = (function($) {
 		},
 
 		setCurrentCat: function() {
-			var pos = $(this).data('catIndex');		// needs real targeting
+			var pos = $(this).data('catIndex'),		// needs real targeting
+				catsLength = myFolio.getCatLength();
 		 
 			pos += ( ~~( catDir === 'nextCat' ) ? ( catDir === 'prevCat' ) : -1);
 
-			var newPos = ( pos < 0 ) ? catsLength - 1 : pos % catsLength;
+			// var newPos = ( pos < 0 ) ? catsLength - 1 : pos % catsLength);
 			$('.cat-list').data('catIndex', newPos);			// needs real targeting
 
 			return pos;
@@ -68,7 +68,8 @@ var FOLIO = (function($) {
 
 		showCat: function() {
 			var $this = $(this),
-				currentCat = $('.cat');
+				currentCat = $this.closest('.cat');
+				console.log(this);
 				
 			currentCat.addClass('cat-expanded');
 			$this.find('.post').eq(currentCat.data('postindex')).slideDown();
@@ -97,20 +98,24 @@ var FOLIO = (function($) {
 		}
 	};
 
-	return myFolio;
-
-}(jQuery));
-
 	//
 	// HANDLERS
 	//
 
-	// $('.cat-btn').on('click', myFolio.toggleCat());
 
+	$('.cat-btn').on('click', function() {
+		FOLIO.toggleCat();
+	});
 
 	// $('.button-big-post').on('click', function() {
 	// 		$(this).closest('.post').hide();
 	// });
+
+	return myFolio;
+
+}(jQuery));
+
+
 
 
 	// MISC FUNCTIONS

@@ -43,6 +43,6 @@ On expand, find first category with active class, run post collapse
 Thoughts
 User module pattern for overall functions
 Use constructor to create category object to hold current post
-Need to combine constructor with module
 
-For cats.length create new Cat
+Assign each 
+
