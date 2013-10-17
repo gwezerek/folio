@@ -1,6 +1,6 @@
 	
 
-(function($) {
+var MODULE = (function($) {
 	
 	'use strict';
 
@@ -29,5 +29,7 @@
 	// $('.cat-btn').on('click', function() {
 	// 	FOLIO.toggleCat();
 	// });
+
+	return module;
 
 }(jQuery));

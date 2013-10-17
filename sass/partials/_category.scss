@@ -6,9 +6,7 @@
 
 .cat {
 	position: relative;
-	&.expanded > .cat-name {
-		color: $accent;
-	}
+
 	@media (min-width: $medium) { 
 		display: table;
 		height: 160px;
@@ -25,11 +23,14 @@
 
 // Could nest above, breaking out for clarity
 .cat-expanded {
-	.cat-btn {
+	> .cat-btn {
 		@include rotate(0deg);
-		color: $accent-50;
+		color: $accent;
 	}
-	.post-wrap {
+	> .cat-name {
+		color: $accent;
+	}
+	> .post-wrap {
 		padding: 20px 0 20px 15px;
 		border-width: 1px 0 1px 1px;
 		border-color: $accent;
@@ -38,7 +39,7 @@
 		}			
 	}
 	.post {
-		display: block;
+		// display: block;
 	}
 }
 
@@ -69,12 +70,12 @@
 
 }
 
-
 .cat-btn {
 	@include rotate(180deg);
 	@include trans(.2s, transform, ease-in);
 	position: absolute;
 	right: 0;
+	color: $accent-50;
 	@media (min-width: $medium) { 
 		display: none;
 	}	
@@ -90,10 +91,10 @@
 }
 
 .post-wrap {
-	margin-bottom: 40px; 
+	margin-bottom: 40px;
+	padding: 0; 
 	border: solid $accent-50;
 	border-width: 0px 0 1px 0px;
-	padding: 0;
 	@media (min-width: $medium) { 
 		display: none;
 	}		

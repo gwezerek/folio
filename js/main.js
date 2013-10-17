@@ -1,4 +1,8 @@
-	
+
+
+// Definitely a work in progress. Functions here are tightly coupled
+// and scope inelegance means I'm passing $(this) as an arg a lot	
+
 
 var FOLIO = (function($) {
 	
@@ -31,17 +35,19 @@ var FOLIO = (function($) {
 			$(selector).removeClass('article-view');
 		},
 
-		setCurrentPost: function(dir) {
-			var pos = $(this).data('postIndex'),		// needs real targeting
-				newPos = '';
+		setCurrentPost: function(dir, e) {
+			var cat = e.closest('.cat'),
+				dir = e.data('dir'),
+				pos = cat.data('postindex'),		
+				newPos = "0";
 
-			pos += ( ~~( dir === 'next' ) ? (dir === 'prev') : -1);
+			pos += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
 
-			// newPos = ( pos < 0 ) ? 5 - 1 : pos % 5);				
+			// newPos += (( pos < 0 ) ? 4 : 0));
 			// Flesh out if/else not to loop, but to hideCat, set catDir and run setCurrentCat, showCat
 
-			console.log(newPos); 
-			$(cat).data('postIndex', newPos);			// needs real targeting
+			cat.data('postindex', pos);			
+			console.log(pos); 
 
 			return pos;
 		},
@@ -58,41 +64,40 @@ var FOLIO = (function($) {
 			return pos;
 		},
 
-		postNav: function() {
-			myFolio.setCurrentPost( $(this).data('dir') );
-			oldPost.hide();	
-			newPost.show();
+		postNav: function(e) {
+			myFolio.setCurrentPost( e.data('dir'), e );
+			// oldPost.hide();	
+			// newPost.show();
 		},
 
-		// Combine next two functions with Toggle, move toggleArticleView outside of function?
+		// I shouldn't be using e here, proper scope would fix this
 
-		showCat: function() {
-			var $this = $(this),
-				currentCat = $this.closest('.cat');
-				console.log(this);
+		showCat: function(e) {
+			var currentCat = e.closest('.cat');
 				
 			currentCat.addClass('cat-expanded');
-			$this.find('.post').eq(currentCat.data('postindex')).slideDown();
+			currentCat.find('.post').eq(currentCat.data('postindex')).slideDown();
 			myFolio.addArticleView('.footer-actions-wrap');
 
 			myFolio.catList.data('postIndex', $.inArray(myFolio.cats, currentCat));			
 		},
 
-		hideCat: function() {
-			var $this = $(this),
-				currentCat = $('.cat');
-				
-			currentCat.removeClass('cat-expanded');
-			$this.find('.post').eq(currentCat.data('postIndex')).slideUp();
+		hideCat: function(e) {
+			var currentCat = e.closest('.cat');
+
+
+			currentCat.removeClass('cat-expanded')
+			currentCat.find('.post').eq(currentCat.data('postindex')).hide()
+
 			myFolio.removeArticleView('.footer-actions-wrap');
 		},
 
-		toggleCat: function() {
+		toggleCat: function(e) {
 
-			if ($(this).closest('.cat').hasClass('cat-expanded')) {
-				myFolio.hideCat();
+			if (e.closest('.cat').hasClass('cat-expanded')) {
+				myFolio.hideCat(e);
 			} else {
-				myFolio.showCat();
+				myFolio.showCat(e);
 			}			
 
 		}
@@ -104,12 +109,12 @@ var FOLIO = (function($) {
 
 
 	$('.cat-btn').on('click', function() {
-		FOLIO.toggleCat();
+		myFolio.toggleCat($(this));
 	});
 
-	// $('.button-big-post').on('click', function() {
-	// 		$(this).closest('.post').hide();
-	// });
+	$('.button-big-post').on('click', function() {
+		myFolio.postNav($(this));
+	});
 
 	return myFolio;
 
