@@ -52,6 +52,9 @@ var FOLIO = (function($) {
 			if (pos < 0) {
 				newPos = postLength - 1;
 				newCatIndex = myFolio.setCurrentCat(e);
+			} else if (pos === postLength) {
+				newPos = 0;
+				newCatIndex = myFolio.setCurrentCat(e);
 			} else {
 				newPos = pos % postLength;
 			}
@@ -112,7 +115,7 @@ var FOLIO = (function($) {
 			myFolio.posts.hide();
 		},
 
-		toggleCat: function(e, selector) {
+		toggleCat: function(selector) {
 
 			if (selector.hasClass('cat-expanded')) {
 				myFolio.hideCat(selector);
@@ -134,7 +137,7 @@ var FOLIO = (function($) {
 	$('.cat-btn').on('click', function() {
 		var $this = $(this);
 
-		myFolio.toggleCat($this, $this.closest('.cat'));
+		myFolio.toggleCat($this.closest('.cat'));
 
 	});
 
