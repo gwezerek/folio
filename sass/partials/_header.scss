@@ -20,8 +20,8 @@
 	@media (min-width: $medium) {
 		position: absolute;
 		bottom: 0;
-		margin-bottom: -15px;
-		width: 106.5%;
+		margin: -3px 0 -15px 0;
+		width: 100%;
 		color: transparent;
 		pointer-events: none;
 	}
@@ -32,9 +32,10 @@
 	top: 30px;
 	right: 5.5%;
 	@media (min-width: $medium) {
-		bottom: -35px;
-		top: auto;
-		right: 0;
+		display: none;
+		// bottom: -35px;
+		// top: auto;
+		// right: 0;
 	}	
 }
 
