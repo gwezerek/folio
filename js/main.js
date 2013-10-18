@@ -12,12 +12,16 @@ var FOLIO = (function($) {
 
 		catList: $('.cat-list'),
 		cats: $('.cat'),
+		posts: $('.post'),
 		postsLength: 5,					
 		currentPost: 0,
 		currentCat: 0,
 
 		getCatLength: function() {
 			return (myFolio.cats.length);
+		},
+		getPostsLength: function() {
+			return (myFolio.cats.first().find('.post').length);
 		},
 		addGrid: function(selector) {
 			$(selector).addClass('grid');
@@ -37,70 +41,86 @@ var FOLIO = (function($) {
 
 		setCurrentPost: function(dir, e) {
 			var currentCat = e.closest('.cat'),
+				postLength = myFolio.getPostsLength(),
 				dir = e.data('dir'),
-				pos = currentCat.data('postindex'),		
+				pos = currentCat.data('postindex'),
+				newCatIndex = '',		
 				newPos = '';
 
 			pos += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
 
-			newPos = ( pos < 0 ? myFolio.postsLength - 1 : pos % myFolio.postsLength);				
-			// Flesh out if/else not to loop, but to hideCat, set catDir and run setCurrentCat, showCat
+			if (pos < 0) {
+				newPos = postLength - 1;
+				newCatIndex = myFolio.setCurrentCat(e);
+			} else {
+				newPos = pos % postLength;
+			}
 
 			currentCat.data('postindex', newPos);			
 
-			return newPos;
+			return [newPos, newCatIndex];
 		},
 
-		setCurrentCat: function() {
-			var pos = $(this).data('catIndex'),		// needs real targeting
-				catsLength = myFolio.getCatLength();
+		setCurrentCat: function(e) {
+			var catsLength = myFolio.getCatLength(),
+				catList = e.closest('.cat-list'),
+				dir = e.data('dir'),		
+				catIndex = catList.data('catindex'),
+				newCatIndex = '';
 		 
-			pos += ( ~~( catDir === 'nextCat' ) ? ( catDir === 'prevCat' ) : -1);
+			catIndex += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
+			newCatIndex = ( catIndex < 0 ? catsLength - 1 : catIndex % catsLength);	
 
-			// var newPos = ( pos < 0 ) ? catsLength - 1 : pos % catsLength);
-			$('.cat-list').data('catIndex', newPos);			// needs real targeting
+			catList.data('catindex', newCatIndex);
 
-			return pos;
+			return newCatIndex;
 		},
 
 		postNav: function(e) {
 			var currentCat = e.closest('.cat'),
 				oldPos = currentCat.data('postindex'),
-				newPos = myFolio.setCurrentPost( e.data('dir'), e );
+				newData = myFolio.setCurrentPost( e.data('dir'), e ),
+				newPosition = newData[0],
+				newCatIndex = newData[1];
 
 			currentCat.find('.post').eq(oldPos).slideUp();
-			currentCat.find('.post').eq(newPos).slideDown();
 
-		},
-
-		// I shouldn't be using e here, proper scope would fix this
-
-		showCat: function(e) {
-			var currentCat = e.closest('.cat');
+			if (newCatIndex) {
+				myFolio.hideCat(currentCat);
+				myFolio.cats.eq(newCatIndex).addClass('cat-expanded');
+				myFolio.cats.eq(newCatIndex).find('.post').first().slideDown();
 				
-			currentCat.addClass('cat-expanded');
-			currentCat.find('.post').eq(currentCat.data('postindex')).slideDown();
-			myFolio.addArticleView('.footer-actions-wrap');
+				console.log('hello1');
+				
+				return;
 
-			myFolio.catList.data('postIndex', $.inArray(myFolio.cats, currentCat));			
-		},
-
-		hideCat: function(e) {
-			var currentCat = e.closest('.cat');
-
-
-			currentCat.removeClass('cat-expanded')
-			currentCat.find('.post').eq(currentCat.data('postindex')).hide()
-
-			myFolio.removeArticleView('.footer-actions-wrap');
-		},
-
-		toggleCat: function(e) {
-
-			if (e.closest('.cat').hasClass('cat-expanded')) {
-				myFolio.hideCat(e);
 			} else {
-				myFolio.showCat(e);
+				console.log(currentCat.find('.post'));
+				currentCat.find('.post').eq(newPosition).slideDown();
+			}
+
+		},
+
+		showCat: function(selector) {
+			selector.addClass('cat-expanded');
+			selector.find('.post').eq(selector.data('postindex')).slideDown();
+			myFolio.catList.data('catindex', selector.data('cat') - 1 );			
+		},
+
+		hideCat: function(selector) {
+			selector.removeClass('cat-expanded');
+			myFolio.posts.hide();
+		},
+
+		toggleCat: function(e, selector) {
+
+			if (selector.hasClass('cat-expanded')) {
+				myFolio.hideCat(selector);
+				myFolio.removeArticleView('.footer-actions-wrap');
+			} else {
+				myFolio.hideCat($('.cat'));
+				myFolio.showCat(selector);
+				myFolio.addArticleView('.footer-actions-wrap');
 			}			
 
 		}
@@ -112,8 +132,12 @@ var FOLIO = (function($) {
 
 
 	$('.cat-btn').on('click', function() {
-		myFolio.toggleCat($(this));
+		var $this = $(this);
+
+		myFolio.toggleCat($this, $this.closest('.cat'));
+
 	});
+
 
 	$('.button-big-post').on('click', function() {
 		myFolio.postNav($(this));

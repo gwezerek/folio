@@ -3,16 +3,17 @@ layout: allpages
 ---
 
 <main class="folio-content">
-	<ul class="cat-list grid" data-catIndex="hello">
+	<ul class="cat-list grid" data-catindex="0">
 
 		{% for cat in site.categories %}
-		<li class="cat" data-postindex="0">
+		{% assign ic = forloop.index %}
+		<li class="cat" data-postindex="0" data-cat={{ ic }}>
 			<h2 class="cat-name">{{ cat[0] | capitalize }}</h2>
 			<button class="cat-btn cat-btn-outside cat-expand icon">&#59236;</button>
-			<ul class="post-wrap post-wrap-collapsed" data-index="1">
+			<ul class="post-wrap post-wrap-collapsed">
 				{% for post in cat[1] %}
 				{% assign i = forloop.index %}
-				<li class="post post-collapsed {% if i == 1 %} current {% endif %}" data-index="{{ i }}">
+				<li class="post post-collapsed">
 					<div class="img-top-wrap">
 						<p class="post-txt-client"><span class="post-txt-label">Client:</span> {{ post.client }}</p>
 						<a href="{{ post.url }}">							
