@@ -17,12 +17,16 @@ var FOLIO = (function($) {
 		currentPost: 0,
 		currentCat: 0,
 
+
 		getCatLength: function() {
 			return (myFolio.cats.length);
 		},
-		getPostsLength: function() {
-			return (myFolio.cats.first().find('.post').length);
+		getPostsLength: function(selector) {
+			return (selector.find('.post').length);
 		},
+
+
+
 		addGrid: function(selector) {
 			$(selector).addClass('grid');
 		},
@@ -39,70 +43,7 @@ var FOLIO = (function($) {
 			$(selector).removeClass('article-view');
 		},
 
-		setCurrentPost: function(dir, e) {
-			var currentCat = e.closest('.cat'),
-				postLength = myFolio.getPostsLength(),
-				dir = e.data('dir'),
-				pos = currentCat.data('postindex'),
-				newCatIndex = '',		
-				newPos = '';
 
-			pos += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
-
-			if (pos < 0) {
-				newPos = postLength - 1;
-				newCatIndex = myFolio.setCurrentCat(e);
-			} else if (pos === postLength) {
-				newPos = 0;
-				newCatIndex = myFolio.setCurrentCat(e);
-			} else {
-				newPos = pos % postLength;
-			}
-
-			currentCat.data('postindex', newPos);			
-
-			return [newPos, newCatIndex];
-		},
-
-		setCurrentCat: function(e) {
-			var catsLength = myFolio.getCatLength(),
-				catList = e.closest('.cat-list'),
-				dir = e.data('dir'),		
-				catIndex = catList.data('catindex'),
-				newCatIndex = '';
-		 
-			catIndex += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
-			newCatIndex = ( catIndex < 0 ? catsLength - 1 : catIndex % catsLength);	
-
-			catList.data('catindex', newCatIndex);
-
-			return newCatIndex;
-		},
-
-		postNav: function(e) {
-			var currentCat = e.closest('.cat'),
-				oldPos = currentCat.data('postindex'),
-				newData = myFolio.setCurrentPost( e.data('dir'), e ),
-				newPosition = newData[0],
-				newCatIndex = newData[1];
-
-			currentCat.find('.post').eq(oldPos).slideUp();
-
-			if (newCatIndex) {
-				myFolio.hideCat(currentCat);
-				myFolio.cats.eq(newCatIndex).addClass('cat-expanded');
-				myFolio.cats.eq(newCatIndex).find('.post').first().slideDown();
-				
-				console.log('hello1');
-				
-				return;
-
-			} else {
-				console.log(currentCat.find('.post'));
-				currentCat.find('.post').eq(newPosition).slideDown();
-			}
-
-		},
 
 		showCat: function(selector) {
 			selector.addClass('cat-expanded');
@@ -126,7 +67,69 @@ var FOLIO = (function($) {
 				myFolio.addArticleView('.footer-actions-wrap');
 			}			
 
+		},
+
+
+
+		postNav: function(e) {
+			var oldCat = e.closest('.cat'),
+				oldPos = oldCat.data('postindex'),
+				newData = myFolio.setCurrentPost( e.data('dir'), e ),
+				newPos = newData[0],
+				newCat = newData[1];
+
+				console.log(oldCat);
+				console.log(newCat);
+
+			oldCat.find('.post').eq(oldPos).slideUp();
+
+			if (newCat) {
+				myFolio.hideCat(oldCat);
+				myFolio.cats.eq(newCat).addClass('cat-expanded');
+				myFolio.cats.eq(newCat).find('.post').first().slideDown();							
+			} else {
+				oldCat.find('.post').eq(newPos).slideDown();
+			}
+
+		},				
+
+		setCurrentPost: function(dir, e) {
+			var currentCat = e.closest('.cat'),
+				postLength = myFolio.getPostsLength(currentCat),
+				dir = e.data('dir'),
+				pos = currentCat.data('postindex'),
+				newCatIndex = '',		
+				newPos = '';
+
+			pos += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
+
+			if (pos < 0) {
+				newPos = postLength - 1;
+				newCatIndex = myFolio.setCurrentCat(e);
+			} else if (pos === postLength) {
+				newPos = 0;
+				newCatIndex = myFolio.setCurrentCat(e);
+			} else {
+				newPos = pos % postLength;
+			}
+
+			currentCat.data('postindex', newPos);			
+			return [newPos, newCatIndex];
+		},
+
+		setCurrentCat: function(e) {
+			var catsLength = myFolio.getCatLength(),
+				catList = e.closest('.cat-list'),
+				dir = e.data('dir'),		
+				catIndex = catList.data('catindex'),
+				newCatIndex = '';
+		 
+			catIndex += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
+			newCatIndex = ( catIndex < 0 ? catsLength - 1 : catIndex % catsLength);	
+			catList.data('catindex', newCatIndex);
+			return newCatIndex;
 		}
+
 	};
 
 	//
