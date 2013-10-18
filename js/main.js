@@ -36,20 +36,19 @@ var FOLIO = (function($) {
 		},
 
 		setCurrentPost: function(dir, e) {
-			var cat = e.closest('.cat'),
+			var currentCat = e.closest('.cat'),
 				dir = e.data('dir'),
-				pos = cat.data('postindex'),		
-				newPos = "0";
+				pos = currentCat.data('postindex'),		
+				newPos = '';
 
 			pos += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
 
-			// newPos += (( pos < 0 ) ? 4 : 0));
+			newPos = ( pos < 0 ? myFolio.postsLength - 1 : pos % myFolio.postsLength);				
 			// Flesh out if/else not to loop, but to hideCat, set catDir and run setCurrentCat, showCat
 
-			cat.data('postindex', pos);			
-			console.log(pos); 
+			currentCat.data('postindex', newPos);			
 
-			return pos;
+			return newPos;
 		},
 
 		setCurrentCat: function() {
@@ -65,9 +64,13 @@ var FOLIO = (function($) {
 		},
 
 		postNav: function(e) {
-			myFolio.setCurrentPost( e.data('dir'), e );
-			// oldPost.hide();	
-			// newPost.show();
+			var currentCat = e.closest('.cat'),
+				oldPos = currentCat.data('postindex'),
+				newPos = myFolio.setCurrentPost( e.data('dir'), e );
+
+			currentCat.find('.post').eq(oldPos).slideUp();
+			currentCat.find('.post').eq(newPos).slideDown();
+
 		},
 
 		// I shouldn't be using e here, proper scope would fix this
