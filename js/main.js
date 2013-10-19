@@ -93,26 +93,20 @@ var FOLIO = (function($) {
 				dir = e.data('dir'),
 				pos = currentCat.data('postindex'),
 				newCatIndex = '',
-				oldPos = '',		
 				newPos = '';
 
 			pos += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
 
 			if (pos < 0) {
 
-				oldPos = 0;
-
-				currentCat.data('postindex', oldPos);
 				newCatIndex = myFolio.setCurrentCat(e);
 				newPos = postLength - 1;
-				myFolio.cats.eq(newCatIndex).data('postindex', newPos)
+				myFolio.cats.eq(newCatIndex).data('postindex', newPos);
 
 			} else if (pos === postLength) {
 
-				newPos = 0;
-
 				newCatIndex = myFolio.setCurrentCat(e);
-				myFolio.cats.eq(newCatIndex).data('postindex', newPos)
+				myFolio.cats.eq(newCatIndex).data('postindex', 0);
 				
 			} else {
 
