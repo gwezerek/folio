@@ -13,9 +13,6 @@ var FOLIO = (function($) {
 		catList: $('.cat-list'),
 		cats: $('.cat'),
 		posts: $('.post'),
-		postsLength: 5,					
-		currentPost: 0,
-		currentCat: 0,
 
 
 		getCatLength: function() {
@@ -78,15 +75,12 @@ var FOLIO = (function($) {
 				newPos = newData[0],
 				newCat = newData[1];
 
-				console.log(oldCat);
-				console.log(newCat);
-
 			oldCat.find('.post').eq(oldPos).slideUp();
 
-			if (newCat) {
+			if (newCat === 0 || newCat) {
 				myFolio.hideCat(oldCat);
 				myFolio.cats.eq(newCat).addClass('cat-expanded');
-				myFolio.cats.eq(newCat).find('.post').first().slideDown();							
+				myFolio.cats.eq(newCat).find('.post').eq(newPos).slideDown();							
 			} else {
 				oldCat.find('.post').eq(newPos).slideDown();
 			}
@@ -95,25 +89,38 @@ var FOLIO = (function($) {
 
 		setCurrentPost: function(dir, e) {
 			var currentCat = e.closest('.cat'),
-				postLength = myFolio.getPostsLength(currentCat),
+				postLength = myFolio.getPostsLength(currentCat),	// defaults as 0
 				dir = e.data('dir'),
 				pos = currentCat.data('postindex'),
-				newCatIndex = '',		
+				newCatIndex = '',
+				oldPos = '',		
 				newPos = '';
 
 			pos += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
 
 			if (pos < 0) {
+
+				oldPos = 0;
+
+				currentCat.data('postindex', oldPos);
+				newCatIndex = myFolio.setCurrentCat(e);
 				newPos = postLength - 1;
-				newCatIndex = myFolio.setCurrentCat(e);
+				myFolio.cats.eq(newCatIndex).data('postindex', newPos)
+
 			} else if (pos === postLength) {
+
 				newPos = 0;
+
 				newCatIndex = myFolio.setCurrentCat(e);
+				myFolio.cats.eq(newCatIndex).data('postindex', newPos)
+				
 			} else {
+
 				newPos = pos % postLength;
+				currentCat.data('postindex', newPos);
+
 			}
 
-			currentCat.data('postindex', newPos);			
 			return [newPos, newCatIndex];
 		},
 
