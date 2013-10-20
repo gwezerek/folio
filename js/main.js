@@ -45,7 +45,8 @@ var FOLIO = (function($) {
 		showCat: function(selector) {
 			selector.addClass('cat-expanded');
 			selector.find('.post').eq(selector.data('postindex')).slideDown();
-			myFolio.catList.data('catindex', selector.data('cat') - 1 );			
+			myFolio.catList.data('catindex', selector.data('cat') - 1 );
+			selector.find('.lazy').trigger('loadSet');			
 		},
 
 		hideCat: function(selector) {
@@ -73,14 +74,16 @@ var FOLIO = (function($) {
 				oldPos = oldCat.data('postindex'),
 				newData = myFolio.setCurrentPost( e.data('dir'), e ),
 				newPos = newData[0],
-				newCat = newData[1];
+				newCatIndex = newData[1],
+				newCat = myFolio.cats.eq(newCatIndex);
 
 			oldCat.find('.post').eq(oldPos).slideUp();
 
-			if (newCat === 0 || newCat) {
+			if (newCatIndex === 0 || newCatIndex) {
 				myFolio.hideCat(oldCat);
-				myFolio.cats.eq(newCat).addClass('cat-expanded');
-				myFolio.cats.eq(newCat).find('.post').eq(newPos).slideDown();							
+				newCat.find('.lazy').trigger('loadSet');			
+				newCat.addClass('cat-expanded');
+				newCat.find('.post').eq(newPos).slideDown();							
 			} else {
 				oldCat.find('.post').eq(newPos).slideDown();
 			}
@@ -98,21 +101,15 @@ var FOLIO = (function($) {
 			pos += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
 
 			if (pos < 0) {
-
 				newCatIndex = myFolio.setCurrentCat(e);
 				newPos = postLength - 1;
 				myFolio.cats.eq(newCatIndex).data('postindex', newPos);
-
 			} else if (pos === postLength) {
-
 				newCatIndex = myFolio.setCurrentCat(e);
-				myFolio.cats.eq(newCatIndex).data('postindex', 0);
-				
+				myFolio.cats.eq(newCatIndex).data('postindex', 0);	
 			} else {
-
 				newPos = pos % postLength;
 				currentCat.data('postindex', newPos);
-
 			}
 
 			return [newPos, newCatIndex];
@@ -142,7 +139,6 @@ var FOLIO = (function($) {
 		var $this = $(this);
 
 		myFolio.toggleCat($this.closest('.cat'));
-
 	});
 
 
@@ -155,16 +151,14 @@ var FOLIO = (function($) {
 }(jQuery));
 
 
-
-
 	// MISC FUNCTIONS
 
 	// Lazy Load
-	// $(function() {
-	// 	$('.lazy').lazyload({
-	// 		event : 'loadSet'
-	// 	});
-	// });
+	$(function() {
+		$('.lazy').lazyload({
+			event : 'loadSet'
+		});
+	});
 
 	// fastclick. No need for double-taps on the page
 	// if( $('html').hasClass('touch') ){
