@@ -44,14 +44,14 @@ var FOLIO = (function($) {
 
 		showCat: function(selector) {
 			selector.addClass('cat-expanded');
-			selector.find('.post').eq(selector.data('postindex')).show();
+			selector.find('.post').eq(selector.data('postindex')).addClass('post-expanded');
 			myFolio.catList.data('catindex', selector.data('cat') - 1 );
 			selector.find('.lazy').trigger('loadSet');			
 		},
 
 		hideCat: function(selector) {
 			selector.removeClass('cat-expanded');
-			myFolio.posts.hide();
+			myFolio.posts.removeClass('.post-expanded');
 		},
 
 		toggleCat: function(selector) {
@@ -77,15 +77,15 @@ var FOLIO = (function($) {
 				newCatIndex = newData[1],
 				newCat = myFolio.cats.eq(newCatIndex);
 
-			oldCat.find('.post').eq(oldPos).hide();
+			oldCat.find('.post').eq(oldPos).removeClass('post-expanded');
 
 			if (newCatIndex === 0 || newCatIndex) {
 				myFolio.hideCat(oldCat);
 				newCat.find('.lazy').trigger('loadSet');			
 				newCat.addClass('cat-expanded');
-				newCat.find('.post').eq(newPos).show();							
+				newCat.find('.post').eq(newPos).addClass('post-expanded');							
 			} else {
-				oldCat.find('.post').eq(newPos).show();
+				oldCat.find('.post').eq(newPos).addClass('post-expanded');
 			}
 
 		},				
@@ -127,6 +127,11 @@ var FOLIO = (function($) {
 			catList.data('catindex', newCatIndex);
 			return newCatIndex;
 		},
+
+		checkImgSize: function() {
+			// $('.cat-expanded').
+		},
+
 
 
 		// enquire.js utilities

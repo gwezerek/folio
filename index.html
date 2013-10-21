@@ -10,10 +10,10 @@ layout: allpages
 		<li class="cat" data-postindex="0" data-cat={{ ic }}>
 			<h2 class="cat-name">{{ cat[0] | capitalize }}</h2>
 			<button class="cat-btn cat-btn-outside cat-expand icon">&#59236;</button>
-			<ul class="post-wrap post-wrap-collapsed">
+			<ul class="post-wrap">
 				{% for post in cat[1] %}
 				{% assign i = forloop.index %}
-				<li class="post post-collapsed">
+				<li class="post">
 					<div class="post-img-wrap">
 						<div class="post-nav-mod">
 							<button class="button-big-post button-big post-prev icon" data-dir="prev" >&#59237;</button>
