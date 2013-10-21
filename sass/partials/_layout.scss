@@ -15,3 +15,18 @@
 		@include media-grid(5, em(40), '.cat');
 	}	
 }
+ 
+.single-view {
+	.grid {
+		@media (min-width: $medium) {
+			@include media-grid(1, 0px, '.cat');
+		}
+		@media (min-width: $large) {
+			@include media-grid(1, 0px, '.cat');
+		}
+		@media (min-width: $x-large) {
+			@include media-grid(1, 0px, '.cat');
+		}
+
+	}	
+}

@@ -32,19 +32,19 @@ var FOLIO = (function($) {
 			$(selector).removeClass('grid');
 		},
 
-		addArticleView: function(selector) {
-			$(selector).addClass('article-view');
+		addSingleView: function(selectors) {
+			$(selectors).addClass('single-view');
 		},
 
-		removeArticleView: function(selector) {
-			$(selector).removeClass('article-view');
+		removeSingleView: function(selectors) {
+			$(selectors).removeClass('single-view');
 		},
 
 
 
 		showCat: function(selector) {
 			selector.addClass('cat-expanded');
-			selector.find('.post').eq(selector.data('postindex')).slideDown();
+			selector.find('.post').eq(selector.data('postindex')).show();
 			myFolio.catList.data('catindex', selector.data('cat') - 1 );
 			selector.find('.lazy').trigger('loadSet');			
 		},
@@ -58,11 +58,11 @@ var FOLIO = (function($) {
 
 			if (selector.hasClass('cat-expanded')) {
 				myFolio.hideCat(selector);
-				myFolio.removeArticleView('.footer-actions-wrap');
+				myFolio.removeSingleView('body');
 			} else {
 				myFolio.hideCat($('.cat'));
 				myFolio.showCat(selector);
-				myFolio.addArticleView('.footer-actions-wrap');
+				myFolio.addSingleView('body');
 			}			
 
 		},
@@ -77,15 +77,15 @@ var FOLIO = (function($) {
 				newCatIndex = newData[1],
 				newCat = myFolio.cats.eq(newCatIndex);
 
-			oldCat.find('.post').eq(oldPos).slideUp();
+			oldCat.find('.post').eq(oldPos).hide();
 
 			if (newCatIndex === 0 || newCatIndex) {
 				myFolio.hideCat(oldCat);
 				newCat.find('.lazy').trigger('loadSet');			
 				newCat.addClass('cat-expanded');
-				newCat.find('.post').eq(newPos).slideDown();							
+				newCat.find('.post').eq(newPos).show();							
 			} else {
-				oldCat.find('.post').eq(newPos).slideDown();
+				oldCat.find('.post').eq(newPos).show();
 			}
 
 		},				
@@ -126,7 +126,27 @@ var FOLIO = (function($) {
 			newCatIndex = ( catIndex < 0 ? catsLength - 1 : catIndex % catsLength);	
 			catList.data('catindex', newCatIndex);
 			return newCatIndex;
+		},
+
+
+		// enquire.js utilities
+
+		mediumEnterMeta: function() {
+			// myFolio.posts.each(function() {
+			// 	var $this = $(this),
+			// 		postTxt = $this.find('.post-txt');
+
+			// 	console.log('heyo');
+			// 	$this.find($('.post-txt-client')).prependTo(postTxt);
+			// 	$this.find($('.post-txt-index')).appendTo(postTxt);
+			// });
+		},
+
+		mediumExitMeta: function() {
+
 		}
+
+
 
 	};
 
@@ -135,10 +155,11 @@ var FOLIO = (function($) {
 	//
 
 
-	$('.cat-btn').on('click', function() {
+	$('.cat-name').on('click', function() {
 		var $this = $(this);
 
 		myFolio.toggleCat($this.closest('.cat'));
+		console.log('ay');
 	});
 
 
@@ -149,6 +170,35 @@ var FOLIO = (function($) {
 	return myFolio;
 
 }(jQuery));
+
+
+	// ENQUIRE FUNCTIONS
+
+	enquire
+	.register("screen and (min-width:600px)", {
+
+		match : function() {
+			FOLIO.mediumEnterMeta();
+			console.log('enter');
+		},    
+
+		unmatch : function() {
+			FOLIO.mediumExitMeta();
+			console.log('exit');			
+		}
+
+	})
+	.register("screen and (min-width:960px)", {
+
+		match : function() {
+			// console.log('meow');
+		},    
+
+		unmatch : function() {
+			// console.log('meoweeee');
+		}
+
+	});
 
 
 	// MISC FUNCTIONS

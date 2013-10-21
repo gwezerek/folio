@@ -14,18 +14,18 @@ layout: allpages
 				{% for post in cat[1] %}
 				{% assign i = forloop.index %}
 				<li class="post post-collapsed">
-					<div class="img-top-wrap">
-						<p class="post-txt-client"><span class="post-txt-label">Client:</span> {{ post.client }}</p>
-						<a href="{{ post.url }}">							
- 							<p class="post-txt-index"><span class="post-txt-index-label">No.</span> {{ i }}</p>
-							</a>
+					<div class="post-img-wrap">
 						<div class="post-nav-mod">
 							<button class="button-big-post button-big post-prev icon" data-dir="prev" >&#59237;</button>
 							<button class="button-big-post button-big post-next icon"data-dir="next">&#59238;</button>
 						</div>
+						<img class="post-img lazy art" src="/img/transparent.gif" data-original="{{ post.image }}">
 					</div>
-					<img class="post-img lazy" src="/img/transparent.gif" data-original="{{ post.image }}">
-					<p class="post-txt-story"> {{ post.story }}</p>
+					<div class="post-txt">
+						<p class="post-txt-client"><span class="post-txt-label">Client:</span> {{ post.client }}</p>				
+						<p class="post-txt-story"> {{ post.story }}</p>
+						<p class="post-txt-index"><span class="post-txt-index-label">No.</span> {{ i }}</p>
+					</div>
 				</div>
 				{% endfor %}
 			</ul>
