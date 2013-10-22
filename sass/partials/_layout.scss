@@ -10,9 +10,6 @@
 	}
 	@media (min-width: $large) {
 		@include media-grid(4, em(40), '.cat');
-	}
-	@media (min-width: $x-large) {
-		@include media-grid(5, em(40), '.cat');
 	}	
 }
  
@@ -24,9 +21,5 @@
 		@media (min-width: $large) {
 			@include media-grid(1, 0px, '.cat');
 		}
-		@media (min-width: $x-large) {
-			@include media-grid(1, 0px, '.cat');
-		}
-
 	}	
 }

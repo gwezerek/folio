@@ -44,5 +44,17 @@ Thoughts
 User module pattern for overall functions
 Use constructor to create category object to hold current post
 
-Assign each 
+
+If the min-width is 800px
+
+Register function:
+If a post/category is expanded
+Then on resize add/remove class
+
+On exit 800px 
+
+Destroy function
+
+
+
 

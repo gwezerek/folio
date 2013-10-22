@@ -190,6 +190,14 @@
 			margin-bottom: 0;
 			max-height: 800px;
 		}
+		.post-contain {
+			.post-img-wrap {
+				min-height: 0;
+			}
+			.post-img {
+				position: static;
+			}
+		}
 		.post-txt {
 			width: 35%;					// fallback
 			width: calc(40% - 20px);
@@ -263,7 +271,7 @@
 		}		
 		.post-txt-index {
 			right: auto;
-			left: calc(30% + 20px);
+			left: 20px;
 			bottom: 20px;
 		}
 	}

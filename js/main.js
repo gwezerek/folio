@@ -43,15 +43,19 @@ var FOLIO = (function($) {
 
 
 		showCat: function(selector) {
+			var post = selector.find('.post').eq(selector.data('postindex'));
+
 			selector.addClass('cat-expanded');
-			selector.find('.post').eq(selector.data('postindex')).addClass('post-expanded');
+			post.addClass('post-expanded');
 			myFolio.catList.data('catindex', selector.data('cat') - 1 );
-			selector.find('.lazy').trigger('loadSet');			
+			selector.find('.lazy').trigger('loadSet');	
+			myFolio.contain(post);
 		},
 
 		hideCat: function(selector) {
 			selector.removeClass('cat-expanded');
-			myFolio.posts.removeClass('.post-expanded');
+			myFolio.posts.removeClass('post-expanded');
+			myFolio.posts.removeClass('post-contain');
 		},
 
 		toggleCat: function(selector) {
@@ -64,7 +68,6 @@ var FOLIO = (function($) {
 				myFolio.showCat(selector);
 				myFolio.addSingleView('body');
 			}			
-
 		},
 
 
@@ -87,6 +90,8 @@ var FOLIO = (function($) {
 			} else {
 				oldCat.find('.post').eq(newPos).addClass('post-expanded');
 			}
+
+			myFolio.contain($('.post-expanded'));
 
 		},				
 
@@ -128,43 +133,62 @@ var FOLIO = (function($) {
 			return newCatIndex;
 		},
 
-		checkImgSize: function() {
-			// $('.cat-expanded').
+
+		indexToImg: function() {
+			myFolio.posts.each(function() {
+				var index = $(this).find('.post-txt-index'),
+					wrap = $(this).find('.post-img-wrap');
+
+				index.appendTo(wrap);
+			});
+		},
+
+		indexFromImg: function() {
+			myFolio.posts.each(function() {
+				// $(this).find('.post-txt-index').appendTo($(this).find('.post-txt'));
+			});
 		},
 
 
 
-		// enquire.js utilities
+		contain: function(selector) {
+			var postHeight = selector.find('.post-img').height();
 
-		mediumEnterMeta: function() {
-			// myFolio.posts.each(function() {
-			// 	var $this = $(this),
-			// 		postTxt = $this.find('.post-txt');
-
-			// 	console.log('heyo');
-			// 	$this.find($('.post-txt-client')).prependTo(postTxt);
-			// 	$this.find($('.post-txt-index')).appendTo(postTxt);
-			// });
+			if (postHeight < 460) {
+				selector.addClass('post-contain');
+			} else {
+				selector.removeClass('post-contain');
+			}
 		},
 
-		mediumExitMeta: function() {
+		bindContain: function() {
+			var post = $('.post-expanded');
 
+			if (post.length === 0) { return; }
+
+			$(window).on('resize', function() {
+				myFolio.contain(post);
+			})
+		},
+
+		unbindContain: function() {
+			$(window).off('resize');
+			myFolio.posts.removeClass('post-contain');
 		}
 
-
-
 	};
+
+
+
 
 	//
 	// HANDLERS
 	//
 
-
 	$('.cat-name').on('click', function() {
 		var $this = $(this);
 
 		myFolio.toggleCat($this.closest('.cat'));
-		console.log('ay');
 	});
 
 
@@ -180,16 +204,17 @@ var FOLIO = (function($) {
 	// ENQUIRE FUNCTIONS
 
 	enquire
-	.register("screen and (min-width:600px)", {
+	.register("screen and (min-width:800px)", {
 
 		match : function() {
-			FOLIO.mediumEnterMeta();
-			console.log('enter');
+			FOLIO.contain($('.post-expanded'));
+			FOLIO.bindContain();
+			FOLIO.indexToImg();
 		},    
 
 		unmatch : function() {
-			FOLIO.mediumExitMeta();
-			console.log('exit');			
+			FOLIO.unbindContain();
+			FOLIO.indexFromImg();
 		}
 
 	})

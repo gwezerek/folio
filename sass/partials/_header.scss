@@ -29,7 +29,7 @@
 
 .contact-tools {
 	position: absolute;
-	top: 30px;
+	top: 55px;
 	right: 5.5%;
 	@media (min-width: $medium) {
 		display: none;
@@ -51,9 +51,6 @@
 	@media (min-width: $large) {
 			@include media-grid(4, em(30), '.header-link');
 	}
-	@media (min-width: $x-large) {
-		@include media-grid(5, em(30), '.header-link');
-	}	
 }
 
 .header-link {
