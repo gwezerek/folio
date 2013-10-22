@@ -45,10 +45,10 @@ var FOLIO = (function($) {
 		showCat: function(selector) {
 			var post = selector.find('.post').eq(selector.data('postindex'));
 
+			selector.find('.lazy').trigger('loadSet');	
 			selector.addClass('cat-expanded');
 			post.addClass('post-expanded');
 			myFolio.catList.data('catindex', selector.data('cat') - 1 );
-			selector.find('.lazy').trigger('loadSet');	
 			myFolio.contain(post);
 		},
 
@@ -67,6 +67,7 @@ var FOLIO = (function($) {
 				myFolio.hideCat($('.cat'));
 				myFolio.showCat(selector);
 				myFolio.addSingleView('body');
+				$('.lazy').trigger('loadSet');
 			}			
 		},
 
@@ -156,6 +157,7 @@ var FOLIO = (function($) {
 
 			if (postHeight < 460) {
 				selector.addClass('post-contain');
+				console.log(postHeight);
 			} else {
 				selector.removeClass('post-contain');
 			}
@@ -163,6 +165,8 @@ var FOLIO = (function($) {
 
 		bindContain: function() {
 			var post = $('.post-expanded');
+
+			console.log('800');
 
 			if (post.length === 0) { return; }
 
