@@ -45,7 +45,6 @@ var FOLIO = (function($) {
 		showCat: function(selector) {
 			var post = selector.find('.post').eq(selector.data('postindex'));
 
-			selector.find('.lazy').trigger('loadSet');	
 			selector.addClass('cat-expanded');
 			post.addClass('post-expanded');
 			myFolio.catList.data('catindex', selector.data('cat') - 1 );
@@ -67,7 +66,6 @@ var FOLIO = (function($) {
 				myFolio.hideCat($('.cat'));
 				myFolio.showCat(selector);
 				myFolio.addSingleView('body');
-				$('.lazy').trigger('loadSet');
 			}			
 		},
 
@@ -85,7 +83,7 @@ var FOLIO = (function($) {
 
 			if (newCatIndex === 0 || newCatIndex) {
 				myFolio.hideCat(oldCat);
-				newCat.find('.lazy').trigger('loadSet');			
+				// newCat.find('.lazy').trigger('loadSet');			
 				newCat.addClass('cat-expanded');
 				newCat.find('.post').eq(newPos).addClass('post-expanded');							
 			} else {
@@ -146,7 +144,10 @@ var FOLIO = (function($) {
 
 		indexFromImg: function() {
 			myFolio.posts.each(function() {
-				// $(this).find('.post-txt-index').appendTo($(this).find('.post-txt'));
+				var index = $(this).find('.post-txt-index'),
+					txt = $(this).find('.post-txt');
+
+				index.appendTo(txt);
 			});
 		},
 
@@ -154,6 +155,7 @@ var FOLIO = (function($) {
 
 		contain: function(selector) {
 			var postHeight = selector.find('.post-img').height();
+			console.log(selector.find('.post-img'));
 
 			if (postHeight < 460) {
 				selector.addClass('post-contain');
@@ -190,14 +192,16 @@ var FOLIO = (function($) {
 	//
 
 	$('.cat-name').on('click', function() {
-		var $this = $(this);
-
-		myFolio.toggleCat($this.closest('.cat'));
+		myFolio.toggleCat($(this).closest('.cat'));
 	});
 
 
 	$('.button-big-post').on('click', function() {
 		myFolio.postNav($(this));
+	});
+
+	$(window).on('load', function() {
+		$('.lazy').trigger('loadSet');
 	});
 
 	return myFolio;
@@ -207,8 +211,7 @@ var FOLIO = (function($) {
 
 	// ENQUIRE FUNCTIONS
 
-	enquire
-	.register("screen and (min-width:800px)", {
+	enquire.register("screen and (min-width:800px)", {
 
 		match : function() {
 			FOLIO.contain($('.post-expanded'));
@@ -219,17 +222,6 @@ var FOLIO = (function($) {
 		unmatch : function() {
 			FOLIO.unbindContain();
 			FOLIO.indexFromImg();
-		}
-
-	})
-	.register("screen and (min-width:960px)", {
-
-		match : function() {
-			// console.log('meow');
-		},    
-
-		unmatch : function() {
-			// console.log('meoweeee');
 		}
 
 	});
@@ -243,12 +235,5 @@ var FOLIO = (function($) {
 			event : 'loadSet'
 		});
 	});
-
-	// fastclick. No need for double-taps on the page
-	// if( $('html').hasClass('touch') ){
-	// 	window.addEventListener('load', function() {
-	// 		FastClick.attach(document.body);
-	// 	}, false);
-	// }
 
 

@@ -45,6 +45,7 @@
 }
 
 .header-wrap {
+	@include trans(0.2s, width, ease-in-out);
 	@media (min-width: $medium) {
 		@include media-grid(3, em(30), '.header-link');
 	}
@@ -53,11 +54,26 @@
 	}
 }
 
+.single-view {
+	.header-link {
+		@media (min-width: $medium) {
+			width: 35%;
+			width: calc(40% - 20px);	
+		}
+		@media (min-width: 800px) {
+			width: 28%;
+			width: calc(30% - 20px);	
+		}
+	}
+}
+
 .header-link {
+	@include trans(0.2s, width, ease-in-out);
 	display: block;			
 }
 
 .header-img {
+	// @include trans(0.2s, width, ease-in);
 	margin-left: -5px;
 	width: 100%;	
 }

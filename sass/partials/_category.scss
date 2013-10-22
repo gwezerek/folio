@@ -168,19 +168,15 @@
 				text-transform: none;		
 			}		
 		}
+		.post {
+			@include pie-clearfix;
+		}
 		.post-nav-mod {
 			@include absolute(-60px 0 n n);	
 			margin-bottom: 0;	
 		}
 		.post-wrap {
 			padding: 40px 0 20px 20px;
-		}
-		.post {
-			@include pie-clearfix;
-			>.txt-bd {
-				width: 30%;
-			}
-
 		}
 		.post-img {
 			float: right;
@@ -220,14 +216,6 @@
 
 
 	@media (min-width: 800px) {
-		.cat {
-			display: none;
-			height: auto;
-			border-width: 0;
-		}
-		.cat-expanded {
-			display: block;
-		}
 		.cat-name {	
 			display: block;
 			text-align: left;
@@ -265,9 +253,6 @@
 			width: calc(30% - 20px);
 			border-top: 1px solid $accent;
 			padding-top: 20px;
-		}
-		.post-txt-story {
-			padding-bottom: em(30);
 		}		
 		.post-txt-index {
 			right: auto;
