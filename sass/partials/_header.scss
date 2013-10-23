@@ -6,6 +6,8 @@
 
 .header {
 	margin-bottom: 50px;
+	display: table-row;
+	height: 1px;
 	@media (min-width: $medium) {
 		position: relative;
 		margin-bottom: 60px;
@@ -46,6 +48,7 @@
 
 .header-wrap {
 	@include trans(0.2s, width, ease-in-out);
+	margin-bottom: 50px;
 	@media (min-width: $medium) {
 		@include media-grid(3, em(30), '.header-link');
 	}

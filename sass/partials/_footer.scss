@@ -4,6 +4,16 @@
 
 // ============================================= 
 
+.footer {
+	// @include absolute(n n 0 n);
+	// padding-bottom: 20px;
+	display: table-row;
+	height: 1px;
+	@media (min-width: $medium) {
+		padding-bottom: 50px;
+	}
+}
+
 .footer-actions-wrap {
 	position: relative;
 	margin-bottom: 10px;
@@ -29,9 +39,10 @@
 .about-txt {
 	text-align: left;
 	border-top: 1px solid white;
-	padding-top: 10px;
+	padding: 10px 0 20px;
 	@media (min-width: $medium) {
 		border: none;
+		padding-bottom: 50px;
 	}
 }
 
