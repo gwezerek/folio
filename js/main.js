@@ -83,14 +83,11 @@ var FOLIO = (function($) {
 
 			if (newCatIndex === 0 || newCatIndex) {
 				myFolio.hideCat(oldCat);
-				// newCat.find('.lazy').trigger('loadSet');			
 				newCat.addClass('cat-expanded');
 				newCat.find('.post').eq(newPos).addClass('post-expanded');							
 			} else {
 				oldCat.find('.post').eq(newPos).addClass('post-expanded');
 			}
-
-			myFolio.contain($('.post-expanded'));
 
 		},				
 
@@ -154,12 +151,10 @@ var FOLIO = (function($) {
 
 
 		contain: function(selector) {
-			var postHeight = selector.find('.post-img').height();
-			console.log(selector.find('.post-img'));
+			var imgHeight = selector.find('.post-img').height();
 
-			if (postHeight < 460) {
+			if (imgHeight < 460) {
 				selector.addClass('post-contain');
-				console.log(postHeight);
 			} else {
 				selector.removeClass('post-contain');
 			}
@@ -167,8 +162,6 @@ var FOLIO = (function($) {
 
 		bindContain: function() {
 			var post = $('.post-expanded');
-
-			console.log('800');
 
 			if (post.length === 0) { return; }
 
@@ -193,11 +186,13 @@ var FOLIO = (function($) {
 
 	$('.cat-name').on('click', function() {
 		myFolio.toggleCat($(this).closest('.cat'));
+		myFolio.contain($('.post-expanded'));
+		myFolio.bindContain();
 	});
-
 
 	$('.button-big-post').on('click', function() {
 		myFolio.postNav($(this));
+		myFolio.contain($('.post-expanded'));
 	});
 
 	$(window).on('load', function() {
@@ -215,7 +210,7 @@ var FOLIO = (function($) {
 
 		match : function() {
 			FOLIO.contain($('.post-expanded'));
-			FOLIO.bindContain();
+			// FOLIO.bindContain();
 			FOLIO.indexToImg();
 		},    
 
@@ -224,6 +219,17 @@ var FOLIO = (function($) {
 			FOLIO.indexFromImg();
 		}
 
+	});
+
+	$(window).on('resize', function bindContain() {
+		var img = $('.post-expanded'),
+			imgHeight = $('.post-expanded').find('.post-img').height();
+
+		if (imgHeight < 460) {
+			img.addClass('post-contain');
+		} else {
+			img.removeClass('post-contain');
+		}
 	});
 
 
