@@ -6,8 +6,6 @@
 
 .header {
 	margin-bottom: 50px;
-	display: table-row;
-	height: 1px;
 	@media (min-width: $medium) {
 		position: relative;
 		margin-bottom: 60px;
@@ -31,7 +29,7 @@
 
 .contact-tools {
 	position: absolute;
-	top: 55px;
+	top: 35px;
 	right: 5.5%;
 	@media (min-width: $medium) {
 		display: none;

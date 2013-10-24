@@ -30,7 +30,7 @@ html {
 
 body {
 	margin: 0 5.5%;
-	padding-top: 50px;
+	padding-top: 30px;
 	background: $bground;
 	max-width: $x-large;
 	height: 100%;
@@ -48,9 +48,9 @@ body {
 	height: 100%;
 }
 
-main {
-	height: auto;	
-}
+// main {
+// 	height: auto;	
+// }
 
 .button-big {
 	@include border-radius(50%);

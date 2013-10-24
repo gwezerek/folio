@@ -5,8 +5,6 @@
 // ============================================= 
 
 .footer {
-	// @include absolute(n n 0 n);
-	// padding-bottom: 20px;
 	display: table-row;
 	height: 1px;
 	@media (min-width: $medium) {
@@ -39,7 +37,7 @@
 .about-txt {
 	text-align: left;
 	border-top: 1px solid white;
-	padding: 10px 0 20px;
+	padding: 10px 0 30px;
 	@media (min-width: $medium) {
 		border: none;
 		padding-bottom: 50px;

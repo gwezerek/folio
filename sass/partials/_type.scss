@@ -12,7 +12,10 @@
 
 body {
 	font-family:'NeueHaasGroteskText W01', Helvetica, Arial, sans-serif;
-	font-size: em(14);
+	font-size: em(13);
 	line-height: 140%;
 	color: $accent;
+	@media (min-width: $medium) {
+		font-size: em(14);
+	}
 }
