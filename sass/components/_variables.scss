@@ -38,11 +38,12 @@ $mono:"Courier New",Courier,mono;
 /* !-- Project ------------------------------------ */
 
 $medium: 600px;
+$single-large: 800px;
 $large: 960px;
 $x-large: 1200px;
 
-$accent: white;
-$bground: black;
+$accent: black;
+$bground: white;
 
 $accent-50: shade($accent, 50%);
 $bground-90: tint($bground, 30%);

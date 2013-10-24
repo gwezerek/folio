@@ -7,17 +7,14 @@
 .footer {
 	display: table-row;
 	height: 1px;
-	@media (min-width: $medium) {
-		padding-bottom: 50px;
-	}
 }
 
 .footer-actions-wrap {
 	position: relative;
 	margin-bottom: 10px;
 	padding: 20px 0;
-	border-top: 1px solid white;
-	border-bottom: 1px solid white;
+	border-top: 1px solid $accent;
+	border-bottom: 1px solid $accent;
 	display: none;
 	@media (min-width: $medium) {
 		display: block;
@@ -27,20 +24,37 @@
 .prev-category {
 	position: absolute;
 	left: 0;
+	display: none;
 }
 
 .next-category {
 	position: absolute;
 	right: 0;
+	display: none;
+}
+
+.footer-contact-tools {
+	display: none;
+	@media (min-width: $medium) {
+		display: inline;
+		float: left;
+		margin-top: 10px;
+	}
+}
+
+.footer-button-big {
+	margin-right: 5px;
 }
 
 .about-txt {
 	text-align: left;
-	border-top: 1px solid white;
+	border-top: 1px solid $accent;
 	padding: 10px 0 30px;
 	@media (min-width: $medium) {
 		border: none;
 		padding-bottom: 50px;
+		float: right;
+		width: calc((100% - 5em) * 2 / 3 + 2.5em);
 	}
 }
 
@@ -50,12 +64,41 @@
 	left: 0;
 }
 
-.footer-snark {
-	position: absolute;
-	left: 0;
+.single-filter {
+	margin: 0 auto;
+	display: none;
 }
 
+
 .email-address {
-	position: absolute;
+	position: static;
 	right: 0;
+	float: right;
+	margin-top: 4px;
 }
+
+
+.single-view {
+	.about-txt {
+		@media (min-width: $medium) {
+			width: 60%;
+			float: right;
+		}
+		@media (min-width: 800px) {
+			width: 70%;
+			text-align: justify;
+		}
+	}
+	.prev-category, .next-category {
+		display: inline-block;
+	}
+	.single-filter {
+		display: inherit;
+	}
+	.email-address, .filter, .footer-snark {
+		display: none;
+	}
+}
+
+
+

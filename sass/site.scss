@@ -35,6 +35,7 @@ body {
 	max-width: $x-large;
 	height: 100%;
 	@media (min-width: $medium) {
+		padding-top: 50px;
 		margin: 0 50px;
 	}
 	@media (min-width: $x-large) {
@@ -48,10 +49,6 @@ body {
 	height: 100%;
 }
 
-// main {
-// 	height: auto;	
-// }
-
 .button-big {
 	@include border-radius(50%);
 	margin-left: 5px;
@@ -59,4 +56,15 @@ body {
 	height: 40px;
 	border: 1px solid $accent;
 	background-color: $bground;
+	@media (min-width: $medium) {
+		&:first-child {
+			margin-left: 0;
+		}
+	}
 }
+
+.button-big-contact {
+	position: relative;
+	z-index: 1;	
+}
+

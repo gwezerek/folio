@@ -8,7 +8,7 @@
 	margin-bottom: 50px;
 	@media (min-width: $medium) {
 		position: relative;
-		margin-bottom: 60px;
+		margin-bottom: 40px;
 	}	
 }
 
@@ -20,33 +20,26 @@
 	@media (min-width: $medium) {
 		position: absolute;
 		bottom: 0;
-		margin: -3px 0 -15px 0;
+		margin: -3px 0 -5px 0;
 		width: 100%;
 		color: transparent;
+		text-align: right;
 		pointer-events: none;
 	}
 }
 
-.contact-tools {
+.header-contact-tools {
 	position: absolute;
 	top: 35px;
 	right: 5.5%;
 	@media (min-width: $medium) {
 		display: none;
-		// bottom: -35px;
-		// top: auto;
-		// right: 0;
 	}	
-}
-
-.button-big-contact {
-	position: relative;
-	z-index: 1;	
 }
 
 .header-wrap {
 	@include trans(0.2s, width, ease-in-out);
-	margin-bottom: 50px;
+	margin-bottom: em(10);
 	@media (min-width: $medium) {
 		@include media-grid(3, em(30), '.header-link');
 	}
@@ -56,8 +49,17 @@
 }
 
 .single-view {
+	.header {
+		margin-bottom: 55px;
+	}
+	.header-snark {
+		@media (min-width: $medium) {
+			margin: -3px 0 -35px 0;
+		}
+	}
 	.header-link {
 		@media (min-width: $medium) {
+			margin-bottom: 0;
 			width: 35%;
 			width: calc(40% - 20px);	
 		}
@@ -70,11 +72,11 @@
 
 .header-link {
 	@include trans(0.2s, width, ease-in-out);
-	display: block;			
+	display: block;
+	margin-bottom: 0;
 }
 
 .header-img {
-	// @include trans(0.2s, width, ease-in);
 	margin-left: -5px;
 	width: 100%;	
 }
