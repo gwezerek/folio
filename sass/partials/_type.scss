@@ -4,18 +4,31 @@
 
 // ============================================= 
 
+@font-face {
+    @include serif;
+    src: url('fonts/portrait-regular2.eot');
+    src: url('fonts/portrait-regular2.eot') format('embedded-opentype'),
+         url('fonts/portrait-regular2.woff') format('woff'),
+         url('fonts/portrait-regular2.ttf') format('truetype'),
+         url('fonts/portrait-regular2.svg#PortraitRegular2') format('svg');
+}
+
 /* entypo */
 .icon {
-  font-family: 'entypo', sans-serif;
   font-size: 12px;
+  font-family: 'entypo', sans-serif;
 }
 
 body {
-	font-family:'NeueHaasGroteskText W01', Helvetica, Arial, sans-serif;
-	font-size: em(13);
-	line-height: 140%;
-	color: $accent;
-	@media (min-width: $medium) {
-		font-size: em(14);
-	}
+    @include serif;
+    color: $accent;
+    font-size: em(16);
+    line-height: 140%;
+    @media (min-width: $medium) {
+        font-size: em(14);
+    }
+    @media (min-width: $large) {
+        font-size: em(16);
+    }
 }
+

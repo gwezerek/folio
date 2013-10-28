@@ -44,27 +44,20 @@
 .cat-name {
 	margin-bottom: 10px;
 	color: $accent-50;
-	text-transform: uppercase;
-	font-weight: 500;
 	font-size: em(26);
-	font-family:'TimesNewRomanW04-CondBo';
 	cursor: pointer;
+	font-weight: 500;
+	font-family: 'PortraitRegular2';
+	@include lining;
+	line-height: 120%;
 
 	@media (min-width: $medium) {
 		display: table-cell;
+		color: $accent;
 		vertical-align: middle; 
 		text-align: center;
 		text-transform: none;
-		font-size: em(16);
-		font-family:'NeueHaasGroteskText W01';
-		color: $accent;
-		&:hover {
-			padding-top: em(10);
-			color: $accent;			
-			text-transform: uppercase;
-			font-size: em(26);
-			font-family:'TimesNewRomanW04-CondBo';			
-		}		
+		font-size: em(20);	
 	}
 
 }
@@ -157,10 +150,11 @@
 			display: block;
 		}
 		.cat-name {	
-			padding-bottom: em(10);
+			display: block;
 			color: $accent;
 			font-size: em(26);
-			font-family:'TimesNewRomanW04-CondBo';
+			text-align: left;
+			margin-right: 60%;
 
 			&:hover {
 				padding-top: 0;
@@ -180,10 +174,12 @@
 		.post-img {
 			float: right;
 			margin-bottom: 0;
-			width: auto;
-			max-width: 60%;
 			margin-bottom: 0;
+			max-width: 60%;
 			max-height: 800px;
+			width: auto;
+			border: 1px solid $accent;
+			padding: em(10px);
 		}
 		.post-contain {
 			.post-img-wrap {
@@ -191,7 +187,6 @@
 			}
 			.post-img {
 				position: static;
-				border-width: 0;
 			}
 		}
 		.post-txt {
@@ -204,12 +199,19 @@
 			padding: 0;
 			border-width: 0;
 		}
+		.post-txt-label {
+			@include sans;
+		}
 		.post-txt-story {
 			padding-bottom: em(30);
 		}		
 		.post-txt-index {
 			top: auto;
 			bottom: 0;
+			@include lining;
+		}
+		.post-txt-index-label {
+			@include sans;
 		}
 	}
 
@@ -217,44 +219,43 @@
 
 	@media (min-width: 800px) {
 		.cat-name {	
-			display: block;
-			text-align: left;
+			margin-right: calc(70% + 20px);
 			margin-bottom: 0;
-			margin-right: calc(70% + 20px);		
 		}
 		.post-nav-mod {
-			float: left;
 			position: static;
+			float: left;
 		}
 		.post-wrap {
 			padding: 0;
 			border-width: 0;
 		}
 		.post-img-wrap {
+			position: relative;
 			float: right;
-			width: 70%;
 			padding: 20px 0 20px 20px;
+			min-height: 500px;
+			width: 70%;
 			border: solid $accent;
 			border-width: 1px 0 1px 1px;
-			position: relative;
-			min-height: 500px;
 		}
 		.post-img {
 			@include absolute(n 0 20px n);
-			border: 1px solid $accent;
-			max-height: 700px;
 			max-width: calc(100% - 130px);
+			max-height: 700px;
+			padding: em(20px);
+			background-color: $bground;
 		}
 		.post-txt {
+			padding-top: 20px;
 			width: 38%;					// fallback
 			width: calc(30% - 20px);
 			border-top: 1px solid $accent;
-			padding-top: 20px;
 		}		
 		.post-txt-index {
 			right: auto;
-			left: 20px;
 			bottom: 20px;
+			left: 20px;
 		}
 	}
 

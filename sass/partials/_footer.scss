@@ -62,6 +62,10 @@
 	}
 }
 
+.colophon {
+	@include sans;
+}
+
 .filter {
 	position: absolute;
 	right: 0;
