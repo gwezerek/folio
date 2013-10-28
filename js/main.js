@@ -210,7 +210,6 @@ var FOLIO = (function($) {
 
 		match : function() {
 			FOLIO.contain($('.post-expanded'));
-			// FOLIO.bindContain();
 			FOLIO.indexToImg();
 		},    
 
