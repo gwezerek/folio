@@ -42,22 +42,23 @@
 }
 
 .cat-name {
+	@include lining;
 	margin-bottom: 10px;
 	color: $accent-50;
-	font-size: em(26);
-	cursor: pointer;
 	font-weight: 500;
+	font-size: em(22);
 	font-family: 'PortraitRegular2';
-	@include lining;
 	line-height: 120%;
+	cursor: pointer;
 
 	@media (min-width: $medium) {
-		display: table-cell;
+		display: table-cell;	
+		padding: em(20);
 		color: $accent;
 		vertical-align: middle; 
 		text-align: center;
 		text-transform: none;
-		font-size: em(20);	
+		font-size: em(20);
 	}
 
 }
@@ -151,15 +152,11 @@
 		}
 		.cat-name {	
 			display: block;
-			color: $accent;
-			font-size: em(26);
-			text-align: left;
 			margin-right: 60%;
-
-			&:hover {
-				padding-top: 0;
-				text-transform: none;		
-			}		
+			padding: 0;
+			color: $accent;
+			text-align: left;
+			font-size: em(22);	
 		}
 		.post {
 			@include pie-clearfix;
@@ -175,11 +172,11 @@
 			float: right;
 			margin-bottom: 0;
 			margin-bottom: 0;
+			padding: em(10px);
 			max-width: 60%;
 			max-height: 800px;
 			width: auto;
 			border: 1px solid $accent;
-			padding: em(10px);
 		}
 		.post-contain {
 			.post-img-wrap {
@@ -206,9 +203,9 @@
 			padding-bottom: em(30);
 		}		
 		.post-txt-index {
+			@include lining;
 			top: auto;
 			bottom: 0;
-			@include lining;
 		}
 		.post-txt-index-label {
 			@include sans;
@@ -220,7 +217,6 @@
 	@media (min-width: 800px) {
 		.cat-name {	
 			margin-right: calc(70% + 20px);
-			margin-bottom: 0;
 		}
 		.post-nav-mod {
 			position: static;
@@ -241,9 +237,9 @@
 		}
 		.post-img {
 			@include absolute(n 0 20px n);
+			padding: em(20px);
 			max-width: calc(100% - 130px);
 			max-height: 700px;
-			padding: em(20px);
 			background-color: $bground;
 		}
 		.post-txt {
