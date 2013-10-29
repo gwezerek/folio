@@ -8,7 +8,7 @@ layout: allpages
 		{% for cat in site.categories %}
 		{% assign ic = forloop.index %}
 		<li class="cat" data-postindex="0" data-cat={{ ic }}>
-			<h2 class="cat-name">{{ cat.catTitle }}</h2>
+			<h2 class="cat-name">{{ cat[0] }}</h2>
 			<button class="cat-btn cat-btn-outside cat-expand icon">&#59236;</button>
 			<ul class="post-wrap">
 				{% for post in cat[1] %}
