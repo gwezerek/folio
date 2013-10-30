@@ -21,11 +21,8 @@
 body {
     @include serif;
     color: $accent;
-    font-size: em(16);
+    font-size: em(14);
     line-height: 140%;
-    @media (min-width: $medium) {
-        font-size: em(14);
-    }
     @media (min-width: $large) {
         font-size: em(16);
     }

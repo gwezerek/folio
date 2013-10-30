@@ -7,9 +7,9 @@ layout: allpages
 
 		{% for cat in site.categories %}
 		{% assign words = cat[0] | split: ' ' %}
+		{% assign ic = forloop.index %}
 		<li class="cat" data-postindex="0" data-cat={{ ic }}>
-			{% assign ic = forloop.index %}
-			<h2 class="cat-name">{{ words[0] | capitalize | replace:'3d','3D'}} {{ words[1] | capitalize | replace:'For','for'}} {{ words[2] | capitalize | replace:'At','at' | replace:'For','for' | replace:'Npr's,'NPR's}} {{ words[3] | capitalize }} {{ words[4] | capitalize }} {{ words[5] | capitalize }} {{ words[6] | capitalize }} {{ words[7] | capitalize }} {{ words[8] | capitalize }}</h2>
+			<h2 class="cat-name">{{ words[0] | capitalize | replace:'3d','3D'}} {{ words[1] | capitalize | replace:'For','for' | replace:'And','and'}} {{ words[2] | capitalize | replace:'At','at' | replace:'For','for' | replace:'Npr's,'NPR's}} {{ words[3] | capitalize }} {{ words[4] | capitalize }} {{ words[5] | capitalize }} {{ words[6] | capitalize }} {{ words[7] | capitalize }} {{ words[8] | capitalize }}</h2>
 			<button class="cat-btn cat-btn-outside cat-expand icon">&#59236;</button>
 			<ul class="post-wrap">
 				{% for post in cat[1] %}

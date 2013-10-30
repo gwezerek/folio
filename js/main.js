@@ -177,14 +177,11 @@ var FOLIO = (function($) {
 
 	};
 
-
-
-
 	//
 	// HANDLERS
 	//
 
-	$('.cat-name').on('click', function() {
+	$('.cat-name, .cat-btn-outside').on('click', function() {
 		myFolio.toggleCat($(this).closest('.cat'));
 		myFolio.contain($('.post-expanded'));
 		myFolio.bindContain();
@@ -198,10 +195,6 @@ var FOLIO = (function($) {
 	$(window).on('load', function() {
 		$('.lazy').trigger('loadSet');
 	});
-
-	return myFolio;
-
-}(jQuery));
 
 
 	// ENQUIRE FUNCTIONS
@@ -240,5 +233,14 @@ var FOLIO = (function($) {
 			event : 'loadSet'
 		});
 	});
+
+
+	return myFolio;
+
+
+}(jQuery));
+
+
+
 
 
