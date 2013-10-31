@@ -69,57 +69,100 @@ var FOLIO = (function($) {
 			}			
 		},
 
+		nextCat: function(selector) {
+			var oldCat = $('.post-expanded').closest('.cat'),
+				oldPos = oldCat.data('postindex'),
+				dir = selector.data('dir'),
+				catList = $('.cat-list'),
+				catIndex = catList.data('catindex'),
+				catsLength = myFolio.getCatLength(),
+				newCatIndex = '',
+				newCat = '';
+
+			// Remove current post-expanded
+			oldCat.find('.post').eq(oldPos).removeClass('post-expanded');
+
+			// Change cat index
+			catIndex += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
+
+			// Deal with edge cases
+			newCatIndex = ( catIndex < 0 ? catsLength - 1 : catIndex % catsLength);
+
+			// Set the new catIndex
+			catList.data('catindex', newCatIndex);
+
+			// Define newCat
+			newCat = myFolio.cats.eq(newCatIndex);	
+
+			// Set the post index of the new cat to 0 FOR NEXT
+			newCat.data('postindex', 0);
+
+			// Hide the old cat
+			myFolio.hideCat(oldCat);
+
+			// Add cat expanded to the new cat
+			newCat.addClass('cat-expanded');
+
+			// Add post expanded to the new cat FOR NEXT
+			newCat.find('.post').eq(0).addClass('post-expanded');		
 
 
-		postNav: function(e) {
+			
+			// Close current cat
+			// Change catIndex to newCatIndex
+			// Switch to next one (at last, at first exceptions)
+			// Grab the postIndex and display that post
+		},
+
+
+
+		postNav: function(e, opt) {
 			var oldCat = e.closest('.cat'),
 				oldPos = oldCat.data('postindex'),
-				newData = myFolio.setCurrentPost( e.data('dir'), e ),
-				newPos = newData[0],
-				newCatIndex = newData[1],
-				newCat = myFolio.cats.eq(newCatIndex);
+				newData = myFolio.setCurrentPost( e.data('dir'), e, oldCat, oldPos ),
+				newCat = myFolio.cats.eq(newData[1]);
 
 			oldCat.find('.post').eq(oldPos).removeClass('post-expanded');
 
-			if (newCatIndex === 0 || newCatIndex) {
+			if (newData[1] === 0 || newData[1]) {
 				myFolio.hideCat(oldCat);
 				newCat.addClass('cat-expanded');
-				newCat.find('.post').eq(newPos).addClass('post-expanded');							
+				newCat.find('.post').eq(newData[0]).addClass('post-expanded');							
 			} else {
-				oldCat.find('.post').eq(newPos).addClass('post-expanded');
+				oldCat.find('.post').eq(newData[0]).addClass('post-expanded');
 			}
 
 		},				
 
-		setCurrentPost: function(dir, e) {
-			var currentCat = e.closest('.cat'),
-				postLength = myFolio.getPostsLength(currentCat),	// defaults as 0
-				dir = e.data('dir'),
-				pos = currentCat.data('postindex'),
+
+		// Changes post index based on event direction
+		// Runs setCurrentCat if at bounds of post range, updates catIndex
+
+		setCurrentPost: function(dir, e, oldCat, oldPos) {
+			var postLength = myFolio.getPostsLength(oldCat),	// defaults as 0
 				newCatIndex = '',
 				newPos = '';
 
-			pos += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
+			oldPos += ((dir === 'prev') ? -1 : ~~( dir === 'next' ));
 
-			if (pos < 0) {
-				newCatIndex = myFolio.setCurrentCat(e);
+			if (oldPos < 0) {
+				newCatIndex = myFolio.setCurrentCat(dir, e);
 				newPos = postLength - 1;
 				myFolio.cats.eq(newCatIndex).data('postindex', newPos);
-			} else if (pos === postLength) {
-				newCatIndex = myFolio.setCurrentCat(e);
+			} else if (oldPos === postLength) {
+				newCatIndex = myFolio.setCurrentCat(dir, e);
 				myFolio.cats.eq(newCatIndex).data('postindex', 0);	
 			} else {
-				newPos = pos % postLength;
-				currentCat.data('postindex', newPos);
+				newPos = oldPos % postLength;
+				oldCat.data('postindex', newPos);
 			}
 
 			return [newPos, newCatIndex];
 		},
 
-		setCurrentCat: function(e) {
+		setCurrentCat: function(dir, e) {
 			var catsLength = myFolio.getCatLength(),
 				catList = e.closest('.cat-list'),
-				dir = e.data('dir'),		
 				catIndex = catList.data('catindex'),
 				newCatIndex = '';
 		 
@@ -192,26 +235,15 @@ var FOLIO = (function($) {
 		myFolio.contain($('.post-expanded'));
 	});
 
+	$('.next-category').on('click', function() {
+		myFolio.nextCat($(this));
+		myFolio.contain($('.post-expanded'));
+	});
+
 	$(window).on('load', function() {
 		$('.lazy').trigger('loadSet');
 	});
 
-
-	// ENQUIRE FUNCTIONS
-
-	enquire.register("screen and (min-width:800px)", {
-
-		match : function() {
-			FOLIO.contain($('.post-expanded'));
-			FOLIO.indexToImg();
-		},    
-
-		unmatch : function() {
-			FOLIO.unbindContain();
-			FOLIO.indexFromImg();
-		}
-
-	});
 
 	$(window).on('resize', function bindContain() {
 		var img = $('.post-expanded'),
@@ -239,6 +271,24 @@ var FOLIO = (function($) {
 
 
 }(jQuery));
+
+
+
+	// ENQUIRE FUNCTIONS
+
+	enquire.register("screen and (min-width:800px)", {
+
+		match : function() {
+			FOLIO.contain($('.post-expanded'));
+			FOLIO.indexToImg();
+		},    
+
+		unmatch : function() {
+			FOLIO.unbindContain();
+			FOLIO.indexFromImg();
+		}
+
+	});
 
 
 
