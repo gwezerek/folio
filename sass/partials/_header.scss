@@ -5,6 +5,7 @@
 // ============================================= 
 
 .header {
+	@include user-select;
 	margin-bottom: 50px;
 	@media (min-width: $medium) {
 		position: relative;

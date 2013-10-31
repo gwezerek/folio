@@ -38,6 +38,7 @@
 
 .cat-name {
 	@include lining;
+	@include user-select;
 	margin-bottom: 10px;
 	color: $accent-50;
 	font-weight: 500;
@@ -98,6 +99,10 @@
 	display: block;
 }
 
+.post-img-wrap {
+	@include user-select;
+}
+
 .post-txt-client {
 	position: absolute;
 	top: -1px;
@@ -137,7 +142,6 @@
 	position: relative;
 	z-index: 1;
 }
-
 
 .post-img {
 	margin-bottom: 15px;

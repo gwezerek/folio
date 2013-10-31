@@ -11,6 +11,7 @@
 
 .footer-actions-wrap {
 	@include sans;
+	@include user-select;
 	font-size: 11px;
 	text-transform: uppercase;
 	position: relative;
@@ -41,6 +42,7 @@
 }
 
 .footer-contact-tools {
+	@include user-select;
 	display: none;
 	@media (min-width: $medium) {
 		display: inline;
@@ -89,6 +91,9 @@
 	}
 }
 
+.footer-snark {
+	cursor: default;
+}
 
 .email-address {
 	@include text-link;
