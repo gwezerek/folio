@@ -45,8 +45,22 @@ $x-large: 1200px;
 $accent: black;
 $bground: white;
 
-$accent-50: shade($accent, 50%);
-$bground-90: tint($bground, 30%);
+$accent-40: tint($accent,40%);
+$accent-50: tint($accent, 50%);
+$bground-90: shade($bground, 30%);
+
+
+// Mixin that uses variables
+// =============================================
+
+@mixin text-link {
+	@include trans(0.2s, color, ease-in-out);
+	color: $accent-40;
+	&:hover {
+		color: $accent;
+	}
+}
+
 
 
 /* !-- Paths ------------------------------------ */

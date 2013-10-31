@@ -25,6 +25,7 @@
 }
 
 .cat-change {
+	@include text-link;
 	position: absolute;
 	display: none;
 	text-transform: uppercase;
@@ -82,11 +83,15 @@
 	margin: 0 auto;
 	display: none;
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 11px;
+	> a {
+		@include text-link;
+	}
 }
 
 
 .email-address {
+	@include text-link;
 	position: static;
 	right: 0;
 	float: right;

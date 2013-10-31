@@ -23,7 +23,10 @@ layout: allpages
 						<img class="post-img lazy art" src="/img/transparent.gif" data-original="{{ post.image }}">
 					</div>
 					<div class="post-txt">
-						<p class="post-txt-client"><span class="post-txt-label">Client:</span> {{ post.client }}</p>				
+						<p class="post-txt-client"><span class="post-txt-label">Client:</span> {{ post.client }}</p>
+						{% if post.view %}
+							<p class="post-txt-view"><span class="post-txt-label">View Project:</span> {{ post.view }}</p>
+						{% endif %}					
 						<p class="post-txt-story"> {{ post.story }}</p>
 						<p class="post-txt-index"><span class="post-txt-index-label">No.</span> {{ i }}</p>
 					</div>

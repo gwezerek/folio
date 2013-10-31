@@ -106,6 +106,10 @@
 	border-bottom: 1px solid $accent;
 }
 
+.post-txt-view {
+	margin-bottom: 8px;
+}
+
 .post-txt-label, .post-txt-index-label {
 	@include sans;
 	text-transform: uppercase;
@@ -195,7 +199,7 @@
 		}
 		.post-txt-client {
 			position: static;
-			margin-bottom: em(10);
+			margin-bottom: 8px;
 			padding: 0;
 			border-width: 0;
 		}
