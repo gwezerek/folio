@@ -12,6 +12,14 @@
 	font-size: 14px;
 }
 
+@mixin sans-bold {
+	font-family:'NHaasGroteskTXW01-75Bd', Helvetica, Arial, sans-serif;
+	// font-family:'NeueHaasGroteskText W01';
+	// font-family:'NHaasGroteskTXW01-56It';
+	// font-family:'NHaasGroteskTXW01-75Bd';
+	font-size: 14px;
+}
+
 @mixin serif {
 	font-family: 'PortraitRegular2';
 }

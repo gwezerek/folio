@@ -11,7 +11,8 @@
 
 .footer-actions-wrap {
 	@include sans;
-	font-size: em(14);
+	font-size: 11px;
+	text-transform: uppercase;
 	position: relative;
 	margin-bottom: 10px;
 	padding: 20px 0;
@@ -23,16 +24,19 @@
 	}
 }
 
-.prev-category {
+.cat-change {
 	position: absolute;
-	left: 0;
 	display: none;
+	text-transform: uppercase;
+	font-size: 11px;
+}
+
+.prev-category {
+	left: 0;
 }
 
 .next-category {
-	position: absolute;
 	right: 0;
-	display: none;
 }
 
 .footer-contact-tools {
@@ -77,6 +81,8 @@
 .single-filter {
 	margin: 0 auto;
 	display: none;
+	text-transform: uppercase;
+	font-size: 12px;
 }
 
 

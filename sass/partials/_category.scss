@@ -6,14 +6,12 @@
 
 .cat {
 	position: relative;
+	@include trans(0.2s, background-color, ease-in-out);
 
 	@media (min-width: $medium) { 
 		display: table;
 		height: 160px;
 		border: 1px solid $accent;
-		&:hover {
-			border-width: em(5);
-		}
 	}
 	@media (min-width: $x-large) { 
 		height: 200px;
@@ -108,6 +106,12 @@
 	border-bottom: 1px solid $accent;
 }
 
+.post-txt-label, .post-txt-index-label {
+	@include sans;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
 .post-txt-index {
 	position: absolute;
 	top: 25px;
@@ -161,11 +165,11 @@
 			@include pie-clearfix;
 		}
 		.post-nav-mod {
-			@include absolute(-60px 0 n n);	
+			@include absolute(-50px 0 n n);	
 			margin-bottom: 0;	
 		}
 		.post-wrap {
-			padding: 40px 0 20px 20px;
+			padding: 30px 0 20px 20px;
 		}
 		.post-img {
 			float: right;
@@ -195,9 +199,6 @@
 			padding: 0;
 			border-width: 0;
 		}
-		.post-txt-label {
-			@include sans;
-		}
 		.post-txt-story {
 			padding-bottom: em(30);
 		}		
@@ -205,9 +206,6 @@
 			@include lining;
 			top: auto;
 			bottom: 0;
-		}
-		.post-txt-index-label {
-			@include sans;
 		}
 	}
 
@@ -229,7 +227,7 @@
 			position: relative;
 			float: right;
 			padding: 20px 0 20px 20px;
-			min-height: 420px;
+			min-height: 470px;
 			width: 70%;
 			border: solid $accent;
 			border-width: 1px 0 1px 1px;

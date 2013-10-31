@@ -101,13 +101,17 @@ var FOLIO = (function($) {
 			newCat.addClass('cat-expanded');
 
 			// Set the post index of the new cat
+
 			if (dir === 'prev') {
 				newCat.data('postindex', 4);
 				newCat.find('.post').eq(4).addClass('post-expanded');		
 			} else if (dir === 'next') {
 				newCat.data('postindex', 0);
 				newCat.find('.post').eq(0).addClass('post-expanded');		
-			}	
+			}
+
+			// Add post expanded to the new cat FOR NEXT
+			newCat.find('.post').eq(4).addClass('post-expanded');		
 
 		},
 
@@ -232,7 +236,7 @@ var FOLIO = (function($) {
 		myFolio.contain($('.post-expanded'));
 	});
 
-	$('.js-cat-change').on('click', function() {
+	$('.cat-change').on('click', function() {
 		myFolio.changeCat($(this));
 		myFolio.contain($('.post-expanded'));
 	});
@@ -246,7 +250,7 @@ var FOLIO = (function($) {
 		var img = $('.post-expanded'),
 			imgHeight = $('.post-expanded').find('.post-img').height();
 
-		if (imgHeight < 380) {
+		if (imgHeight < 430) {
 			img.addClass('post-contain');
 		} else {
 			img.removeClass('post-contain');
