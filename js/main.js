@@ -69,7 +69,7 @@ var FOLIO = (function($) {
 			}			
 		},
 
-		nextCat: function(selector) {
+		changeCat: function(selector) {
 			var oldCat = $('.post-expanded').closest('.cat'),
 				oldPos = oldCat.data('postindex'),
 				dir = selector.data('dir'),
@@ -92,10 +92,7 @@ var FOLIO = (function($) {
 			catList.data('catindex', newCatIndex);
 
 			// Define newCat
-			newCat = myFolio.cats.eq(newCatIndex);	
-
-			// Set the post index of the new cat to 0 FOR NEXT
-			newCat.data('postindex', 0);
+			newCat = myFolio.cats.eq(newCatIndex);
 
 			// Hide the old cat
 			myFolio.hideCat(oldCat);
@@ -103,15 +100,15 @@ var FOLIO = (function($) {
 			// Add cat expanded to the new cat
 			newCat.addClass('cat-expanded');
 
-			// Add post expanded to the new cat FOR NEXT
-			newCat.find('.post').eq(0).addClass('post-expanded');		
+			// Set the post index of the new cat
+			if (dir === 'prev') {
+				newCat.data('postindex', 4);
+				newCat.find('.post').eq(4).addClass('post-expanded');		
+			} else if (dir === 'next') {
+				newCat.data('postindex', 0);
+				newCat.find('.post').eq(0).addClass('post-expanded');		
+			}	
 
-
-			
-			// Close current cat
-			// Change catIndex to newCatIndex
-			// Switch to next one (at last, at first exceptions)
-			// Grab the postIndex and display that post
 		},
 
 
@@ -235,8 +232,8 @@ var FOLIO = (function($) {
 		myFolio.contain($('.post-expanded'));
 	});
 
-	$('.next-category').on('click', function() {
-		myFolio.nextCat($(this));
+	$('.js-cat-change').on('click', function() {
+		myFolio.changeCat($(this));
 		myFolio.contain($('.post-expanded'));
 	});
 
