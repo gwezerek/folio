@@ -94,6 +94,8 @@ var FOLIO = (function($) {
 			// Define newCat
 			newCat = myFolio.cats.eq(newCatIndex);
 
+			console.log(oldCat);
+
 			// Hide the old cat
 			myFolio.hideCat(oldCat);
 
@@ -108,10 +110,7 @@ var FOLIO = (function($) {
 			} else if (dir === 'next') {
 				newCat.data('postindex', 0);
 				newCat.find('.post').eq(0).addClass('post-expanded');		
-			}
-
-			// Add post expanded to the new cat FOR NEXT
-			newCat.find('.post').eq(4).addClass('post-expanded');		
+			}	
 
 		},
 
