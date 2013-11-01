@@ -240,11 +240,6 @@ var FOLIO = (function($) {
 		myFolio.contain($('.post-expanded'));
 	});
 
-	$(window).on('load', function() {
-		$('.lazy').trigger('loadSet');
-	});
-
-
 	$(window).on('resize', function bindContain() {
 		var img = $('.post-expanded'),
 			imgHeight = $('.post-expanded').find('.post-img').height();
@@ -255,6 +250,11 @@ var FOLIO = (function($) {
 			img.removeClass('post-contain');
 		}
 	});
+
+	$(window).on('load', function() {
+		$('.lazy').trigger('loadSet');
+	});
+
 
 
 	// MISC FUNCTIONS

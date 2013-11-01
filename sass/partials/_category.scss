@@ -186,7 +186,6 @@
 			padding: em(10px);
 			max-width: 60%;
 			max-height: 800px;
-			width: auto;
 			border: 1px solid $accent;
 		}
 		.post-contain {
@@ -195,6 +194,7 @@
 			}
 			.post-img {
 				position: static;
+				width: 100%;
 			}
 		}
 		.post-txt {
@@ -246,6 +246,7 @@
 			max-width: calc(100% - 130px);
 			max-height: 700px;
 			background-color: $bground;
+			width: auto;
 		}
 		.post-txt {
 			padding-top: 20px;
