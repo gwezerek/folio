@@ -5,8 +5,8 @@
 // ============================================= 
 
 .cat {
-	position: relative;
 	@include trans(0.2s, background-color, ease-in-out);
+	position: relative;
 
 	@media (min-width: $medium) { 
 		display: table;
@@ -39,19 +39,18 @@
 .cat-name {
 	@include lining;
 	@include user-select;
+	@include text-link;
 	margin-bottom: 10px;
-	color: $accent-50;
+	padding-right: em(20);
 	font-weight: 500;
 	font-size: 18px;
 	font-family: 'PortraitRegular2';
 	line-height: 120%;
 	cursor: pointer;
-	padding-right: em(20);
 
 	@media (min-width: $medium) {
 		display: table-cell;	
 		padding: em(20);
-		color: $accent;
 		vertical-align: middle; 
 		text-align: center;
 		text-transform: none;
@@ -245,8 +244,8 @@
 			padding: em(20px);
 			max-width: calc(100% - 130px);
 			max-height: 700px;
-			background-color: $bground;
 			width: auto;
+			background-color: $bground;
 		}
 		.post-txt {
 			padding-top: 20px;
