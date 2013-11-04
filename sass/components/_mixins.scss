@@ -4,6 +4,30 @@
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
+@font-face {
+  font-family: 'Portrait Text Web';
+  src: url('/fonts/PortraitText-Regular-Web.eot');
+  src: url('/fonts/PortraitText-Regular-Web.eot?#iefix') format('embedded-opentype'),
+     url('/fonts/PortraitText-Regular-Web.woff') format('woff'),
+     url('/fonts/PortraitText-Regular-Web.ttf') format('truetype'),
+     url('/fonts/PortraitText-Regular-Web.svg#Portrait Text Web') format('svg');
+  font-weight:  400;
+  font-style:   normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Portrait Text Web';
+  src: url('/fonts/PortraitText-RegularItalic-Web.eot');
+  src: url('/fonts/PortraitText-RegularItalic-Web.eot?#iefix') format('embedded-opentype'),
+     url('/fonts/PortraitText-RegularItalic-Web.woff') format('woff'),
+     url('/fonts/PortraitText-RegularItalic-Web.ttf') format('truetype'),
+     url('/fonts/PortraitText-RegularItalic-Web.svg#Portrait Text Web') format('svg');
+  font-weight:  400;
+  font-style:   italic;
+  font-stretch: normal;
+}
+
 @mixin sans {
 	font-family:'NeueHaasGroteskText W01', Helvetica, Arial, sans-serif;
 	// font-family:'NeueHaasGroteskText W01';
@@ -21,7 +45,7 @@
 }
 
 @mixin serif {
-	font-family: 'PortraitRegular2';
+	font-family: 'Portrait Text Web';
 }
 
 

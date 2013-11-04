@@ -4,15 +4,6 @@
 
 // ============================================= 
 
-@font-face {
-    @include serif;
-    src: url('fonts/portrait-regular2.eot');
-    src: url('fonts/portrait-regular2.eot') format('embedded-opentype'),
-         url('fonts/portrait-regular2.woff') format('woff'),
-         url('fonts/portrait-regular2.ttf') format('truetype'),
-         url('fonts/portrait-regular2.svg#PortraitRegular2') format('svg');
-}
-
 /* entypo */
 .icon {
   font-family: 'entypo', sans-serif;

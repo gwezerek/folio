@@ -40,11 +40,11 @@
 	@include lining;
 	@include user-select;
 	@include text-link;
+	@include serif;
 	margin-bottom: 10px;
 	padding-right: em(20);
 	font-weight: 500;
 	font-size: 18px;
-	font-family: 'PortraitRegular2';
 	line-height: 120%;
 	cursor: pointer;
 
