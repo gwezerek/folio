@@ -28,6 +28,14 @@
   font-stretch: normal;
 }
 
+@mixin text-link {
+	@include trans(0.2s, color, ease-in-out);
+	color: $accent-40;
+	&:hover {
+		color: $accent;
+	}
+}
+
 @mixin sans {
 	font-family:'NeueHaasGroteskText W01', Helvetica, Arial, sans-serif;
 	// font-family:'NeueHaasGroteskText W01';

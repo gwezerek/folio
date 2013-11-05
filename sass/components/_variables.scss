@@ -53,14 +53,13 @@ $bground-90: shade($bground, 30%);
 // Mixin that uses variables
 // =============================================
 
-@mixin text-link {
-	@include trans(0.2s, color, ease-in-out);
-	color: $accent-40;
-	&:hover {
-		color: $accent;
-	}
-}
-
+// @mixin text-link {
+// 	@include trans(0.2s, color, ease-in-out);
+// 	color: $accent-40;
+// 	&:hover {
+// 		color: $accent;
+// 	}
+// }
 
 
 /* !-- Paths ------------------------------------ */
