@@ -196,7 +196,7 @@ var FOLIO = (function($) {
 		contain: function(selector) {
 			var imgHeight = selector.find('.post-img').height();
 
-			if (imgHeight < 380) {
+			if (imgHeight < 430) {
 				selector.addClass('post-contain');
 			} else {
 				selector.removeClass('post-contain');
