@@ -12,7 +12,7 @@
 .footer-actions-wrap {
 	@include sans;
 	@include user-select;
-	font-size: 10px;
+	font-size: 11px;
 	text-transform: uppercase;
 	position: relative;
 	margin-bottom: 10px;
@@ -27,19 +27,39 @@
 
 .cat-change {
 	@include text-link;
+	@include trans;
 	position: absolute;
 	display: none;
 	text-transform: uppercase;
 	font-size: 11px;
+	&:hover .cat-change-icon {
+		@include trans;
+		opacity: 100;
+	}
 }
 
 .prev-category {
-	left: 0;
+	left: -8px;
+	&:hover {
+		left: 0px;
+	}
 }
 
 .next-category {
-	right: 0;
+	right: -7px;
+	&:hover {
+		right: 0px;
+	}
 }
+
+.cat-change-icon {
+	font-size: 10px;
+	opacity: 0;
+}
+
+.prev-icon {
+	padding-right: 3px;
+} 
 
 .footer-contact-tools {
 	@include user-select;

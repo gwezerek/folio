@@ -12,7 +12,7 @@ var FOLIO = (function($) {
 
 		catList: $('.cat-list'),
 		cats: $('.cat'),
-		posts: $('.post'),
+		posts: $('.post'), 
 
 
 		getCatLength: function() {

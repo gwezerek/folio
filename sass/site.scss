@@ -17,7 +17,7 @@
 @import "partials/layout";
 @import "partials/header";
 @import "partials/category";
-@import "partials/footer";
+@import "partials/footer"; 
 
 
 //  Base styles            
@@ -29,7 +29,7 @@ html {
 
 body {
 	margin: 0 5.5%;
-	padding-top: 30px;
+	padding-top: 20px;
 	background: $bground;
 	max-width: $x-large;
 	height: 100%;

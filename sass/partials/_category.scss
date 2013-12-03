@@ -123,6 +123,7 @@
 	position: absolute;
 	top: 25px;
 	display: inline;
+	font-size: 13px;
 	.single-view & {
 		@media (min-width: $medium) {
 			top: static;
