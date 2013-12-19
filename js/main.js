@@ -291,6 +291,3 @@ var FOLIO = (function($) {
 	});
 
 
-
-
-
